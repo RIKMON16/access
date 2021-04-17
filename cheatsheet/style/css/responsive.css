@@ -1,0 +1,107 @@
+/* Universal Styles 
+default font size is 16px
+1em is equal 16px
+Rem stands for root em. It acts similar to em, but instead of checking parent elements to size font, 
+it checks the root element. The root element is the <html> tag.
+ex: if html font-size if mentioned in CSS @ 20px the rem 2 will make it 40
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu&display=swap');
+
+html {
+    font-size: 16px;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    min-width: 200px;
+    min-height: auto;
+    padding: 0px 10px;
+    text-align: justify;
+}
+#banner h1{
+    height: 46rem;
+    font-size: 3.75rem;
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url(../images/head.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.post h2 {
+  font-size: 1.75em;
+  
+}
+
+.post h3 {
+  font-size: 1.25em;
+  color: #999999;
+}
+
+footer {
+  padding: 4rem 0;
+  border-top: 1px solid #999999;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.275rem; 
+  color: #999999;
+  text-align: center;
+}
+
+.main {
+  height: 400px;
+  width: 1200px;
+}
+ 
+.main .subsection {
+  height: 80%;
+  width: 80%;
+}
+
+#blog {
+  width: 86%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#blog .post {
+    width: 52%;
+    margin-top: 12.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.8;
+    color: #444444;
+}
+
+.post .image-container {
+  width: 100%;
+}
+
+.images .image-container {
+  display: inline;
+  width: 50%;
+}
+
+.image-container {
+  overflow: hidden;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

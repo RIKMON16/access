@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Grid</title>
+    <link rel="stylesheet" href="./style/css/gridpra.css">
+</head>
+<body>
+    <header>
+        <ul id="list">
+            <li>codecademy</li>
+            <li>Review</li>
+            <li>Skip</li>
+        </ul>
+    </header>
+    <div class="container">
+        <section class="left">
+            <ul>
+                <li class="a">fr Relative Unit</li>
+                <li class="b">CSS Inline Level Grid</li>
+                <li class="c">CSS grid-auto-rows</li>
+                <li class="d">CSS unit rem</li>
+                <li class="e">CSS flex-wrap-property</li>
+                <li class="f">Review Complete</li>
+            </ul>
+        </section>
+        <section class="right">
+            <h2>fr Relative unit</h2>
+            <p class="color black">
+                    In this example, the second column take 60px of the available 100px so the first & third columns split the remaining
+                    40px into the two parts ('1fr' = 50% or 20px)
+            </p>
+            <p class="color">
+                    .grid {
+                    display: grid; width: 100px; grid-template-columns: 1fr 60px 1fr;
+                    }
+            </p>
+            <p id="bottom">
+                    The CSS grid relative sizing unit <strong>fr</strong> is used to split rows and or columns into proportional
+                    distance.
+                    Each <strong>fr</strong> unit is a fraction of the grid's overall length and width. If a fixed unit is used along
+                    with
+                    <strong>fr</strong> (like pixels for example), then the <strong>fr</strong> units will only be proportional to the
+                    distance
+                    left over.
+            </p>
+        </section>
+        <section class="next">
+            <h2>CSS Inline Level Grid</h2>
+            <p class="color">
+                #grid-container {
+                    display: inline-grid;
+                }
+            </p>
+            <p>CSS Grid is a two dimensional CSS layout system. To set an HTML element into a inline-level <em>grid-container</em> 
+                use <strong>display:inline-grid</strong> propert/value. The nested items inside this element are called <em>grid items.</em>
+            </p>
+            <p id="bottom">
+                The difference between the values <strong>inline-grid</strong> and <strong>grid</strong> is that the <strong>inline-grid</strong>
+                will make the elements inline while <strong>grid</strong> will make it block-level element.
+            </p>
+        </section>
+        <section class="d">
+            <h2>CSS grid-auto-rows</h2>
+            <p id="bottom">
+                The CSS <strong>grid-auto-rows</strong>property specifies the height of the implicitly added grid rows or it sets a
+                size for rows in a grid container. This property is declared on the grid container. <strong>grid-auto-columns</strong> provides
+                the same functionality for columns. Implicity-added rows of columns occur when there are more grid items then cell available
+            </p>
+        </section>
+        <section class="rem">
+            <h2>CSS unit rem</h2>
+            <p class="color">
+                html {
+                    font-size: 18px;
+                }
+                span {
+                    font-size: 2rem;
+                }
+            </p>
+            <p>
+                The CSS unit <strong>rem</strong> can be used to set the font size of the HTML elements relevant to the font size
+                of the root element. 1 <strong>rem</strong> represents size of the base font within the root element the html tag.
+            </p>
+            <p id="bottom">
+                In the example code block, font size of all the span elements will be twice in size of the font size declared for the root element
+                i.e. html (root element). In other words rem doubles the size of the root element. By default font-size is 16px, so if you mention
+                span elements as 2rem in css. Size represented on user screen will be 32px
+            </p>
+        </section>
+        <section class="flex">
+            <h2>CSS flex-wrap property</h2>
+            <p class="color">
+                .container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 200px;
+                }
+            </p>
+            <p id="bottom">
+                The <strong>flex-wrap</strong> property specifies whether flex items should wrap or not. This applies to flex items only.
+                Once you tell your container to <strong>flex-wrap</strong>, wrapping become priority over shrinking. Flex items only begin
+                to wrap if their combined <strong>flex-basis</strong> value is <strong>greater</strong> than the current size of their flex-container.
+            </p>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Unica+One&display=swap');
+
+body {
+    font-family: 'Crimson Text', 'Unica One', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: black;
+    text-align: justify;
+    margin: 5rem 0;
+    padding: 0 10rem;
+}
+
+h1, h2 {
+    font-family: 'Unica One', sans-serif;
+    padding-left: 20px;
+    letter-spacing: 5px;
+}
+
+.grid {
+    border: 2px blue solid;
+    width: 800px;
+    height: auto;
+    display: grid;
+    grid-template: repeat(3, 1fr) / 3fr minmax(50px, 300px) 1fr;
+    grid-gap: 20px 5px;
+}
+
+.box {
+    border: 2px black solid;
+    background-color: papayawhip;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.grid3 {
+  display: grid;
+  border: 2px blue solid;
+  height: 500px;
+  width: 500px;
+  grid-template: repeat(4, 1fr 2fr) / repeat(4, 3fr 2fr);
+  grid-gap: 5px;
+}
+
+.box2 {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+  padding: 8px;
+}
+.j {
+  grid-area: 5 / 1 / span 2 / span 2;
+}
+
+.l {
+  grid-area: 2 / 2 / span 3 / span 6;
+}
+
+.m {
+  grid-area: 6 / 8 / span 3 / span 1;
+}
+/* .grid {
+    border: 2px blue solid;
+    width: 800px;
+    height: auto;
+    display: grid;
+    grid-template: 50% 50% 70px / 150px 70% 200px;
+    grid-row-gap: 20px;
+    grid-column-gap: 5px;
+}*/

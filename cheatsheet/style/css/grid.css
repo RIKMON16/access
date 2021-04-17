@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Unica+One&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crimson Text', 'Unica One', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: black;
+    text-align: justify;
+    margin: 5rem 0;
+    padding: 0 10rem;
+}
+
+h1, h2 {
+    font-family: 'Unica One', sans-serif;
+    padding-left: 20px;
+    letter-spacing: 5px;
+}
+
+.container .passive ul li{
+    width: 900px;
+    height: auto;
+    list-style: none;
+    margin: 0;
+}

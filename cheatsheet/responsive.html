@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bana's Travel Blog</title>
+    <link rel="stylesheet" href="./style/css/responsive.css">
+</head>
+
+<body>
+    <div id="banner">
+        <h1>Bana's Travel Blog</h1>
+    </div>
+    <div class="main">
+        <div class="subsection">
+            <h2>Percentages: Height & Width</h2>
+            <p>To size non-text HTML elements relative to their parent elements on the page you can use percentages.
+            
+            Percentages are often used to size box-model values, like width and height, padding, border, and margins. They can also
+            be used to set positioning properties (top, bottom, left, right).
+            
+            To start, let’s size the height and width of an element using percentages.</p>
+            <p>
+                In the example above, .main and .subsection each represent divs. The .subsection div is nested within the .main div.
+                Note that the dimensions of the parent div (.main) have been set to a height of 300 pixels and a width of 500 pixels.
+                
+                When percentages are used, elements are sized relative to the dimensions of their parent element (also known as a
+                container). Therefore, the dimensions of the .subsection div will be 150 pixels tall and 250 pixels wide. Be careful, a
+                child element’s dimensions may be set erroneously if the dimensions of its parent element aren’t set first.
+                
+                Note: Because the box model includes padding, borders, and margins, setting an element’s width to 100% may cause content
+                to overflow its parent container. While tempting, 100% should only be used when content will not have padding, border,
+                or margin.
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <h2>Padding & Margin</h2>
+            <p>
+                Percentages can also be used to set the padding and margin of elements.
+                
+                When height and width are set using percentages, you learned that the dimensions of child elements are calculated based
+                on the dimensions of the parent element.
+                
+                When percentages are used to set padding and margin, however, they are calculated based only on the width of the parent
+                element.
+                
+                For example, when a property like margin-left is set using a percentage (say 50%), the element will be moved halfway to
+                the right in the parent container (as opposed to the child element receiving a margin half of its parent’s margin).
+                
+                Vertical padding and margin are also calculated based on the width of the parent. Why? 
+                Consider the following scenario:
+                <ol>
+                <li>A container div is defined, but its height is not set (meaning it’s flat).</li>
+                <li>The container then has a child element added within. The child element does have a set height. This causes the height of
+                its parent container to stretch to that height.</li>
+                <li>The child element requires a change, and its height is modified. This causes the parent container’s height to also
+                stretch to the new height. This cycle occurs endlessly whenever the child element’s height is changed!</li></ol></p>
+                <p>In the scenario above, an unset height (the parent’s) results in a constantly changing height due to changes to the
+                child element. This is why vertical padding and margin are based on the width of the parent, and not the height.
+                
+                Note: When using relative sizing, ems and rems should be used to size text and dimensions on the page related to text
+                size (i.e. padding around text). This creates a consistent layout based on text size. Otherwise, percentages should be
+                used.
+                </p>
+        </div>
+    </div>
+    <div class="width">
+        <div class="min">
+            <h2>Width: Minimum & Maximum</h2>
+            <p>
+                Although relative measurements provide consistent layouts across devices of different screen sizes, elements on a
+                website can lose their integrity when they become too small or large. You can limit how wide an element becomes with the
+                following properties:
+                
+                min-width — ensures a minimum width for an element.
+                max-width — ensures a maximum width for an element.
+                p {
+                min-width: 300px;
+                max-width: 600px;
+                }
+                In the example above, when the browser is resized, the width of paragraph elements will not fall below 300 pixels, nor
+                will their width exceed 600 pixels.
+                
+                When a browser window is narrowed or widened, text can become either very compressed or very spread out, making it
+                difficult to read. These two properties ensure that content is legible by limiting the minimum and maximum widths.
+                
+                Note: The unit of pixels is used to ensure hard limits on the dimensions of the element(s).
+            </p>
+            <h2>Height: Minimum & Maximum</h2>
+            <p>
+                You can also limit the minimum and maximum height of an element.
+                
+                min-height — ensures a minimum height for an element’s box.
+                max-height — ensures a maximum height for an element’s box.
+                p {
+                min-height: 150px;
+                max-height: 300px;
+                }
+                In the example above, the height of all paragraphs will not shrink below 150 pixels and the height will not exceed 300
+                pixels.
+                
+                What will happen to the contents of an element if the max-height property is set too low for that element? It’s possible
+                that content will overflow outside of the element, resulting in content that is not legible.
+            </p>
+        </div>
+    </div>
+    <div class="image">
+        <div class="scaling">
+            <h2>Scaling Images and Videos</h2>
+            <p>
+                Many websites contain a variety of different media, like images and videos. When a website contains such media, it’s
+                important to make sure that it is scaled proportionally so that users can correctly view it.
+                
+                .container {
+                width: 50%;
+                height: 200px;
+                overflow: hidden;
+                }
+                
+                .container img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                }
+                In the example above, .container represents a container div. It is set to a width of 50% (half of the browser’s width,
+                in this example) and a height of 200 pixels. Setting overflow to hidden ensures that any content with dimensions larger
+                than the container will be hidden from view.
+                
+                The second CSS rule ensures that images scale with the width of the container. The height property is set to auto,
+                meaning an image’s height will automatically scale proportionally with the width. Finally, the last line will display
+                images as block level elements (rather than inline-block, their default state). This will prevent images from attempting
+                to align with other content on the page (like text), which can add unintended margin to the images.
+                
+                It’s worth memorizing the entire example above. It represents a very common design pattern used to scale images and
+                videos proportionally.
+                
+                Note: The example above scales the width of an image (or video) to the width of a container. If the image is larger than
+                the container, the vertical portion of the image will overflow and will not display. To swap this behavior, you can set
+                max-height to 100% and width to auto (essentially swapping the values). This will scale the height of the image with the
+                height of the container instead. If the image is larger than the container, the horizontal portion of the image will
+                overflow and not display.
+        
+            </p>
+        </div>
+    </div>
+    <div class="background">
+        <div class="bgimage">
+            <h2>Scaling Background Images</h2>
+            <p>
+                Background images of HTML elements can also be scaled responsively using CSS properties.
+                
+                body {
+                background-image: url('#');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                }
+                In the example above, the first CSS declaration sets the background image (# is a placeholder for an image URL in this
+                example). The second declaration instructs the CSS compiler to not repeat the image (by default, images will repeat).
+                The third declaration centers the image within the element.
+                
+                The final declaration, however, is the focus of the example above. It’s what scales the background image. The image will
+                cover the entire background of the element, all while keeping the image in proportion. If the dimensions of the image
+                exceed the dimensions of the container then only a portion of the image will display.
+            </p>
+        </div>
+    </div>
+    <div class="review">
+        <div class="relate">
+            <h2>Review: Relative Measurements</h2>
+            <p>
+                Great work! You learned how to size elements on a website relative to other elements on the page.
+                Let’s review what you learned:
+                <ul>
+                    <li>Content on a website can be sized relative to other elements on the page using <em>relative measurements</em>.</li>
+                    <li>The unit of em sizes font relative to the font size of a parent element.</li>
+                    <li>The unit of rem sizes font relative to the font size of a root element. That root element is the <em>html element</em>.</li>
+                    <li>Percentages are commonly used to size box-model features, like the width, height, padding, or margin of an element.</li>
+                    <li>When percentages are used to size width and height, child elements will be sized relative to the dimensions of their
+                    parent (remember that parent dimensions must first be set).</li>
+                    <li>Percentages can be used to set padding and margin. Horizontal and vertical padding and margin are set relative to the
+                    width of a parent element.</li>
+                    <li>The minimum and maximum width of elements can be set using min-width and max-width.</li>
+                    <li>The minimum and maximum height of elements can be set using min-height and max-height.</li>
+                    <li>When the height of an image or video is set, then its width can be set to auto so that the media scales proportionally.
+                    Reversing these two properties and values will also achieve the same result.</li>
+                    <li>A background image of an HTML element will scale proportionally when its background-size property is set to cover.</li>
+                </ul></p>
+                <p>Relative units of measurement are a first step towards incorporating responsive design in a website. When combined with
+                more advanced responsive techniques, you can create a seamless user experience regardless of a device’s screen size.
+                </p>
+        </div>
+    </div>
+    <div id="blog">
+        <div class="post">
+            <h2>Saturday Market</h2>
+            <h3>January 7th</h3>
+            <strong class="opening-line">On Saturday, Dilara took us to the market.</strong>
+            <p>It is a wonderfully eclectic mix of goods from all over the world - delightfully random. I dusted off my
+                bargaining skills to buy a metal bracelet with camels on it, and Maggie bought a lapis lazuli necklace
+                from Afghanistan. In the evening, we walked along Gulf Road towards the marina, passed through Marina
+                Mall, and ate dinner at a wonderful little cafe that we will definitely be frequenting. I’ve developed a
+                slight obsession with lentil soul... maybe it’s because I miss Foco’s Indian lentil chili.</p>
+            <div class="image-container">
+                <img src="./style/images/brush.png" />
+            </div>
+            <p>We took a catamaran from the marina to Failaka Island, where we got to explore a bit, relax on the beach,
+                and go swimming. The water in the Gulf is incredibly still; I haven’t seen a wave yet, and when you look
+                out on the horizon it seems to go forever. Something about the color of the water and maybe the dust in
+                the air make it seem hazier than the Atlantic coast. I have some cool pictures of the city skyline as we
+                returned on the boat.</p>
+            <p>That night, I hung out in a cafe with two friends, drinking traditional lemonade with mint. It’s
+                delicious; maybe I should send in a flavor suggestion to Morano Gelato? Then we drove around the city
+                for a while. Cruising around is a really valid way to spend the time when a tank of gas costs about
+                seven bucks. </p>
+        </div>
+        <div class="images">
+            <div class="image-container">
+                <img src="./style/images/norway.png"/>
+            </div>
+            <!--
+      Adding comment to ensure no whitespace between inline-block div elements from HTML file.
+      -->
+            <div class="image-container">
+                <img src="./style/images/Swissalps.png" />
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span>&copy; Bana’s Travel Blog</span>
+    </footer>
+</body>
+
+</html>

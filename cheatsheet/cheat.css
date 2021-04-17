@@ -1,0 +1,342 @@
+/* 
+cheat code sheet
+body of the html
+fonts from google
+Section: 1 Flex and all flex related css
+Section: 2 Links & Buttons Usage
+Section: 3 Breadcrumbs Nav
+*/
+
+body {
+    margin: 0 5px;
+    padding: 0;
+    border: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+
+/* flex */
+
+/* Justify content - to justify content you need to fist select the parent like display: flex and then use the justify content*/
+
+.container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    background-color: whitesmoke;
+}
+
+.box {
+    height: auto;
+    width: 80px;
+    padding: 15px;
+    background-color: dodgerblue;
+    border: 1px solid lightgray;
+    display: inline-block;
+}
+
+li {
+    font-family: "quicksand", sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+#flexstart {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#flexend {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#center {
+    display: flex;
+    justify-content: center;
+}
+
+#spacearound {
+    display: flex;
+    justify-content: space-around;
+}
+
+#spacebetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle {
+    flex-grow: 1;
+}
+
+.side {
+    flex-grow: 1;
+}
+
+.middle1 {
+    width: 100px;
+    flex-shrink: 1;
+}
+
+.side1 {
+    width: 100px;
+    flex-shrink: 1;
+}
+
+.container2 {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 250px;
+}
+ 
+.item {
+  width: 100px;
+  height: 100px;
+}
+
+.container3 {
+  background-color: dodgerblue;
+  display: flex;
+  max-height: 600px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.box2 {
+  background-color: whitesmoke;
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
+  flex-grow: 1;
+}
+
+#row {
+  flex-direction: row;
+}
+
+#row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Section:2 Links & Buttons */
+
+a {
+    color: #466995;
+    cursor: pointer;
+}
+
+a:visited {
+    font-style: italic;
+}
+
+a:hover {
+    text-decoration: none;
+    font-style: italic;
+}
+
+a:active {
+    color: #DBE9EE;
+}
+
+/* Button styling */
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Roboto', sans-serif;
+}
+
+.button {
+  height: 50px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.skeuomorphic {
+  border: 2px solid #0c960c;
+  border-radius: 5px;
+  color: #F8F8F8;
+  text-shadow: 0 -2px #006bb3;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2), 0px -2px 2px rgba(255, 255, 255, 0.5) inset, 0 2px 2px rgba(255, 255, 255, 0.8) inset;
+  background: #1D1;
+  background: linear-gradient(#1D1, #0ebc0e);
+  text-shadow: 0 -2px #0c960c;
+  
+}
+
+.skeuomorphic:hover {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.25) inset, 0 2px 2px rgba(255, 255, 255, 0.4) inset;
+  background: #0ebc0e;
+  background: linear-gradient(#0ebc0e, #0c960c);
+  border-color: #064f06;
+}
+
+.skeuomorphic:active {
+  margin-top: 2px;
+  margin-bottom: -2px;
+  box-shadow: 0px 2px 2px rgba(63, 63, 63, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.25) inset, 0 2px 2px rgba(255, 255, 255, 0.4) inset;
+  background: #0c960c;
+  background: linear-gradient(#0c960c, #0ebc0e);
+}
+
+.flat {
+  background-color: #1D1;
+  color: #fff;
+  border: 2px solid #12dd23;
+  border-radius: 10px;
+}
+
+.flat:hover {
+  background-color: #0c960c;
+  transition: background-color .15s, font-size .15s;
+  font-size: 18px;
+}
+
+.flat:active {
+  border-color: #fff;
+}
+
+.style1 {
+    border: 1px solid #466995;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+}
+
+.style1:hover, .style2:hover {
+    background-color: #c0d6df;
+    transition: color .1s ease-in, background-color .1s ease-in;
+}
+
+.style1:active {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0px 0px;
+    background-color: #c0d6df;
+    color: #ffffff;
+    transition: font-size .1s ease-in-out;
+}
+
+.style2 {
+    border: 1px solid #466995;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Breadcrumbs */
+
+.breadcrumb > li {
+    display: inline;
+}
+
+.breadcrumb li+li::before {
+	padding: 10px;
+    content: ">";
+}
+
+.breadcrumb li a::before, .breadcrumb li a::after {
+  content: "";
+  position: absolute;
+  border-color: darkcyan;
+  border-style: solid;
+  border-width: 15px 5px;
+}
+
+.breadcrumb li a::before {
+  left: -10px;
+  border-left-color: transparent;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color:rgba(226, 9, 9, 0.685);
+}
+
+.breadcrumb1 {
+  text-align: left;
+}
+.breadcrumb1 li {
+  float: left;
+}
+
+.breadcrumb1 a {
+  color: #fff;
+  background: darkcyan;
+  text-decoration: none;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 15px;
+  padding: 0 5px;
+}
+
+.breadcrumb1 a::before,
+.breadcrumb1 a::after {
+  content: "";
+  position: absolute;
+  border-color: darkcyan;
+  border-style: solid;
+  border-width: 15px 5px;
+}
+
+.breadcrumb1 a::before {
+  left: -10px;
+  border-left-color: transparent;
+}
+.breadcrumb1 a::after {
+  left: 100%;
+  border-color: transparent;
+  border-left-color: darkcyan;
+}
+
+.breadcrumb1 a:hover {
+  background-color: blue;
+}
+.breadcrumb1 a:hover::before {
+  border-color: blue;
+  border-left-color: transparent;
+}
+.breadcrumb1 a:hover::after {
+  border-left-color: blue;
+}
+
+.breadcrumb2 {
+  text-align: left;
+}
+.breadcrumb2 li {
+  display: inline;
+}
+.breadcrumb2 li.location+li.location::before {
+  color: gray;
+  content: ">";
+}
+.breadcrumb2 a {
+  display: inline;
+}
+
+.attribute a {
+  color: gray;
+}
+
+.attribute a::after {
+  content: " x";
+  font-size: 8px;
+  vertical-align: super;
+}

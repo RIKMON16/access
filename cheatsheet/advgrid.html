@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Grid</title>
+    <link rel="stylesheet" href="./style/css/advgrid.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/savory.svg" alt="" class="logo">
+        </header>
+        <div class="intro">
+            <h2>Introduction to Advanced Grid</h2>
+            <p>
+                In the previous lesson, you learned all the foundational properties necessary to create a two-dimensional
+                grid-based
+                layout for your web pages! In this lesson, you’ll learn the following additional properties that you can use to
+                harness
+                the power of CSS Grid Layout:
+            <ul class="grey">
+                <li>
+                    grid-template-areas
+                </li>
+                <li>
+                    justify-items
+                </li>
+                <li>
+                    justify-content
+                </li>
+                <li>
+                    justify-self
+                </li>
+                <li>
+                    align-items
+                </li>
+                <li>
+                    align-content
+                </li>
+                <li>
+                    align-self
+                </li>
+                <li>
+                    grid-auto-rows
+                </li>
+                <li>
+                    grid-auto-columns
+                </li>
+                <li>
+                    grid-auto-flow
+                </li>
+            </ul>
+            </p>
+            <p>
+                You will also learn about the explicit and implicit grids and grid axes.
+            </p>
+        </div>
+        <div class="container1">
+            <header class="head">
+                <h2>grid Template area</h1>
+            </header>
+            <nav class="nav2">
+            <p>
+                The grid-template-areas property allows you to name sections of your web page to use as values in the grid-row-start,
+                grid-row-end, grid-col-start,grid-col-end, and grid-area properties.
+                <p>example:</p>
+                <aside>
+                    <p class="side">div class="container"</p>
+                    <p class="side">header Welcome! header</p>
+                    <p class="side">nav Links! nav</p>
+                    <p class="side">section class="info" Info! section</p>
+                    <p class="side">    section class="services">Services!</p>
+                    <p class="side">footer>Contact us!</p>
+                </aside>
+            </nav>
+            <section class="left">
+                <aside>
+                    <p class="side">.container {
+
+                    </p>
+                    <p class="side">display: grid;
+                        max-width: 900px;
+                        position: relative;
+                        margin: auto;
+                        grid-template-areas: "head head"
+                        "nav nav"
+                        "info services"
+                        "footer footer";
+                        grid-template-rows: 300px 120px 800px 120px;
+                        grid-template-columns: 1fr 3fr;
+                        }
+                    </p>
+                    <p>
+                        header {
+                        grid-area: head;
+                        }
+                        
+                        nav {
+                        grid-area: nav;
+                        }
+                        
+                        .info {
+                        grid-area: info;
+                        }
+                        
+                        .services {
+                        grid-area: services;
+                        }
+                        
+                        footer {
+                        grid-area: footer;
+                        }
+                    </p>
+                </aside>
+            </section>
+            <section class="right">
+                <p>
+                    You may want to expand this section of the website to view the code above more clearly.
+                </p>
+            </section>
+            <ol class="footer">
+                <li>
+                    In the example above, the HTML creates a web page with five distinct parts.
+                </li>
+                <li>
+                    The grid-template-areas declaration in the .container rule set creates a 2-column, 4-row layout.
+                </li>
+                <li>
+                    The grid-template-rows declaration specifies the height of each of the four rows from top to bottom: 300 pixels, 120
+                    pixels, 800 pixels, and 120 pixels.
+                </li>
+                <li>
+                    The grid-template-columns declaration uses the fr value to cause the left column to use one fourth of the available
+                    space on the page and the right column to use three-fourths of the available space on the page.
+                </li>
+                <li>
+                    In each rule set below .container, we use the grid-area property to tell that section to cover the portion of the page
+                    specified. The header element spans the first row and both columns. The nav element spans the second row and both
+                    columns. The element with class .info spans the third row and left column. The element with class .services spans the
+                    third row and right column. The footer element spans the bottom row and both columns.
+                </li>
+                <li>
+                    That’s it! An entire page laid out in 40 lines of code.
+                </li>
+                <p>This property is declared on grid containers.
+                
+                    You can see what you’ll be building in this exercise <a
+                        href="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/grid-template-areas/index.html">here.</a>
+                </p>
+            </ol>
+        </div>
+        <div class="over">
+            <h2>Overlapping Elements</h2>
+            <p>
+                Another powerful feature of CSS Grid Layout is the ability to easily overlap elements.
+                
+                When overlapping elements, it is generally easiest to use grid line names and the grid-area property.
+            </p>
+            <aside>
+                <p class="side">div class="container"</p>
+                <p class="side">div class="info" info</p>
+                <p class="side">img tag src="#"</p>
+                <p class="side">div class="service" service</p>
+                <p class="side">div to close tags</p>
+            </aside>
+            <aside>
+                .container {
+                display: grid;
+                grid-template: repeat(8, 200px) / repeat(6, 100px);
+                }
+                
+                .info {
+                grid-area: 1 / 1 / 9 / 4;
+                }
+                
+                .services {
+                grid-area: 1 / 4 / 9 / 7;
+                }
+                
+                img {
+                grid-area: 2 / 3 / 5 / 5;
+                z-index: 5;
+                }
+            </aside>
+            <p>
+                In the example above, there is a grid container with eight rows and six columns. There are three grid items within the
+                container — a <div> with the class info, a <div> with the class services, and an image.
+            </p>
+            <p>
+                The info section covers all eight rows and the first three columns. The services section covers all eight rows and the
+                last three columns.
+            </p>
+            <p>
+                The image spans the 2nd, 3rd, and 4th rows and the 3rd and 4th columns
+            </p>
+            <p>
+                The z-index property tells the browser to render the image element on top of the services and info sections so that it
+                is visible.
+            </p>
+            <p class="bold">Remember, the grid-area property accepts 4 values: grid-row-start, grid-column-start, grid-row-end, and grid-column-end.</p>
+        </div>
+        <div class="container3">
+            <header class="header3">
+                <h1>Header</h1>
+            </header>
+            <nav class="nav3">
+                <h1>Nav</h1>
+            </nav>
+            <section class="left3">
+                <h2>Left</h2>
+                <p>In the .left rule set in style.css, add the grid-area property and set its value to 4 / 1 / 9 / 5.</p>
+                <p>Set its value so that the overlap element spans the 6th and 7th rows and the 4th and 5th columns.
+                
+                Remember, the grid-area property accepts 4 values: grid-row-start, grid-column-start, grid-row-end, and grid-column-end.</p>
+            </section>
+            <div class="overlap3">
+                <h3>Overlap!</h3>
+                <p>In the .overlap rule set in style.css, add the grid-area property.</p>
+            </div>
+            <section class="right3">
+                <h2>Right</h2>
+                <p>In the .right rule set in style.css, add the grid-area property and set its value to 4 / 5 / 9 / 7.</p>
+            </section>
+            <footer class="footer3">
+                <h1>Footer</h1>
+                <p>In the footer rule set in style.css, add the grid-area property and set its value to 9 / 1 / 13 / 7.</p>
+                <p>Notice that the overlap element is covered by the right element.
+                
+                Set the z-index of the overlap element to 5.</p>
+            </footer>
+        </div>
+        <div class="justify">
+            <h2>Justify Contents</h2>
+            <p>
+                We have referred to “two-dimensional grid-based layout” several times throughout this course.
+                
+                There are two axes in a grid layout — the column (or block) axis and the row (or inline) axis.
+                
+                The column axis stretches from top to bottom across the web page.
+                
+                The row axis stretches from left to right across the web page.
+                
+                In the following four exercises, we will learn and use properties that rely on an understanding of grid axes.
+                
+                justify-items is a property that positions grid items along the inline, or row, axis. This means that it positions items
+                from left to right across the web page.
+                
+                justify-items accepts these values:
+            </p>
+            <ul>
+                <li>start — aligns grid items to the left side of the grid area</li>
+                <li>
+                    end — aligns grid items to the right side of the grid area
+                </li>
+                <li>center — aligns grid items to the center of the grid area</li>
+                <li>stretch — stretches all items to fill the grid area</li>
+            </ul>
+            <p>
+                There are several other values that justify-items accepts, which you can read about on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout#Justifying_Items_on_the_Inline_or_Row_Axis">Mozilla Developer Network.</a>
+                The definitions for these values can also be found in the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items#values">documentation.</a>  It is important to note that the page with the
+                definitions includes some values that are not accepted in CSS Grid layout.
+            </p>
+            <aside>
+                main {
+                display: grid;
+                grid-template-columns: repeat(3, 400px);
+                justify-items: center;
+                }
+            </aside>
+            <p>
+                <ul>
+                    <p>In the example above, we use justify-items to adjust the positioning of some elements on this web page.</p>
+                
+                <li>
+                    There is a grid container with three columns that are each 400 pixels wide.
+                </li>
+                <li>The container has three grid items that do not have a specified width.</li>
+                <li>Without setting the justify-items property, these elements will span the width of the column they are in (400 pixels).</li>
+                <li>
+                    By setting the justify-items property to center, the .card divs will be centered inside of their columns. They will
+                        only be as wide as necessary to contain their content (the words Card 1, etc).
+                </li>
+                <li>
+                    If we specify a width for the .card elements, they will not stretch the width of their column.
+                </li>
+                </ul>
+                <p>
+                    This property is declared on grid containers.
+                </p>
+            </p>
+            <h2>Justify Left & Right content</h2>
+            <p>
+                In the previous exercise, we learned how to position elements within their columns. In this exercise, we will learn how
+                to position a grid within its parent element.
+                
+                We can use justify-content to position the entire grid along the row axis.
+            </p>
+            <ul>
+                <p>
+                    Carry forward the list from above/ little bit change in wording in stretch
+                </p>
+                <li>stretch — stretches the grid items to increase the size of the grid to expand horizontally across the container</li>
+                <li>
+                    space-around — includes an equal amount of space on each side of a grid element, resulting in double the amount of space
+                    between elements as there is before the first and after the last element
+                </li>
+                <li>
+                    space-between — includes an equal amount of space between grid items and no space at either end
+                </li>
+                <li>
+                    space-evenly — places an even amount of space between grid items and at either end
+                </li>
+            </ul>
+                <p>
+                    There are several other values that justify-content accepts, which you can read about on the Mozilla Developer Network.
+                    The definitions for these values can also be found in the documentation. It is important to note that the page with the
+                    definitions includes some values that are not accepted in CSS Grid layout.
+                </p>
+                <aside>
+                    main {
+                    display: grid;
+                    width: 1000px;
+                    grid-template-columns: 300px 300px;
+                    grid-template-areas: "left right";
+                    justify-content: center;
+                    }
+                </aside>
+                <p>
+                    In the example above, the grid container is 1000 pixels wide, but we only specified two columns that are 300 pixels
+                    each. This will leave 400 pixels of unused space in the grid container.
+                    justify-content: center; positions the columns in the center of the grid, leaving 200 pixels on the right and 200 pixels
+                    on the left of the grid.
+                    This property is declared on grid containers.
+
+                </p>
+        </div>
+        <div class="align">
+            <h2>Align Items</h2>
+            <p>
+                In the previous two exercises, we learned how to position grid items and grid columns from left to right across the
+                page. Below, we’ll learn how to position grid items from <em>top to bottom!</em>
+            </p>
+            <p>
+                <em>align-items</em> is a property that positions grid items along the block, or column axis. This means that it positions items
+                from top to bottom.
+            </p>
+            <p>
+                align-items accepts these values:
+            </p>
+            <ul>
+                <li><em>start</em> — aligns grid items to the top side of the grid area</li>
+                <li><em>end</em> — aligns grid items to the bottom side of the grid area</li>
+                <li><em>center</em> — aligns grid items to the center of the grid area</li>
+                <li><em>stretch</em> — stretches all items to fill the grid area</li>
+            </ul>
+            <p>
+                There are several other values that align-items accepts, which you can read about on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout#Aligning_items_on_the_block_or_column_Axis">Mozilla Developer Network.</a>  The
+                definitions for these values can also be found in the documentation. It is important to note that the page with the
+                definitions includes some values that are not accepted in CSS Grid layout.
+            </p>
+            <aside>
+                main {
+                display: grid;
+                grid-template-rows: repeat(3, 400px);
+                align-items: center;
+                }
+            </aside>
+            <p>
+                In the example above, we use align-items to adjust the positioning of some elements on this web page.
+            </p>
+            <ul>
+                <li>
+                    There is a grid container with three rows that are 400 pixels tall.
+                </li>
+                <li>
+                    The container has three grid items that do not have a specified width.
+                </li>
+                <li>Without setting the align-items property, these elements will span the height of the row they are in (400 pixels).</li>
+                <li>
+                    By setting the align-items property to center, the .card divs will be centered vertically inside of their rows. They
+                        will only be as tall as necessary to contain their content (the words Card 1, etc).
+                </li>
+                <li>
+                    If we specify a height for the .card elements, they will not stretch the height of their row even if align-items:
+                    stretch; is set.
+                </li>
+            </ul>
+        </div>
+        <div class="align-item">
+            <h2>Align Items</h2>
+            <p>
+                In the previous exercise, we positioned grid items within their rows. align-content positions the rows along the column
+                axis, or from top to bottom.
+                
+                It accepts these positional values:
+                <ul>
+                <li><em>start</em> — aligns the grid to the top of the grid container</li>
+                  <li><em>end</em> — aligns the grid to the bottom of the grid container</li>
+                <li><em>center</em> — centers the grid vertically in the grid container</li>
+                <li><em>stretch</em> — stretches the grid items to increase the size of the grid to expand vertically across the container</li>
+                <li><em>space-around</em> — includes an equal amount of space on each side of a grid element, resulting in double the amount of space
+                between elements as there is before the first and after the last element</li>
+                <li><em>space-between</em> — includes an equal amount of space between grid items and no space at either end</li>
+                <li><em>space-evenly</em> — places an even amount of space between grid items and at either end</li>
+                <p> There are several other values that align-content accepts, which you can read about on the Mozilla Developer Network.
+                The definitions for these values can also be found in the documentation. It is important to note that the page with the
+                definitions includes some values that are not accepted in CSS Grid layout.</p>
+                </ul>
+            </p>
+            <aside>
+                main {
+                display: grid;
+                height: 600px;
+                rows: 200px 200px;
+                grid-template-areas: "top"
+                "bottom";
+                align-content: center;
+                }
+            </aside>
+            <ul>
+                <li>
+                    In the example above, the grid container is 600 pixels tall, but we only specified two rows that are 200 pixels each.
+                    This will leave 200 pixels of unused space in the grid container.
+                </li>
+                <li>
+                    align-content: center; positions the rows in the center of the grid, leaving 100 pixels at the top and 100 pixels at the
+                    bottom of the grid.
+                </li>
+            </ul>
+
+        </div>
+        <div class="self">
+            <h2>Justify Self and Align Self</h2>
+            <p>
+                The justify-items and align-items properties specify how all grid items contained within a single container will
+                position themselves along the row and column axes, respectively.
+                <em>justify-self</em>specifies how an individual element should position itself with respect to the row axis. This property will override <em>justify-items</em>for any item on which it is declared.
+                <em>align-self</em>specifies how an individual element should position itself with respect to the column axis. This property will override
+                <em>align-items</em> for any item on which it is declared.
+                They both accept these four properties: 
+                <ul>
+                    <li>
+                        <em>start</em>— positions grid items on the left side/top of the grid area
+                    </li>
+                    <li>
+                        <em>end</em> — positions grid items on the right side/bottom of the grid area
+                    </li>
+                    <li><em>center</em>— positions grid items on the center of the grid area
+                    </li>
+                    <li><em>stretch</em>— positions grid items to fill the grid area (default)</li>
+                </ul>
+                <p>
+                    <em>align-self</em> and <em>justify-self</em>accept the same values as align-items and justify-items. You can read about these values on the Mozilla Developer
+                    Network. The definitions for these values can also be found in the documentation. It is important to note that the page
+                    with the definitions includes some values that are not accepted in CSS Grid layout.
+                </p>
+            </p>
+        </div>
+        <div class="implicit">
+            <h2>Implicit vs. Explicit Grid</h2>
+            <p>
+                So far, we have been explicitly defining the dimensions and quantities of our grid elements using various properties.
+                This works well in many cases, such as a landing page for a business that will display a specific amount of information
+                at all times.
+                
+                However, there are instances in which we don’t know how much information we’re going to display. For example, consider
+                online shopping. Often, these web pages include the option at the bottom of the search results to display a certain
+                quantity of results or to display ALL results on a single page. When displaying all results, the web developer can’t
+                know in advance how many elements will be in the search results each time.
+                
+                What happens if the developer has specified a 3-column, 5-row grid (for a total of 15 items), but the search results
+                return 30?
+                
+                Something called the <em>implicit</em>grid takes over. The implicit grid is an algorithm built into the specification for CSS Grid that determines default
+                behavior for the placement of elements when there are more than fit into the grid specified by the CSS.
+                
+                The default behavior of the implicit grid is as follows: items fill up rows first, adding new rows as necessary. New
+                grid rows will only be tall enough to contain the content within them. In the next exercise, you’ll learn how to change
+                this default behavior.
+            </p>
+        </div>
+        <div class="autorows">
+            <h2>Grid Auto Rows and Grid Auto Columns</h2>
+            <p>
+                CSS Grid provides two properties to specify the size of grid tracks added implicitly: <em>grid-auto-rows</em> &
+                <em>grid-auto-columns.</em>
+                grid-auto-rows specifies the height of implicitly added grid rows. grid-auto-columns specifies the width of implicitly
+                added grid columns.
+                
+                grid-auto-rows and grid-auto-columns accept the same values as their explicit counterparts, grid-template-rows and
+                grid-template-columns:
+                <ul>
+                    <li>pixels (px)</li>
+                    <li>percentages (%)</li>
+                    <li>fractions (fr)</li>
+                    <li>the repeat() function</li>
+                </ul>
+                <aside>
+                    body {
+                    display: grid;
+                    grid: repeat(2, 100px) / repeat(2, 150px);
+                    grid-auto-rows: 50px;
+                    }
+                </aside>
+            </p>
+            <p>
+                In the example above, there are 5 div>s. However, in the section rule set, we only specify a 2-row, 2-column grid —
+                    four grid cells.
+                
+                    The fifth div> will be added to an implicit row that will be 50 pixels tall.
+                
+                        If we did not specify grid-auto-rows, the rows would be auto-adjusted to the height of the content of the grid
+                        items.
+                
+                        These properties are declared on grid containers.
+            </p>
+        </div>
+        <div class="gridautoflow">
+            <h2>Grid Auto Flow</h2>
+            <p>
+                In addition to setting the dimensions of implicitly-added rows and columns, we can specify the order in which they are
+                rendered. <em>grid-auto-flow</em> specifies whether new elements should be added to rows or columns. <em>grid-auto-flow</em>
+                accepts these values:
+                <ul>
+                    <li><em>row</em>— specifies the new elements should fill rows from left to right and create new rows when there are too many elements
+                    (default)</li>
+                    <li><em>column</em>— specifies the new elements should fill columns from top to bottom and create new columns when there are too many
+                    elements</li>
+                    <li><em>dense</em>— this keyword invokes an algorithm that attempts to fill holes earlier in the grid layout if smaller elements are added</li>
+                </ul>
+                <p>
+                    You can pair row and column with dense, like this: grid-auto-flow: row dense;.
+                    
+                    This property is declared on grid containers.
+                </p>
+            </p>
+        </div>
+        <div class="review">
+            <h2>Review</h2>
+            <p>
+                Great work! You have learned many new properties to use when creating a layout using CSS Grid! Let’s review:
+                <ul>
+                    <li>
+                        grid-template-areas specifies grid named grid areas
+                    </li>
+                    <li>
+                        grid layouts are two-dimensional: they have a row, or inline, axis and a column, or block, axis.
+                    </li>
+                    <li>
+                        justify-items specifies how individual elements should spread across the row axis
+                    </li>
+                    <li>
+                        justify-content specifies how groups of elements should spread across the row axis
+                    </li>
+                    <li>
+                        justify-self specifies how a single element should position itself with respect to the row axis
+                    </li>
+                    <li>
+                        align-items specifies how individual elements should spread across the column axis
+                    </li>
+                    <li>
+                        align-content specifies how groups of elements should spread across the column axis
+                    </li>
+                    <li>
+                        align-self specifies how a single element should position itself with respect to the column axis
+                    </li>
+                    <li>
+                        grid-auto-rows specifies the height of rows added implicitly to the grid
+                    </li>
+                    <li>
+                        grid-auto-columns specifies the width of columns added implicitly to the grid
+                    </li>
+                    <li>
+                        grid-auto-flow specifies in which direction implicit elements should be created
+                    </li>
+                </ul>
+                <p>
+                    This is a great time to experiment with the code in the code editor and try any of the properties you want to practice
+                    more! When you’re ready, move on!
+                </p>
+            </p>
+
+        </div>
+        <main>
+            <div class="recipe a">
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/image-1.png" />
+                <h2>Chocolate Mousse</h2>
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/time.sv" alt="" class="time" />
+                <p class="mins">20 mins</p>
+                <p class="description">
+                    This delicious Chocolate Mousse will dinner guests of all ages
+                </p>
+            </div>
+            <div class="recipe b">
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/image-2.png" />
+                <h2>Smoked Lamb with rice</h2>
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/time.svg" class="time" />
+                <p class="mins">120 mins</p>
+                <p class="description">
+                    Want to feel like your favorite relative came over and made you dinner? This comfort meal of smoked lamb and rice
+                    will quickly become a weekend favorite!
+                </p>
+            </div>
+            <div class="recipe c">
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/image-4.png" />
+                <h2>CHICKEN SANDWICH</h2>
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/time.svg" class="time" />
+                <p class="mins">45 mins</p>
+                <p class="description">
+                    We've packed a lot into this one - shredded cabbage, carmalized onions, deep-fried chicken, chipotle mayo, half-sour
+                    pickles, and a toasted sesame bun will leave you thoroughly satisfied
+                </p>
+            </div>
+            <div class="recipe e">
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/image-3.png" />
+                <h2>SWEET CHURROS</h2>
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/time.svg" class="time" />
+                <p class="mins">90 mins</p>
+                <p class="description">
+                    Making this classic summer treat at home will remind you of a childhood spent in the park.
+                </p>
+            </div>
+            <div class="recipe f">
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/image-6.png" />
+                <h2>BERRY PARFAIT</h2>
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/time.svg" class="time" />
+                <p class="mins">10 mins</p>
+                <p class="description">
+                    This low-calorie, vitamin-packed parfait is great for breakfast, dessert, or post-workout!</p>
+            </div>
+            <div class="recipe e">
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/image-3.png" />
+                <h2>SWEET CHURROS</h2>
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/time.svg" class="time" />
+                <p class="mins">90 mins</p>
+                <p class="description">
+                    Making this classic summer treat at home will remind you of a childhood spent in the park.
+                </p>
+            </div>
+            <div class="recipe f">
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/image-6.png" />
+                <h2>BERRY PARFAIT</h2>
+                <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/time.svg" class="time" />
+                <p class="mins">10 mins</p>
+                <p class="description">
+                    This low-calorie, vitamin-packed parfait is great for breakfast, dessert, or post-workout!</p>
+            </div>
+        </main>
+        <footer>
+            <img src="https://content.codecademy.com/courses/learn-css-grid/lesson-ii/savory.svg" class="logo">
+        </footer>
+    </div>
+</body>
+</html>

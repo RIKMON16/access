@@ -1,0 +1,91 @@
+
+html, body {
+    max-width: 1200px;
+    margin: auto;
+    font-size: 18px;
+    font-family: 'Space Mono', monospace;
+    line-height: 1.4em;
+    color: ghostwhite;
+}
+
+body {
+    background-image: url(../images/spac.jpg);
+    height: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+.page-title {
+    text-align: center;
+    margin: auto;
+    line-height: 2em;
+}
+
+p, h2 {
+    text-align: center;
+}
+
+gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  margin: 20px;
+}
+
+.gallery-item .thumbnail {
+  width: 240px;
+  border: 2px solid GhostWhite;
+  border-radius: 4px;
+}
+
+.footer ul li{
+    display: inline;
+    list-style: none;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.contact-btn {
+    cursor: pointer;
+    margin: 10px 20px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 480px) {
+  .page-title {
+    width: 270px;
+
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px), (orientation: portrait) {
+   .gallery-item .thumbnail {
+     width: 95%;
+   }
+}
+
+@media only screen and (min-resolution: 150dpi) {
+  .logo {
+    background-image: url("../img/spaceship@2x.png");
+  }
+}
+
+@media only screen and (max-resolution: 150dpi)and (max-width: 480px) {
+    .page-description {
+      font-size: 20px
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+   .page-title, .page-description {
+     float: left;
+     width: 20em;
+   }
+   .page-description {
+     text-align: left;
+   }
+}

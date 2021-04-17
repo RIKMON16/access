@@ -1,0 +1,226 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Unica+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Exo&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo', sans-serif;
+    font-size: 20px;
+    color: black;
+    text-align: justify;
+}
+
+h1, h2 {
+    font-family: 'Unica One', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-align: left;
+    padding: 10px 0px 10px 10px;
+}
+
+header, footer {
+    background-color: #ffa500;
+    text-align: center;
+    min-width: 500px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: repeat(3, 450px);
+    grid-gap: 20px;
+    margin-top: 44px;
+    grid-auto-rows: 500px;
+    justify-items: center;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    grid-auto-rows: 500px;
+    grid-auto-flow: column;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+em {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: bold;
+}
+
+p, ul   {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+
+.recipe {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+  width: 200px;
+}
+
+/*.a {
+  align-self: end;
+}
+
+.c {
+  justify-self: start;
+}*/
+
+.time {
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 20px;
+  height: auto;
+}
+
+.mins {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-align: left;
+    color: #4a4a4a;
+    position: relative;
+    bottom: 5px;
+}
+
+.description {
+    font-size: 14px;
+  font-weight: 300;
+  line-height: 1.29;
+  letter-spacing: 0.1px;
+  text-align: left;
+  color: #4a4a4a;
+  padding: 10px 0px 10px 10px;
+  border-top: 1px solid #4a4a4a;
+}
+
+.logo {
+    width: 115px;
+  height: 21.1px;
+  object-fit: contain;
+  padding: 20px;
+}
+
+.container {
+    min-width: 500px;
+    margin: auto;
+}
+
+footer {
+  margin-top: 44px;
+}
+
+aside {
+    display: inline-block;
+    width: 400px;
+    letter-spacing: 0.3px;
+    text-align: left;
+    color: rgba(255, 145, 0, 0.616);
+    position: relative;
+    bottom: 5px;
+    border: 1px solid black;
+    background-color: black;
+    padding-left: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.container1 {
+    display: grid;
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    padding: 5px;
+    grid-gap: 10px;
+    grid-template-areas: "header header"
+                       "nav nav" 
+                       "left right"
+                       "footer footer";
+}
+
+.head {
+    background-color: dodgerblue;
+    grid-area: header;
+}
+
+.nav2 {
+  background-color: beige;
+  grid-area: nav;
+}
+
+.left {
+  background-color: dodgerblue;
+  grid-area: left;
+}
+
+.right {
+  background-color: beige;
+  grid-area: right;
+}
+
+.footer {
+  background-color: dodgerblue;
+  grid-area: footer;
+}
+
+.container3 {
+  display: grid;
+  max-width: 900px;
+  position: relative;
+  margin: auto;
+  grid-gap: 10px;
+  grid-template: repeat(12, 1fr) / repeat(6, 1fr);
+}
+
+.header3 {
+  background-color: dodgerblue;
+  grid-area: 1 / 1 / 3 / 7;
+}
+
+.nav3 {
+  background-color: beige;
+  grid-area: 3 / 1 / 4 / 7;
+}
+
+.left3 {
+  background-color: dodgerblue;
+  grid-area: 4 / 1 / 9 / 5;
+}
+
+.right3 {
+  background-color: beige;
+  grid-area: 4 / 5 / 9 / 7;
+}
+
+.overlap3 {
+  background-color: lightcoral;
+  grid-area: 6 / 4 / 8 / 6;
+  z-index: 5;
+}
+
+.footer3 {
+  background-color: dodgerblue;
+  grid-area: 9 / 1 / 13 / 7;
+}
+
+.bold {
+    font-weight: bolder;
+    font-style: italic;
+}
+
+/* grid-template-columns: 200px 400px;
+    grid-template-rows: 150px 200px 600px 200px; 
+ this formula to be used in .container2 to have the perfect image of the web
+ but this will not work at the moment on this sample web page   
+    */
