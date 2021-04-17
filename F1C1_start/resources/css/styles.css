@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Damion&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500;1,700&family=Rubik:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+@media only screen and (max-width: 760px) {
+    .main-content {
+      top: 2.5625rem;
+    }
+  }
+  
+html{
+    font-family: "roboto", sans-serif;
+    font-size: 16px;
+}
+
+.main-content {
+    position: relative;
+    top: 5.3125rem;
+}
+
+header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    border-bottom: 1px solid #c6c1c1;
+    background-color: white;
+}
+
+header .content {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+header .logo{
+    flex: 1;
+}
+
+header nav ul {
+    display: flex;
+}
+
+ul {
+    display: block;
+    list-style-type: disc; 
+    margin-block-start: 1em; 
+    scroll-margin-block-end: 1em;
+    margin-inline-end: 0px; 
+    margin-inline-start: 0px; 
+    padding-inline-start: 40px;
+}
+
+nav li {
+    padding-left: 3.5rem;
+    list-style: none;
+}
+
+nav a {
+    vertical-align: bottom;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #4a4a4a;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+header .mobile {
+    display: none;
+}
+
+header .icon {
+    width: 1rem;
+    padding-left: .75rem;
+}
+
+#sign-up-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 43.5rem;
+    background-image: url(../images/banner-landingpage.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#sign-up-cta {
+    position: relative;
+    top: 171px;
+    left: 10%;
+    padding: 0 5rem 2.5rem 5rem;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    background-color: #9dc20b;
+}
+
+#sign-up-cta .content{
+    width: 25.625rem;
+    margin-top: 2rem;
+    font-family: "roboto", sans-serif;
+    font-size: 1.25rem;
+    line-height-step: 1.4;
+    color: white;
+}
+.center {
+    text-align: center;
+}
+
+div {
+    display: block;
+}
+
+#sign-up-cta .cursive {
+    font-family: "Damion", cursive;
+}
+
+#sign-up-cta h2 {
+    font-size: 2.25rem;
+}
+
+#sign-up-cta .striking {
+    font-family: "Rubik", sans-serif;
+    padding-bottom: .75rem;
+}
+
+#sign-up-cta .button {
+    margin-top: 1.625rem;
+    padding: 1.25rem 7.25rem;
+}
+
+.button {
+    border-radius: 4px;
+    background-color: #4a4a4a;
+    color: white;
+}
+
+#features-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 64px 49px;
+    background-color: #f3f3f3;
+}
+
+.feature {
+    flex: 1;
+    padding: 2rem;
+    margin: 0px 1.25rem;
+    background-color: white;
+}
+
+.feature .image-container {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.feature .content {
+    padding: 2.5rem 0;
+}
+
+.image-container {
+    overflow: hidden;
+}
+
+.image-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.feature h2 {
+    padding-bottom: .5rem;
+    font-size: 2.5rem;
+    color: #4a4a4a;
+}
+
+.feature h3 {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 300;
+    color: #4a4a4a;
+}
+
+#filters-section {
+    padding: 64px 0;
+    background-color: #4a4a4a;
+}
+
+#filters-section .content {
+    padding: 0 10px;
+    margin-bottom: 80px;
+}
+
+#filters-section .content h2 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: white;
+}
+
+#filters-section .content h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 300;
+    color: white;
+}
+
+#filters-section .images-container {
+    display: flex;
+    max-width: 100%;
+    padding: 0 9px;
+}
+
+#quotes-section {
+    background-color: #f3f3f3;
+}
+
+#quotes-section .content {
+    padding: 80px 0;
+}
+
+#quotes-section .quote {
+    padding: 0 30px 0 0;
+    font-family: "Palatino", serif;
+    font-size: 1.875rem;
+    line-height: 1.1;
+    font-style: italic;
+    color: #4a4a4a;
+}
+
+#quotes-section .quote-citation {
+    height: 1.875rem;
+}
+
+footer {
+    background-color: #9b9b9b;
+    padding: 24px 32px;
+}
+
+footer .content {
+    color: white;
+    display: flex;
+    font-size: .75rem;
+}
+
+footer .copyright {
+    flex-grow: 1;
+}
