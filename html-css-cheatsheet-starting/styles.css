@@ -1,0 +1,10 @@
+.nav {
+    position: fixed;
+    top: 0px;
+    background-color: hsla(300, 100%, 50%, 0.3);
+}
+
+nav ul li {
+    display: inline;
+    text-decoration: none;
+}
