@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>WHAT IS GIT HUB</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="./cmd.html">Command Line</a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="./git.html">GIT</a></li>
+                    <li><a class="dropdown-item" href="./github.html">GIT HUB</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            </div>
+        </div>
+        </nav>
+    </header>
+    <h1 class="text-center mt-5">WHAT IS GIT HUB?</h1>
+    <div class="container-fluid justify">
+        <div class="row">
+            <div class="col-md-10 ms-3">
+                <article>
+                    <h2>Introduction</h2>
+                    <p>One of the best ways to share what you’ve been learning with other people is to put your code on GitHub. GitHub is both a website and a service that facilitates software development by allowing you to store your code in containers, called repositories, and by tracking changes made to your code. In addition, it offers a hosting service and tools to build, test, and deploy code. <br>GitHub uses Git, a version-control development tool, to manage your projects by tracking changes to files and allowing multiple people to work on the same project. Although both GitHub and Git have similar names, to be clear, GitHub is a service while Git is a development tool that can be used by you outside of and without GitHub.</p>
+                    <h2>Why is GitHub important?</h2>
+                    <p>There are many reasons why knowing about GitHub is important for your personal growth as a developer. A large part of the appeal of Github is the access it grants developers to the massive community of developers around the world who openly share their code, projects, and software development tools with each other. Therefore, if you want to continue working on your Git skills, creating your programming portfolio, or finding work, GitHub can help.</p>
+                    <h2>How to Sign Up for an Account</h2>
+                    <p>Now that you’re aware of GitHub’s benefits, you probably want to sign up for an account and try it out yourself. First navigate to the home page of the GitHub website, <a href="https://github.com">Github.com</a></p>
+                </article>
+            </div>
+            <div class="col-md-10 ms-3">
+                <article>
+                    <h2>Set Up with Git and GitHub</h2>
+                    <p>In this tutorial, we walk through the process for using Git locally on your personal computer and using GitHub to back it up. Specifically, we’ll walk through creating your personal GitHub account, setting up Git on your computer, starting your first Git repository, and connecting that repository to a GitHub repository.</p>
+                    <p>This tutorial assumes that you’ve completed the lessons on Learn the Command Line and Learn Git. Now, prepare to use those skills on your personal computer! If some steps in this tutorial are confusing, have no fear; it will all come together by the end.</p>
+                    <article class="ms-3"><h3>What are Git and GitHub?</h3>
+                    <p>This tutorial refers to Git and GitHub repeatedly. Git is a widely-used version control system used to manage code. Git allows you to save drafts of your code so that you can look back at previous versions and potentially undo complicated errors. A project managed with Git is called a Git repository.</p>
+                    <p>GitHub is popular hosting service for Git repositories. GitHub allows you to store your local Git repositories in the cloud. With GitHub, you can backup your personal files, share your code, and collaborate with others.</p>
+                    <p>In short, GitHub is a tool for working with Git. There are other services to host Git repositories, but GitHub is a trusted, free service used by organizations across the world, big and small.</p></article>
+                    <article class="ms-3">
+                        <h3>Create a GitHub Account</h3>
+                        <p>To use GitHub, you will need a GitHub account. <br>In your own browser:</p>
+                        <ul><li>
+                            Open a new browser tab
+                            </li>
+                            <li>Navigate to https://github.com/</li>
+                            <li>Create an account</li>
+                        </ul>
+                        <p>If you already have GitHub account, continue to the next exercise. <br>After you sign up, you will receive a verification e-mail. Be sure to verify your e-mail address to GitHub by following the instructions in that e-mail.</p>
+                    </article>
+                    <article class="ms-3">
+                        <h3>Git Setup for Mac and Windows</h3>
+                        <p>Next, we will set up Git on your personal computer. Follow the instructions for your operating system.</p>
+                        <h4 class="ms-4">Mac users:</h4>
+                        <p class="ms-4"><ol><li>Launch the Terminal application. You can find it in /Applications/Utilities/. You can also use the Spotlight search tool (the little magnifying glass in the top right of your screen) to search for Terminal. Once Spotlight locates it, click on the result that says Terminal.</li>
+                        <li>When Terminal opens, type in git and press enter.</li><li>If you don’t already have Git installed, a dialog will appear saying that “The ‘git’ command requires the command line developer tools. Would you like to install the tools now?” Click “Install”.</li><li>When the download finishes, the installer will go away on its own signifying that Git is now installed! Click “Done” to finish the installation process.</li>
+                    <li>Navigate to GitHub’s articles on setting up your Git username and email and follow the instructions for each using Terminal.</li><li>GitHub offers two authentication options, HTTPS and SSH, to keep your work secure. This is a security measure which prevents anyone who isn’t authorized from making changes to your GitHub repository. In this article, we will use HTTPS. Navigate to GitHub’s article on caching your password and follow the instructions to configure your computer to be able to use HTTPS.</li></ol>Lets try it out.</p>
+                    </article>
+                    <article class="ms-4">
+                        <h3>Try It Out!</h3>
+                        <p>Now you have everything you need to practice your Git skills on your local computer. Take a moment to run the commands below to initialize a Git repository. We will use this Git repository again later in this tutorial so make sure you complete these steps exactly as described.</p>
+                        <ol>
+                            <li>mkdir git_practice to make a new directory to practice.</li>
+                            <li>cd git_practice to make the new directory your working directory.</li>
+                            <li>git init to turn the current, empty directory into a fresh Git repository.</li>
+                            <li>echo "Hello Git and GitHub" >> README.txt to create a new README file (more on this later) with some sample text.</li>
+                            <li>git add README.txt to add the new file to the Git staging area.</li>
+                            <li>git commit -m "First commit" to make your first commit with the new README file.</li>
+                        </ol>
+                    </article>
+                    <article class="ms-3">
+                        <h3>Your First Remote Repository on GitHub</h3>
+                        <p>Finally, we’ll create a repository on GitHub and then link it to a local repository on your computer. This allows you to backup your work constantly and safely, so you never need to worry about losing your work again! <br>Now, let’s connect our local Git repository to GitHub.</p>
+                    </article>
+                    <article class="ms-3">
+                        <h3>Instructions</h3>
+                        <p><ol><li>In your Command Line Interface, make sure your current working directory is your new Git repository. Navigate there if not.</li><br><li>Check the status of which files and folders are new or have been edited. There should be no files modified.</li>
+                        <br><code>$ git status</code><br><li>On GitHub, create a new repository by clicking the New repository button on the home page.</li><br><li>On the new repository page, give your repository a name. It’s not necessary, but it would be convenient to name it the same as the directory, git_practice. After naming the repository, click Create repository.</li><br><li>After creating a repository, GitHub displays the repository page. At the top of the page, make sure “HTTPS” is selected.</li>
+                    <br><li>The repository is empty, so it’s time to connect it to your existing work. Copy the Git commands on the GitHub page, under the title “…or push an existing repository from the command line”, and paste them into your Command Line Interface. Running these commands will add a remote repository, and then push your local repository to the remote repository. <br>When asked for a username and password, type in your GitHub username and password and press enter after each. Don’t be alarmed if you can’t see the characters you are typing, they are intentionally hidden as a security measure.</li>
+                    <br><li>Once your Command Line Interface reports that the push is complete, refresh the page on GitHub. You should now see the text you wrote earlier in the README file, “Hello Git and GitHub.” <br>GitHub automatically displays the contents of a file named README.txt if it exists in the repository. The README file is the perfect place to write a description of your project. <br>There you have it! Your first GitHub repository, linked to your local Git repository. You’ve taken some huge leaps, so be proud! Now you can use your knowledge of Git to track progress on your local computer, and push that progress to GitHub whenever you want. You can rest easy knowing that each step of your progress is safely stored in GitHub.</li></ol></p>
+                    </article>
+                    <article>
+                        <h2>Getting Started with Git and Github (Videos)</h2>
+                        <p>This article introduces the basic concepts of Git and Github, and how to get started setting up Git on your computer for both Mac and Windows.</p>
+                        <h3 class="ms-3">Mac OSX</h3>
+                        <iframe src="https://www.youtube.com/watch?v=tMDbJ0DDuug" width="350" height="240"></iframe>
+                        <h3 class="ms-3">Starting a Code Base on Git Hub</h3>
+                        <iframe src="https://www.youtube.com/watch?v=zFxuHc9AUzg?autoplay=1"></iframe>
+                    </article>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
