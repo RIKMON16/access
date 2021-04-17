@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>GIT HUB</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./cmd.html">Command Line</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="./git.html">GIT</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+    </header>
+    <h1 class="text-center mt-5">GIT</h1>
+    <div class="container-fluid justify">
+        <div class="row">
+            <div class="col-md-10 ms-2">
+                <h2>Hello GIT</h2>
+                <article>
+                    <p>Git is a software that allows you to keep track of changes made to a project over time. Git works by recording the changes you make to a project, storing those changes, then allowing you to reference them as needed.</p>
+                </article>
+                <article>
+                    <h2>git init</h2>
+                    <p>Now that we have started working on the screenplay, let’s turn the sorcerers-code directory into a Git project. We do this with: <br><code>git init</code><br>The word init means initialize. The command sets up all the tools Git needs to begin tracking changes made to the project.</p>
+                </article>
+                <article>
+                    <h2>Git Workflow</h2>
+                    <p>Nice! We have a Git project. A Git project can be thought of as having three parts: <ol>
+                        <li>A Working Directory: where you’ll be doing all the work: creating, editing, deleting and organizing files</li>
+                        <li>A Staging Area: where you’ll list changes you make to the working directory</li>
+                        <li>A Repository: where Git permanently stores those changes as different versions of the project</li>
+                    </ol>The Git workflow consists of editing files in the working directory, adding files to the staging area, and saving changes to a Git repository. In Git, we save changes with a commit, which we will learn more about in this lesson.</p>
+                </article>
+                <article class="ms-5">
+                    <h3>git status</h3>
+                    <p>As you write the screenplay, you will be changing the contents of the working directory. You can check the status of those changes with: <br><code>git status</code></p>
+                    <h3>git add</h3>
+                    <p>In order for Git to start tracking scene-1.txt, the file needs to be added to the staging area. We can add a file to the staging area with: <br><code>git add filename</code><br>The word filename here refers to the name of the file you are editing, such as scene-1.txt.</p>
+                    <h3>git diff</h3>
+                    <p>Good work! Now you know how to add a file to the staging area. Imagine that we type another line in scene-1.txt. Since the file is tracked, we can check the differences between the working directory and the staging area with: <br><code>git diff filename</code><br> Here, filename is the actual name of the file. If the name of my file was changes.txt the command would be <br><code>git diff changes.txt</code></p>
+                    <h3>git commit</h3>
+                    <p>A commit is the last step in our Git workflow. A commit permanently stores changes from the staging area inside the repository. <br>git commit is the command we’ll do next. However, one more bit of code is needed for a commit: the option -m followed by a message. Here’s an example: <br><code>git commit -m "Complete first line of dialogue"</code><br>Standard Conventions for Commit Messages: <li>Must be in quotation marks</li><li>Written in the present tense</li><li>Should be brief (50 characters or less) when using -m</li></p>
+                    <h3>git log</h3>
+                    <p>Often with Git, you’ll need to refer back to an earlier version of a project. Commits are stored chronologically in the repository and can be viewed with: <br><code>git log</code></p>
+                    <h3>Cheat Sheet</h3>
+                    <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">GIT Cheat Sheet for quick access</a>
+                </article>
+                <article>
+                    <h2>Generalizations</h2>
+                    <p>You have now been introduced to the fundamental Git workflow. You learned a lot! Let’s take a moment to generalize:</p>
+                    <ul>
+                        <li>Git is the industry-standard version control system for web developers</li>
+                        <li>Use Git commands to help keep track of changes made to a project:
+                            <ul>
+                                <li>git init creates a new Git repository</li>
+                                <li>git status inspects the contents of the working directory and staging area</li>
+                                <li>git add adds files from the working directory to the staging area</li>
+                                <li>git diff shows the difference between the working directory and the staging area</li>
+                                <li>git commit permanently stores file changes from the staging area in the repository</li>
+                                <li>git log shows a list of all previous commits</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

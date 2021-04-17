@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>GIT HUB</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./cmd.html">Command Line</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="./git.html">GIT</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+    </header>
+    <h1 class="text-center mt-5">Command Line</h1>
+    <div class="container-fluid justify">
+        <div class="row">
+            <div class="col-md-10">
+                <h2>Introduction</h2>
+                <article>
+                    <p>The command line is a text interface for your computer. It’s a program that takes in commands and passes them on to the computer’s operating system to run.</p>
+                    <p>From the command line, you can navigate through files and folders on your computer, just as you would with Finder on Mac OS or Windows Explorer on Windows. The difference is that the command line is fully text-based.</p>
+                    <p>The advantage of using the command line is its power. You can run programs, write scripts to automate common tasks, and combine simple commands to handle difficult tasks. All of these traits come together to make it an important programming tool.</p>
+                    <p>This course is for unix-based systems such as Linux and Mac OS X. You can also download programs on Windows that will allow you to use the same commands. An appendix of all commands taught in this course is available <a href="https://www.codecademy.com/articles/command-line-commands">here.</a></p>
+                </article>
+            </div>
+            <div class="col-md-10">
+              <article>
+                <h2>Filesystem</h2>
+                <p>A filesystem organizes a computer’s files and directories into a tree structure: <ol>
+                  <li>The first directory in the filesystem is the root directory. It is the parent of all other directories and files in the filesystem.</li>
+                  <li>Each parent directory can contain more child directories and files. In the filesystem on the right, blog/ is the parent of 2014/, 2015/, and hardware.txt.</li>
+                  <li>Each directory can contain more files and child directories. The parent-child relationship continues as long as directories and files are nested.</li>
+                </ol>
+                  You’re probably already familiar with this tree structure - Mac Finder and Windows Explorer represent the filesystem as trees as well.  
+                </p>
+                <p>We are going to use the pictured filesystem for the rest of the lesson. You can reference it at anypoint <a href="https://content.codecademy.com/courses/learn-command-line/img/LCL-fileTrees-01.png">here.</a></p>
+              </article>
+            </div>
+            <div class="col-md-10">
+              <article>
+                <h2>List a.k.a ls</h2>
+                <p>The first command we’re going to look at is ls. A command is a directive to the computer to perform a specific task. When you type ls, the command line looks at the directory you are in, and then “lists” all the files and directories inside of it. Be sure to type the letter l as in “List” and not the number 1.</p>
+                <p>In the terminal, the first thing you see is $. This is called a shell prompt. It appears when the terminal is ready to accept a command.</p>
+                <p>If we typed: <br><code>$ ls</code><br>the terminal would display our current directory’s files and directories: <br><code>2014 2015 hardware.txt</code><br> The directories 2014, 2015, and the file hardware.txt are the contents of the current directory.</p>
+              </article>
+            </div>
+            <div class="col-md-10">
+              <article>
+                <h2>Print Working Directory a.k.a pwd</h2>
+                <p>The next command we’re going to look at is pwd, which stands for “print working directory.” It outputs the name of the directory you are currently in, called the working directory. <br>Here the working directory is blog/. In Codecademy courses, your working directory is usually inside the /home/ccuser/workspace/ directory. <br>Together with ls, the pwd command is useful to show where you are in the filesystem.</p>
+                <article>
+                  <h2>Change Directory a.k.a cd I</h2>
+                  <p>Our next command is cd, which stands for “change directory.” Just as you would click on a folder in Windows Explorer or Finder, cd switches you into the directory you specify. In other words, cd changes the working directory. <br>Let’s say the directory we change into is 2015:
+                  <br><code>$ cd 2015</code><br> When a file, directory, or program is passed into a command, it is called an argument. Here the 2015 directory is an argument for the cd command. The cd command takes a directory name as an argument and switches into that directory.</p>
+                </article>
+                <h2>cd II</h2>
+                <p>Instead of using cd twice in order to move from 2015 to memory, we can use it once and give it a longer argument: <br><code>$ cd jan/memory</code><br>
+                To navigate directly to a directory, use cd with the directory’s path as an argument. Here, cd jan/memory navigates directly to the memory directory. <br>To move up one directory, we use cd ..: <br><code>$ cd ..</code><br> Here, cd .. navigates up from jan/memory/ to jan/.</p>
+              </article>
+            </div>
+            <div class="col-md-10">
+              <article>
+                <h2>Make Directory a.k.a mkdir</h2>
+                <p>Now that we can traverse the existing filesystem, let’s try editing it by making directories (folders) through the command line. The command for that is mkdir: <br><code>$ mkdir media</code><br> The mkdir command stands for “make directory”. It takes in a directory name as an argument and then creates a new directory in the current working directory. Here we used mkdir to create a new directory named media/ inside our working directory.</p>
+              </article>
+            </div>
+            <div class="col-md-10">
+              <article>
+                <h2>Touch</h2>
+                <p>Now we know how to create directories through the command line, but how do we create new files? <br>We can do this using the command touch: <br><code>$ touch keyboard.txt</code><br> The touch command creates a new file inside the working directory. It takes in a filename as an argument and then creates an empty file with that name in the current working directory.</p>
+                <h2>Helper Commands</h2>
+                <p>Now that we’ve covered the basics of navigating your filesystem from the command line, let’s look at some helpful commands that will make using it easier!</p>
+                <p>clear is used to clear your terminal, which is useful when it’s full of previous commands and outputs. It doesn’t change or undo your previous commands, it just clears them from the view. You can scroll upwards to see them at any time.</p>
+                <p>tab can be used to autocomplete your command. When you are typing the name of an existing file or directory, you can use tab to finish the rest of the name.</p>
+                <p>The up and down arrows (↑ and ↓) can be used to cycle through your previous commands. ↑ will take you up through your most recent commands, and ↓ will take you back through to the most recent one.</p>
+              </article>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
