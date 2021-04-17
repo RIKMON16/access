@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Major+Mono+Display&family=Quicksand:wght@500;700&display=swap');
+
+html,
+body {
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+}
+
+h3 {
+    font-family: 'Major Mono Display', monospace;
+    border: 1px solid dodgerblue;
+    background-color: dodgerblue;
+    border-radius: 25px 0px;
+    width: 500px;
+    padding: 20px;
+}
+
+td {
+    padding: 5px 0px 0px 15px;
+    text-align: left;
+}
+
+th {
+    font-family: 'Major Mono Display', monospace;
+    border: 1px solid dodgerblue;
+    background-color: dodgerblue;
+    border-collapse: collapse; 
+    padding: 10px;
+}
