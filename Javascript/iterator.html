@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Syntax-2</title>
+    <link rel="stylesheet" href="./style/css/syntax2.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <ul>
+                <li><h1>Learn JS Syntax - II</h1></li>
+                <li><a href="./syntax2.html">Array</a></li>
+                <li><a href="./loop.html">Loop</a></li>
+                <li><a href="./objects.html">Objects</a></li>
+                <li><a href="./Advanced.html">Advanced Objects Intro</a></li>
+                <li><a href="./iterator.html">Iterators</a></li>
+                <li><a href="./errors.html">Errors</a></li>
+                <li><a href="./Exercisesjs.html">Exercises</a></li>
+            </ul>
+        </div>
+    </header>
+     <div class="jumbotron">
+         <span>Cheatsheets / JavaScript Syntax</span>
+        <h1>Learn JavaScript Syntax: II</h1>
+        <h1>Iterators</h1>
+    </div>
+    <div class="main">
+        <div class="flex">
+            <section>
+                <h3>Introduction to Higher-Order Functions</h3>
+                <p>
+                    We are often unaware of the number of assumptions we make when we communicate with other people in our native languages. If we told you to “count to three,” we would expect you to say or think the numbers one, two and three. We assumed you would know to start with “one” and end with “three”. With programming, we’re faced with needing to be more explicit with our directions to the computer. Here’s how we might tell the computer to “count to three”:
+                </p>
+                <div class="box">
+                    <p>for (let i = 1; i<=3; i++) {</p>
+                        <p>console.log(i)</p>
+                        <p>}</p>
+                </div>
+                <p>
+                    When we speak to other humans, we share a vocabulary that gives us quick ways to communicate complicated concepts. When we say “bake”, it calls to mind a familiar subroutine— preheating an oven, putting something into an oven for a set amount of time, and finally removing it. This allows us to <em>abstract</em> 
+                    away a lot of the details and communicate key concepts more concisely. Instead of listing all those details, we can say, “We baked a cake,” and still impart all that meaning to you.
+                </p>  
+                <p>
+                    In programming, we can accomplish “abstraction” by writing functions. In addition to allowing us to reuse our code, functions help to make clear, readable programs. If you encountered countToThree() in a program, you might be able to quickly guess what the function did without having to stop and read the function’s body.
+                </p>
+                <p>
+                    We’re also going to learn about another way to add a level of abstraction to our programming: <em>higher-order functions. Higher-order functions</em> are functions that accept other functions as arguments and/or return functions as output. This enables us to build abstractions on other abstractions, just like “We hosted a birthday party” is an abstraction that may build on the abstraction “We made a cake.”
+                </p>
+                <p>
+                    In summary, using more abstraction in our code allows us to write more modular code which is easier to read and debug.
+                </p>
+            </section>
+            <section>
+                <h3>Functions as Data</h3>
+                <p>
+                    JavaScript functions behave like any other data type in the language; we can assign functions to variables, and we can reassign them to new variables.
+                </p>
+                <p>
+                    Below, we have an annoyingly long function name that hurts the readability of any code in which it’s used. Let’s pretend this function does important work and needs to be called repeatedly!
+                </p>
+                <div class="box">
+                    <p>const announceThatIAmDoingImportantWork = () => {</p>
+                        <p>console.log("I’m doing very important work!");</p>
+                        <p>};</p>
+                </div>
+                <p>
+                    What if we wanted to rename this function without sacrificing the source code? We can re-assign the function to a variable with a suitably short name:
+                </p>
+                <div class="box">
+                    <p>const busy = announceThatIAmDoingImportantWork;</p>
+                    <p>busy();</p>
+                    <p>//This function call barely takes any space!</p>
+                </div>
+                <p>busy is a variable that holds a <em>reference</em> to our original function. If we could look up the address in memory of busy and the address in memory of announceThatIAmDoingImportantWork they would point to the same place. Our new busy() function can be invoked with parentheses as if that was the name we originally gave our function.
+                    
+                </p>
+                <p>
+                    Notice how we assign announceThatIAmDoingImportantWork without parentheses as the value to the busy variable. We want to assign the value of the function itself, not the value it returns when invoked.
+                </p>
+                <p>
+                    In JavaScript, functions are first class objects. This means that, like other objects you’ve encountered, JavaScript functions can have properties and methods.
+                </p>
+                <p>
+                    Since functions are a type of object, they have properties such as .length and .name and methods such as .toString(). You can see more about the methods and properties of functions <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">MDN documents.</a>
+                </p>
+                <p>
+                    Functions are special because we can invoke them, but we can still treat them like any other type of data. Let’s get some practice doing that!
+                </p>
+                <p>
+                    1. We’ve defined a function with a very long name: checkThatTwoPlusTwoEqualsFourAMillionTimes. This function takes a long time to execute. It checks whether 2 + 2 = 4, but it does it a million times (just to be really sure)! Create a shorter-named variable, is2p2 that will be easier to work with, and assign checkThatTwoPlusTwoEqualsFourAMillionTimes as its value.
+                </p>
+                <div class="box">
+                    <p>const is2p2 = </p>
+                    <p>checkThatTwoPlusTwoEqualsFourAMillionTimes;</p>
+                </div>
+                <p>2. Invoke your is2p2() function</p>
+                <div class="box">
+                    <p>is2p2();</p>
+                </div>
+                <p>
+                    Hmmm, if we forgot the original name of our function, is there a way we could figure it out? Use is2p2 to console.log() the name property of the function we assigned to is2p2. Check out <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">MDN Documents</a>
+                </p>
+                <div class="box">
+                    <p>console.log(is2p2.name);</p>
+                    <p><em>Output:</em> checkThatTwoPlusTwoEqualsFourAMillionTimes</p>
+                </div>
+            </section>
+            <section>
+                <h3>Functions as Parameters</h3>
+                <p>
+                    Since functions can behave like any other type of data in JavaScript, it might not surprise you to learn that we can also pass functions (into other functions) as parameters. A higher-order function is a function that either accepts functions as parameters, returns a function, or both! We call the functions that get passed in as parameters <em>(a limit or boundary which defines the scope of a particular process or activity.)</em> and invoked callback functions because they get called during the execution of the higher-order function.
+                </p>
+                <p>
+                    When we pass a function in as an argument to another function, we don’t invoke it. Invoking the function would evaluate to the return value of that function call. With callbacks, we pass in the function itself by typing the function name without the parentheses (that would evaluate to the result of calling the function):
+                </p>
+                <div class="box">
+                    <p>const timeFuncRuntime = funcParameter => {</p>
+                        <p>let t1 = Date.now();</p>
+                        <p>funcParameter();</p>
+                        <p>let t2 = Date.now();</p>
+                        <p>return t2 - t1;</p>
+                        <p>}</p>
+                        <p>const addOneToOne = () => 1 + 1;</p>
+                        <p>timeFuncRuntime(addOneToOne);</p>
+                </div>
+                <p>
+                    We wrote a higher-order function, timeFuncRuntime(). It takes in a function as an argument, saves a starting time, invokes the callback function, records the time after the function was called, and returns the time the function took to run by subtracting the starting time from the ending time.
+                </p>
+                <p>
+                    This higher-order function could be used with any callback function which makes it a potentially powerful piece of code.
+                </p>
+                <p>
+                    We then invoked timeFuncRuntime() first with the addOneToOne() function - note how we passed in addOneToOne and did not invoke it.
+                </p>
+                <div class="box">
+                    <p>
+                        timeFuncRuntime(() => {
+                    </p>
+                    <p>for (let i = 10; i>0; i--){</p>
+                        <p>console.log(i);</p>
+                        <p>}</p>
+                        <p>});</p>
+                </div>
+                <p>
+                    In this example, we invoked timeFuncRuntime() with an anonymous function that counts backwards from 10. Anonymous functions can be arguments too!
+                </p>
+                <p>1. Save a variable, time2p2. Assign as its value the result of invoking the timeFuncRuntime() function with the checkThatTwoPlusTwoEqualsFourAMillionTimes() function.</p>
+                <div class="box">
+                    <p>
+                        const time2p2 = timeFuncRuntime
+                    </p>
+                    <p>(checkThatTwoPlusTwoEqualsFourAMillionTimes);</p>
+                </div>
+                <p>
+                    2. Write a higher-order function, checkConsistentOutput(). This function should have two parameters: a function and a value. It should call the argument function with the value two times. If the callback function produces the same result twice, it should return the result of the function call, otherwise, it should return the string 'This function returned inconsistent results'
+                </p>
+                <div class="box">
+                    <p>const checkConsistentOutput = (func, val) => {</p>
+                        <p>let firstTry = func(val);</p>
+                        <p>let secondTry = func(val);</p>
+                        <p>if (firstTry === secondTry) {</p>
+                            <p>return firstTry</p>
+                            <p>} else {</p>
+                                <p>return 'This function returned inconsistent results'</p>
+                                <p>}</p>
+                                <p>};</p>
+                </div>
+                <p>
+                    3. Invoke your checkConsistentOutput() with the addTwo() function we wrote and a number as arguments.
+                </p>
+                <div class="box">
+                    <p>checkConsistentOutput(addTwo, 10);</p>
+                </div>
+
+            </section>
+            <section>
+                <h3>Review</h3>
+                <p>
+                    Great job! By thinking about functions as data and learning about higher-order functions, you’ve taken important steps in being able to write clean, modular code and take advantage of JavaScript’s flexibility.
+                </p>
+                <p>Let’s review what we learned in this lesson:
+                    <li>
+                        Abstraction allows us to write complicated code in a way that’s easy to reuse, debug, and understand for human readers
+                    </li>
+                    <li>
+                        We can work with functions the same way we would any other type of data including reassigning them to new variables
+                    </li>
+                    <li>
+                        JavaScript functions are first-class objects, so they have properties and methods like any object
+                    </li>
+                    <li>
+                        Functions can be passed into other functions as parameters
+                    </li>
+                    <li>
+                        A higher-order function is a function that either accepts functions as parameters, returns a function, or both
+                    </li>
+                </p>
+            </section>
+            <section>
+                <h3>Introduction to Iterators</h3>
+                <p>
+                    Imagine you had a grocery list and you wanted to know what each item on the list was. You’d have to scan through each row and check for the item. This common task is similar to what we have to do when we want to iterate over, or loop through, an array. One tool at our disposal is the for loop. However, we also have access to built-in array methods which make looping easier.
+                </p>
+                <p>
+                    The built-in JavaScript array methods that help us iterate are called iteration methods, at times referred to as iterators. Iterators are methods called on arrays to manipulate elements and return values.
+                </p>
+                <p>
+                    In this lesson, you will learn the syntax for these methods, their return values, how to use the documentation to understand them, and how to choose the right iterator method for a given task.
+                </p>
+            </section>
+            <section>
+                <h3>The .forEach() Method</h3>
+                <p>
+                    The first iteration method that we’re going to learn is .forEach(). Aptly named, .forEach() will execute the same code for each element of an array.
+                </p>
+                <div class="box">
+                    <p>
+                        const groceries = ['brown sugar', 'salt', 'chilli'];
+                    </p>
+                    <p>
+                        groceries.forEach(function(groceryItem){
+                    </p>
+                    <p>console.log(' - ' + groceryItem);</p>
+                    <p>});</p>
+                </div>
+                <p>
+                    The code above will log a nicely formatted list of the groceries to the console. Let’s explore the syntax of invoking .forEach().
+                    <li>
+                        groceries.forEach() calls the forEach method on the groceries array.
+                    </li>
+                    <li>
+                        .forEach() takes an argument of callback function. Remember, a callback function is a function passed as an argument into another function.
+                    </li>
+                    <li>
+                        .forEach() loops through the array and executes the callback function for each element. During each execution, the current element is passed as an argument to the callback function.
+                    </li>
+                    <li>
+                        The return value for .forEach() will always be undefined.
+                    </li>
+                </p>
+                <p>
+                    Another way to pass a callback for .forEach() is to use arrow function syntax.
+                </p>
+                <div class="box">
+                    <p>
+                        groceries.forEach(groceryItem => 
+                    </p>
+                    <p>
+                        console.log(groceryItem));
+                    </p>
+                </div>
+                <p>
+                    We can also define a function beforehand to be used as the callback function.
+                </p>
+                <div class="box">
+                    <p>function printGrocery(element){</p>
+                        <p>console.log(element);</p>
+                        <p>}</p>
+                        <p>groceries.forEach(printGrocery);</p>
+                </div>
+                <p>
+                    The above example uses a function declaration but you can also use a function expression or arrow function as well.
+                </p>
+                <p>
+                    All three code snippets do the same thing. In each array iteration method, we can use any of the three examples to supply a callback function as an argument to the iterator. It’s good to be aware of the different ways to pass in callback functions as arguments in iterators because developers have different stylistic preferences. Nonetheless, due to the strong adoption of ES6, we will be using arrow function syntax in the later exercises.
+                </p>
+                <div class="box">
+                    <p>
+                        const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+                    </p>
+                    <p>
+                        fruits.forEach(fruitItem =>
+                    </p>
+                    <p>
+                        console.log('I want to eat a ' + fruitItem));
+                    </p>
+                    <p>Output: I want to eat a mango....</p>
+                </div>
+            </section>
+            <section>
+                <h3>The .map() Method</h3>
+                <p>
+                    The second iterator we’re going to cover is .map(). When .map() is called on an array, it takes an argument of a callback function and returns a new array! Take a look at an example of calling .map()
+                </p>
+                <div class="box">
+                    <p>
+                        const numbers = [1, 2, 3, 4, 5]; 
+                    </p>
+                    <p>
+                        const bigNumbers = numbers.map(number => {
+                    </p>
+                    <p>
+                        return number * 10;
+                    </p>
+                    <p>
+                        });
+                    </p>
+                </div>
+                <p>
+                    .map() works in a similar manner to .forEach()— the major difference is that .map() returns a new array.
+                </p>
+                <p>
+                    In the example above:
+                    <li>
+                        numbers is an array of numbers.
+                    </li>
+                    <li>
+                        bigNumbers will store the return value of calling .map() on numbers.
+                    </li>
+                    <li>
+                        numbers.map will iterate through each element in the numbers array and pass the element into the callback function.
+                    </li>
+                    <li>
+                        return number * 10 is the code we wish to execute upon each element in the array. This will save each value from the numbers array, multiplied by 10, to a new array.
+                    </li>
+                </p>
+                <p>
+                    If we take a look at numbers and bigNumbers:
+                </p>
+                <div class="box">
+                    <p>console.log(numbers);</p>
+                    <p>// Output: [1, 2, 3, 4, 5]</p>
+                    <p>console.log(bigNumbers);</p>
+                    <p>// Output: [10, 20, 30, 40, 50]</p>
+                </div>
+                <p>
+                    Notice that the elements in numbers were not altered and bigNumbers is a new array.
+                </p>
+                <p>
+                    1. Add your code under the animals array and before the line console.log(secretMessage.join('')); Use .map() to create a new array that contains the first character of each string in the animals array. Save the new array to a const variable named secretMessage.
+                </p>
+                <div class="box">
+                    <p>
+                        const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
+                    </p>
+                    <p>
+                        const secretMessage = animals.map(i => i[0]);
+                    </p>
+                    <p>
+                        console.log(secretMessage.join(''));
+                    </p>
+                    <p>
+                        <em>Output: </em> HelloWorld
+                    </p>
+                </div>
+                <p>
+                    2. Use .map() to divide all the numbers in bigNumbers by 100. Save the returned values to a variable declared with const called smallNumbers.
+                </p>
+                <div class="box">
+                    <p>const bigNumbers = [100, 200, 300, 400, 500];</p>
+                    <p>
+                        const smallNumbers = bigNumbers.map(i => i / 100);
+                    </p>
+                    <p>
+                        console.log(smallNumbers);
+                    </p>
+                    <p><em>Output: </em> [ 1, 2, 3 , 4, 5 ]</p>
+                </div>
+            </section>
+            <section>
+                <h3>The .filter() Method</h3>
+                <p>
+                    Another useful iterator method is .filter(). Like .map(), .filter() returns a new array. However, .filter() returns an array of elements after filtering out certain elements from the original array. The callback function for the .filter() method should return true or false depending on the element that is passed to it. The elements that cause the callback function to return true are added to the new array. Take a look at the following example:
+                </p>
+                <div class="box">
+                    <p>
+                        const words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+                    </p>
+                    <p>
+                        const shortWords = words.filter(word => {
+                    </p>
+                    <p>
+                        return word.length < 6;
+                    </p>
+                    <p>});</p>
+                </div>
+                <p>
+                    <li>words is an array that contains string elements.</li>
+                    <li>const shortWords = declares a new variable that will store the returned array from invoking .filter().</li>
+                    <li>
+                        The callback function is an arrow function has a single parameter, word. Each element in the words array will be passed to this function as an argument.
+                    </li>
+                    <li>
+                        word.length < 6; is the condition in the callback function. Any word from the words array that has fewer than 6 characters will be added to the shortWords array.
+                    </li>
+                    Let’s also check the values of words and shortWords:
+                    <div class="box">
+                        <p>console.log(words); </p>
+                        <p>
+                            // Output: ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+                        </p>
+                        <p>console.log(shortWords);</p>
+                        <p>// Output: ['chair', 'music', 'brick', 'pen', 'door']</p>
+                    </div>
+                </p>
+                <p>
+                    Observe how words was not mutated, i.e. changed, and shortWords is a new array.
+                </p>
+                <p>1. Call the .filter() method on randomNumbers to return values that are less than 250. Save them to a new array called smallNumbers, declared with const.</p>
+                <div class="box">
+                    <em>Example</em>
+                    <p>const randomNumbers = [375, 200, 3.14, 7, 13, 852];</p>
+                    <p>const smallNumbers = randomNumbers.filter(i => i < 250);</p>
+                    <p>console.log(smallNumbers);</p>
+                    <p><em>Output: </em> [200, 3.14, 7, 13]</p>
+                </div>
+                <p>
+                    Now let’s work with an array of strings. Invoke .filter() on the favoriteWords array to return elements that have more than 7 characters. Save the returned array to a const variable named longFavoriteWords.
+                </p>
+                <div class="box">
+                    <p>
+                        const favoriteWords = ['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+                    </p>
+                    <p>
+                        const longFavoriteWords = favoriteWords.filter(word => word.length > 7);
+                    </p>
+                    <p>
+                        console.log(longFavoriteWords);
+                    </p>
+                    <p><em>Output: </em> ["nostalgia", "hyperbole", "esoteric"]</p>
+                </div>
+            </section>
+            <section>
+                <h3>The .findIndex() Method</h3>
+                <p>
+                    We sometimes want to find the location of an element in an array. That’s where the .findIndex() method comes in! Calling .findIndex() on an array will return the index of the first element that evaluates to true in the callback function.
+                </p>
+                <div class="box">
+                    <p>
+                        const jumbledNums = [123, 25, 78, 5, 9]; 
+                    </p>
+                    <p>const lessThanTen = jumbledNums.findIndex(num</p>
+                    <p>=> {</p>
+                        <p>return num < 10;</p>
+                        <p>});</p>
+                </div>
+                <p>
+                    <li>jumbledNums is an array that contains elements that are numbers.</li>
+                    <li>
+                        const lessThanTen = declares a new variable that stores the returned index number from invoking .findIndex().
+                    </li>
+                    <li>
+                        The callback function is an arrow function has a single parameter, num. Each element in the jumbledNums array will be passed to this function as an argument.
+                    </li>
+                    <li>
+                        num < 10; is the condition that elements are checked against. .findIndex() will return the index of the first element which evaluates to true for that condition.
+                    </li>
+                    Let’s take a look at what lessThanTen evaluates to:
+                </p>
+                <div class="box">
+                    <p>console.log(lessThanTen); </p>
+                    <p>// Output: 3 </p>
+                </div>
+                <p>If we check what element has index of 3:
+                    <div class="box">
+                        <p>console.log(jumbledNums[3]);</p>
+                        <p>// Output: 5</p>
+                    </div>
+                </p>
+                <p>
+                    Great, the element in index 3 is the number 5. This makes sense since 5 is the first element that is less than 10.
+                </p>
+                <p>
+                    If there isn’t a single element in the array that satisfies the condition in the callback, then .findIndex() will return -1.
+                </p>
+                <div class="box">
+                    <p>const greaterThan1000 </p>
+                    <p>= jumbledNums.findIndex(num => {</p>
+                        <p>return num > 1000;</p>
+                        <p>});</p>
+                        <p>console.log(greaterThan1000);</p>
+                        <p>// Output: -1</p>
+                </div>
+                <p>
+                    1. Invoke .findIndex() on the animals array to find the index of the element that has the value 'elephant' and save the returned value to a const variable named foundAnimal.
+                    <div class="box">
+                        <p>
+                            const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
+                        </p>
+                        <em>Option 1 to do</em>
+                        <p>
+                            const x = (i) => i === 'elephant';
+                        </p>
+                        <p>
+                            console.log(animals.findIndex(x));
+                        </p>
+                        <p><em>Output: </em> // 7</p>
+                        <br>
+                        <em>Option 2 to do</em>
+                        <p>const foundAnimal = animals.findIndex(i =></p>
+                        <p>{ return i === 'elephant';</p>
+                        <p>});</p>
+                        <p>console.log(foundAnimal);</p>
+                        <p><em>Output: </em> // 7</p>
+                    </div>
+                </p>
+                <p>
+                    2. Let’s see if we can find the index of the first animal that starts with the letter 's'. Call .findIndex() on the animals array return the index of the first element that starts with 's'. Assign the returned value to a const variable named startsWithS.
+                    <div class="box">
+                        <p>
+                            const startsWithS = animals.findIndex(x =>
+                        </p>
+                        <p>
+                            {return x === 'seal'; 
+                        </p>
+                        <p>
+                            });
+                        </p>
+                        <p>
+                            console.log(startsWithS);
+                        </p>
+                        <p><em>Output: </em> // 3</p>
+                    </div>
+                </p>
+            </section>
+            <section>
+                <h3>The .reduce() Method</h3>
+                <p>
+                    Another widely used iteration method is .reduce(). The .reduce() method returns a single value after iterating through the elements of an array, thereby reducing the array. Take a look at the example below:
+                    <div class="box">
+                        <p>const numbers = [1, 2, 4, 10];</p>
+                        <p>const summedNums = numbers.reduce((accumulator,</p>
+                        <p>currentValue) => {</p>
+                        <p>return accumulator + currentValue</p>
+                        <p>})</p>
+                        <p>console.log(summedNums)</p>
+                        <p>// Output: 17</p>
+                    </div>
+                    <p>Here are the values of accumulator and currentValue as we iterate through the numbers array:
+                        <table>
+                            <tr>
+                                <th>iteration</th>
+                                <th>accumulator</th>
+                                <th>currentValue</th>
+                                <th>return value</th>
+                            </tr>
+                            <tr>
+                                <td>First</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Second</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>Third</td>
+                                <td>7</td>
+                                <td>10</td>
+                                <td>17</td>
+                            </tr>
+                        </table>
+                    </p>
+                    <p>
+                        Now let’s go over the use of .reduce() from the example above:
+                        <li>numbers is an array that contains numbers.</li>
+                        <li>summedNums is a variable that stores the returned value of invoking .reduce() on numbers.</li>
+                        <li>numbers.reduce() calls the .reduce() method on the numbers array and takes in a callback function as argument.</li>
+                        <li>The callback function has two parameters, accumulator and currentValue. The value of accumulator starts off as the value of the first element in the array and the currentValue starts as the second element. To see the value of accumulator and currentValue change, review the chart above.</li>
+                        <li>As .reduce() iterates through the array, the return value of the callback function becomes the accumulator value for the next iteration, currentValue takes on the value of the current element in the looping process.</li>
+                    </p>
+                    <p>The .reduce() method can also take an optional second parameter to set an initial value for accumulator (remember, the first argument is the callback function!). For instance:</p>
+                    <div class="box">
+                        <p>const numbers = [1, 2, 4, 10];</p>
+                        <p>const summedNums = numbers.reduce((accumulator,</p>
+                        <p>currentValue) => {</p>
+                        <p>return accumulator + currentValue</p>
+                        <p>}, 100</p>
+                        <p><em>Output: </em>// <- Second argument for .reduce()</p>
+                        <p>console.log(summedNums);</p>
+                        <p><em>Output: </em>117</p>
+                    </div>
+                    <p>Here’s an updated chart that accounts for the second argument of 100:
+                        <table>
+                            <tr>
+                                <th>iteration</th>
+                                <th>accumulator</th>
+                                <th>currentValue</th>
+                                <th>return value</th>
+                            </tr>
+                            <tr>
+                                <td>First</td>
+                                <td>100</td>
+                                <td>1</td>
+                                <td>101</td>
+                            </tr>
+                            <tr>
+                                <td>Second</td>
+                                <td>101</td>
+                                <td>2</td>
+                                <td>103</td>
+                            </tr>
+                            <tr>
+                                <td>Third</td>
+                                <td>103</td>
+                                <td>4</td>
+                                <td>107</td>
+                            </tr>
+                            <tr>
+                                <td>Fourth</td>
+                                <td>107</td>
+                                <td>10</td>
+                                <td>117</td>
+                            </tr>
+                        </table>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank">MDN documents for reference</a>
+                    </p>
+                </p>
+            </section>
+            <section>
+                <h3>Iterator Documentation</h3>
+                <p>
+                    <p>There are many additional built-in array methods, a complete list of which is on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods" target="_blank">MDN’s Array iteration methods page.</a>
+                    The documentation for each method contains several sections:</p>
+                    <li>A short definition.</li>
+                    <li>A block with the correct syntax for using the method.</li>
+                    <li>A list of parameters the method accepts or requires.</li>
+                    <li>The return value of the function.</li>
+                    <li>An extended description.</li>
+                    <li>Examples of the method’s use.</li>
+                    <li>Other additional information.</li>
+                </p>
+            </section>
+            <section>
+                <h3>Choose the Right Iterator</h3>
+                <p>
+                    There are many iteration methods you can choose. In addition to learning the correct syntax for the use of iteration methods, it is also important to learn how to choose the correct method for different scenarios. The exercises below will give you the opportunity to do just that!
+                </p>
+            </section>
+            <section>
+                <h3>Review</h3>
+                <p>
+                    Awesome job on clearing the iterators lesson! You have learned a number of useful methods in this lesson as well as how to use the JavaScript documentation from the Mozilla Developer Network to discover and understand additional methods. Let’s review!
+                    <li>.forEach() is used to execute the same code on every element in an array but does not change the array and returns undefined.</li>
+                    <li>.map() executes the same code on every element in an array and returns a new array with the updated elements.</li>
+                    <li>.filter() checks every element in an array to see if it meets certain criteria and returns a new array with the elements that return truthy for the criteria.</li>
+                    <li>.findIndex() returns the index of the first element of an array which satisfies a condition in the callback function. It returns -1 if none of the elements in the array satisfies the condition.</li>
+                    <li>.reduce() iterates through an array and takes the values of the elements and returns a single value.</li>
+                    <li>All iterator methods takes a callback function that can be pre-defined, or a function expression, or an arrow function.</li>
+                    <li>You can visit the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Mozilla Developer Network</a> to learn more about iterator methods (and all other parts of JavaScript!).</li>
+                </p>
+                <p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-iteration-methods" target="_blank">How to use Array in JavaScript</a></p>
+                <h4>Description of Arrays</h4>
+                <p>Arrays are list-like objects whose prototype has methods to perform traversal <em>(is a process to visit all the nodes of a tree and may print their values too. Because, all nodes are connected via edges (links) we always start from the root (head) node. That is, we cannot randomly access a node in a tree. There are three ways which we use to traverse a tree − In-order Traversal.)</em>
+                    and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's length can change at any time, and data can be stored at non-contiguous locations in the array, JavaScript arrays are not guaranteed to be dense; this depends on how the programmer chooses to use them. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.
+                    <p>
+                        Arrays cannot use strings as element indexes (as in an associative array) but must use integers. Setting or accessing via non-integers using bracket notation (or dot notation) will not set or retrieve an element from the array list itself, but will set or access a variable associated with that array's object property collection. The array's object properties and list of array elements are separate, and the array's traversal and mutation operations cannot be applied to these named properties. 
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Check MDN documents for details</a>
+                    </p>
+                </p>
+                     
+            </section>
+        </div>
+    </div>
+    <div class="footer">
+        <footer>
+            <aside style="float:left;"><a href="./Advanced.html">Previous (Advanced Objects)</a></aside>
+            <aside style="float:right;"><a href="./errors.html">Next (Errors)</a></aside>
+        </footer>
+    </div>
+</body>
+</html>

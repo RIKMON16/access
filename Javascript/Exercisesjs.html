@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Syntax-2</title>
+    <link rel="stylesheet" href="./style/css/syntax2.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <ul>
+                <li><h1>Learn JS Syntax - II</h1></li>
+                <li><a href="./syntax2.html">Array</a></li>
+                <li><a href="./loop.html">Loop</a></li>
+                <li><a href="./objects.html">Objects</a></li>
+                <li><a href="./Advanced.html">Advanced Objects Intro</a></li>
+                 <li><a href="./iterator.html">Iterators</a></li>
+                <div class="dropdown">
+                    <li><a href="./Exercisesjs.html">Exercises</a></li>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="#meal">Meal Maker</a></li>
+                            <li><a href="#team">Team Stats</a></li>
+                            <li><a href="#mini">Mini Linter</a></li>
+                            <li><a href="#credit">Credit Card Checker</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <li><a href="./mdn.html">MDN Documents</a></li>
+            </ul>
+        </div>
+    </header>
+     <!---<div class="jumbotron">
+         <span>Cheatsheets / JavaScript Syntax</span>
+        <h1>Learn JavaScript Syntax: II</h1>
+        <h1>Exercises</h1>
+    </div>--->
+    <div class="main">
+        <div class="flex">
+            <section id="meal">
+                <h3>Meal Maker</h3>
+                <p>
+                    As a frequent diner, you love trying out new restaurants and experimenting with different foods. However, having to figure out what you want to order can be a time-consuming ordeal if the menu is big, and you want an easier way to be able to figure out what you are going to eat.
+                </p>
+                <p>
+                    In this project, you’ll use JavaScript to randomly create a three-course meal based on what is available on a menu. We’ll keep running it until we’re satisfied with the generated meal!
+                </p>
+                <p>
+                    1. Start by creating an empty menu object.
+                </p>
+                <div class="box">
+                    <p>const menu = { '' };</p>
+                    <p><em>note</em></p>
+                    <p>_courses is passed in the above curly braces</p>
+                </div>
+                <p>
+                    2. Add a _courses property to your menu object and set its value to an empty object. This property will ultimately contain a mapping between each course and the dishes available to order in that course. 
+                </p>
+                <p>3. Create three properties inside the _courses object called appetizers, mains, and desserts. Each one of these should initialize to an empty array.</p>
+                <div class="box">
+                    <p>_courses: {</p>
+                        <p>appetizers: [ <em>Empty array</em> ],</p>
+                        <p>mains: [ ],</p>
+                        <p>desserts: [ ], },</p>
+                </div>
+                <p>
+                    4. Create getter and setter methods for the appetizers, mains, and desserts properties.
+                </p>
+                <div class="box">
+                    <p>get appetizers(){</p>
+                        <p>return this._courses.appetizers; </p>
+                        <p>},</p>
+                        <p><em>copy till dessert</em></p>
+                </div>
+                <br>
+                <div class="box">
+                    <p>set appetizers(appetizerls){</p>
+                        <p>this._courses.appetizers = appetizers;</p>
+                        <p>},</p>
+                        <p><em>copy till dessert</em></p>
+                </div>
+                <p>5. Inside your menu object, create an empty getter method for the _courses property</p>
+                <p>6. Inside the courses getter method, return an object that contains key/value pairs for appetizers, mains, and desserts.</p>
+                <div class="box">
+                    <p>get courses() {</p>
+                        <p>return {</p>
+                            <p>appetizers: this.appetizers,</p>
+                            <p>mains: this.mains,</p>
+                            <p>desserts: this.desserts,</p>
+                            <p>};</p>
+                            <p>},</p>
+                </div>
+                <p>7. Inside the menu object, we are going to create a method called .addDishToCourse() which will be used to add a new dish to the specified course on the menu.</p>
+                <p>The method should take in three parameters: the courseName, the dishName , and the dishPrice.</p>
+                <p>8. The .addDishToCourse() method should create an object called dish which has a name and price which it gets from the parameters.</p>
+                <p>The method should then push this dish object into the appropriate array in your menu‘s _courses object based on what courseName was passed in.</p>
+                <div class="box">
+                    <p>addDishToCourse (courseName, dishName, dishPrice) {</p>
+                        <p>const dish = {</p>
+                            <p>name: dishName,</p>
+                            <p>price: dishPrice,</p>
+                            <p>};</p>
+                            <p>return this._courses[courseName].push(dish);</p>
+                            <p>},</p>
+                </div>
+                <p>9. Now, we’re going to need another function which will allow us to get a random dish from a course on the menu, which will be necessary for generating a random meal.</p>
+                <p>Create a method inside the menu object called .getRandomDishFromCourse(). It will take in one parameter which is the courseName.</p>
+                <p>
+                    10. There are a few steps in getting the .getRandomDishFromCourse() to work.
+                    <li>Retrieve the array of the given course’s dishes from the menu‘s _courses object and store in a variable called dishes.</li>
+                    <li>Generate a random index by multiplying Math.random() by the length of the dishes array (This will guarantee that the random number will be between 0 and the length of the array)</li>
+                    <li>Round that generated number to a whole number by using Math.floor() on the result.</li>
+                    <li>
+                        Return the dish located at that index in dishes.
+                    </li>
+                </p>
+                <div class="box">
+                    <p>getRandomDishFromCourse(courseName) {</p>
+                        <p>const dishes = this._courses[courseName];</p>
+                        <p>const randomIndex = Math.floor(Math.random() * dishes.length);</p>
+                        <p>return dishes[randomIndex];</p>
+                        <p>},</p>
+                </div>
+                <p>
+                    11. Now that we have a way to get a random dish from a course, we can create a .generateRandomMeal() function which will automatically generate a three-course meal for us. The function doesn’t need to take any parameters.
+                    <li>
+                        The function should create an appetizer variable which should be the result of calling the .getRandomDishFromCourse() method when we pass in an appetizers string to it.
+                    </li>
+                    <li>
+                        Create a main variable and dessert variable the same way you created the appetizer variable, but make sure to pass in the right course type.
+                    </li>
+                    <li>
+                        Calculates the total price and returns a string that contains the name of each of the dishes and the total price of the meal, formatted as you like.
+                    </li>
+                </p>
+                <div class="box">
+                    <p>
+                        generateRandomMeal() {
+                    </p>
+                    <p>
+                        const appetizer = 
+                    </p>
+                    <p>
+                        this.getRandomDishFromCourse
+                    </p>
+                    <p>('appetizers');</p>
+                    <p><em>copy above till desserts</em></p>
+                    <p>const totalPrice =</p>
+                    <p>appetizer.price + main.price</p>
+                    <p>+ dessert.price;</p>
+                    <p>return `Your three course meal is</p>
+                    <p>${appetizer.name}, ${main.name}</p>
+                    <p>& ${dessert.name}.</p>
+                    <p>Total price GBP ${totalPrice}`;</p>
+                    <p>}</p>
+                    <p><em>entire program in const menu };</em></p>
+                </div>
+                <p>
+                    12. Now that we’ve finished our menu, object, let’s use it to create a menu by adding some appetizers, mains, and desserts with the .addDishToCourse() function. Add at least 3 dishes to each course (or more if you like!).
+                </p>
+                <div class="box">
+                    <p>menu.addDishToCourse('appetizers', 'Caesar Salad', 4.25);</p>
+                    <p>menu.addDishToCourse('appetizers', 'Fries', 6.25);</p>
+                    <p>menu.addDishToCourse('appetizers', 'Onion Rings', 6.00);</p>
+                    <br>
+                    <p>menu.addDishToCourse('mains', 'Fish Fry', 11.00);</p>
+                    <p>menu.addDishToCourse('mains', 'Steak', 19.25);</p>
+                    <p>menu.addDishToCourse('mains', 'Chicken Full', 10.00);</p>
+                    <br>
+                    <p>menu.addDishToCourse('desserts', 'Chocolate Shake', 3.00);</p>
+                    <p>menu.addDishToCourse('desserts', 'Tofu', 3.25);</p>
+                    <p>menu.addDishToCourse('desserts', 'Apple Pie', 4.00);</p>
+                </div>
+                <p>
+                    13. Once your menu has items inside it, generate a meal by using the .generateRandomMeal() function on your menu, and save it to a variable called meal. Lastly, print out your meal variable to see what meal was generated for you.
+                </p>
+                <div class="box">
+                    <p>const meal = menu.generateRandomMeal();</p>
+                    <p>console.log(meal);</p>
+                    <p>Output: // random dish with price</p>
+                </div>
+            </section>
+            <section id="team">
+                <h3>Team Stats</h3>
+                <p>
+                    We want to create and extract information about your favorite sports team. Basketball, soccer, tennis, or water polo, you pick it. It’s your job to create data using the JavaScript data structures at your disposal: arrays, objects, etc.
+                </p>
+                <p>
+                    Once created, you can manipulate these data structures as well as gain insights from them. For example, you might want to get the total number of games your team has played, or the average score of all of their games.
+                </p>
+                <p>1. We want a data structure to store the information about our team. Create an empty team object.</p>
+                <div class="box">
+                    <p>const team = { };</p>
+                </div>
+                <p>
+                    2. Our team has players, and the team plays games. We want to represent both of these. Add two properties to your team object. A _players property and a _games property that are both initialized to empty arrays.
+                </p>
+                <div class="box">
+                    <p>_players: [],</p>
+                    <p>_games: [],</p>
+                </div>
+                <p>
+                    3. Populate the empty array that corresponds to the _players key in your team object with three actual players. They should be in the following format:
+                </p>
+                <div class="box">
+                    <p>{ firstName: 'Yuvraj',</p>
+                    <p>lastName: 'Singh',</p>
+                    <p>age: 35</p>
+                    <p>}</p>
+                    <p><em>data entered in empty array</em></p>
+                </div>
+                <p>
+                    4. Populate the empty array that corresponds to the _games key in your object with three actual games. They should be in the following format:
+                </p>
+                <div class="box">
+                    <p>{ opponent: 'Australia',</p>
+                    <p>teamScore: 350,</p>
+                    <p>opponentScore: 300</p>
+                    <p>}</p>
+                    <p><em>data entered in empty array</em></p>
+
+                </div>
+                <p>5. Create getter methods for your _players and _games keys. You do not need to create setter methods, because we don’t want anyone to change the values saved to these keys.
+                </p>
+                <div class="box">
+                    <p>get players(){</p>
+                        <p>return this._players;</p>
+                        <p>},</p>
+                        <br>
+                        <p>get games() {</p>
+                            <p>return this._games;</p>
+                            <p>},</p>
+                </div>
+                <p>
+                    6. We want to add a new player to your team. Add a method addPlayer to your team object. This method should take in three parameters: firstName, lastName, and age. It should create a player object, and add them to the team‘s players array.
+                </p>
+                <div class="box">
+                    <p>addPlayer(firstName, lastName, age){</p>
+                        <p>let player = {</p>
+                            <p>firstName: firstName,</p>
+                            <p>lastName: lastName,</p>
+                            <p>age: age</p>
+                            <p>};</p>
+                            <p>this.players.push(player);</p>
+                            <p>},</p>
+                </div>
+                <p>
+                    7. Below your team object, invoke your addPlayer method on the following players: Steph Curry Age 28,Lisa Leslie Age 44, and Bugs Bunny Age 76.
+
+Print out the team‘s players to check they were all properly added.
+                </p>
+                <div class="box">
+                    <p>
+                        team.addPlayer('Shubman', 'Gill', 22);
+                    </p>
+                    <p>
+                        team.addPlayer('Rohit', 'Sharma', 28);
+                    </p>
+                    <p>
+                        team.addPlayer('Harbhajan', 'Singh', 33);
+                    </p>
+                </div>
+                <p>
+                    8. The scorekeeper has some new information for us! Add a similar method for recording game results called addGame that:
+                    <li>takes in an opponent’s name,</li>
+                    <li>your team’s points,</li>
+                    <li>the opponent’s points,</li>
+                    <li>creates a game object,</li>
+                    <li>adds the game object to your team‘s games array.</li>
+                </p>
+                <div class="box">
+                    <p>addGame(opp, myScor, oppScor) {</p>
+                        <p>const game = {</p>
+                            <p>opponent: opp,</p>
+                            <p>teamScore: myScor,</p>
+                            <p>opponentScore: oppScor</p>
+                            <p>};</p>
+                            <p>this.games.push(game);</p>
+                            <p>},</p>
+                </div>
+                <p>
+                    9. Invoke your addGame method on three games and print the team‘s updated games array.
+                </p>
+                <div class="box">
+                    <p>
+                        team.addGame('Australia', 350, 250);
+                    </p>
+                    <p>
+                        team.addGame('England', 400, 300);
+                    </p>
+                    <p>
+                        team.addGame('Pakistan', 475, 150);
+                    </p>
+                </div>
+            </section>
+            <section id="mini">
+                <h3>Mini Linter</h3>
+                <p>In this project, you will use what you know about iterating over arrays to improve the quality of a paragraph and gather some information about that paragraph.</p>
+                <p>This is the same type of work that word processing software does. Additionally, you may have heard of <em>linting - (is the process of running a program that will annalyze code)</em> a process by which text is evaluated and improved by an application. In this project, you will create a miniature version of a linter using array methods that you have learned.</p>
+                <p>1. In the code editor, there is a string called story. We want to gather some information about the individual words and sentences in the string. Let’s split the string into individual words and save them in a new array called storyWords.</p>
+                <div class="box">
+                    <p>let story = 'Last weekend, I took literally the most beautiful bike ride of my life. The route is called "The 9W to Nyack" and it actually stretches all the way from Riverside Park in Manhattan to South Nyack, New Jersey. It\'s really an adventure from beginning to end! It is a 48 mile loop and it basically took me an entire day. I stopped at Riverbank State Park to take some extremely artsy photos. It was a short stop, though, because I had a really long way left to go. After a quick photo op at the very popular Little Red Lighthouse, I began my trek across the George Washington Bridge into New Jersey.  The GW is actually very long - 4,760 feet! I was already very tired by the time I got to the other side.  An hour later, I reached Greenbrook Nature Sanctuary, an extremely beautiful park along the coast of the Hudson.  Something that was very surprising to me was that near the end of the route you actually cross back into New York! At this point, you are very close to the end.';</p>
+                    <p>const storyWords = story.split(' ');</p>
+                    <p>console.log(storyWords.length);</p>
+                </div>
+                <p>2. Log how many words there are in this story to the console.
+                    <em>Done in above example with .length (method)</em>
+                </p>
+                <p>3. There is an array of words that are unnecessary. Iterate over your array to filter out these words. Save the remaining words in an array called betterWords. There are several ways that you could achieve this.</p>
+                <div class="box">
+                    <p>let unnecessaryWords = ['extremely', 'literally', 'actually' ];</p>
+                    <p>const betterWords = storyWords.filter(x => {</p>
+                        <p>return !unnecessaryWords.includes(x)</p>
+                        <p>});</p>
+                        <p>console.log(betterWords.length);</p>
+                </div>
+                <p>4. There is an array of words called overusedWords. These are words overused in this story. You want to let the user of your program know how many times they have used these overused words. There are two ways to achieve this. Try it on your own first. If you need help, consult the hint.</p>
+                <div class="box">
+                    <p>let overusedWords = ['really', 'very', 'basically'];</p>
+                    <p>let reallyCount = 0;</p>
+                    <p>let veryCount = 0;</p>
+                    <p>let basicallyCount = 0;</p>
+                    <p>for (i of betterWords) {</p>
+                    <p>if (i === 'really') {</p>
+                    <p>reallyCount += 1</p>
+                    <p>} else if (i === 'very') {</p>
+                    <p>veryCount += 1</p>
+                    <p>} else if (i === 'basically') {</p>
+                    <p>basicallyCount += 1</p>
+                    <p>} }</p>
+                    <p>console.log("Really Count: ", reallyCount);</p>
+                </div>
+                <p>5. Now, count how many sentences are in the paragraph. This may seem tricky, but remember that all of the sentences in this paragraph end with a period (.) or an exclamation mark (!). You could iterate over the array and add 1 to a sentence counter variable for each word that has a period or exclamation mark as its final character.</p>
+                <div class="box">
+                    <p>let sentences = 0;</p>
+                    <p>betterWords.forEach(i => {</p>
+                    <p>if(i[i.length-1] === '.' || i[i.length-1] ===</p>
+                    <p>'!') {</p>
+                    <p>sentences += 1</p>
+                    <p>}</p>
+                    <p>});</p>
+                    <p>console.log("No. of Sentences: ", sentences);</p>
+                </div>
+                <p>6. Now, log the betterWords array to the console as a single string.</p>
+                <div class="box">
+                    <p>console.log(betterWords.join());</p>
+                </div>
+            </section>
+            <section id="credit">
+                <h3>Credit Card Checker</h3>
+                <h4>Overview</h4>
+                <p>This project is slightly different than others you have encountered thus far on Codecademy. Instead of a step-by-step tutorial, this project contains a series of open-ended requirements which describe the project you’ll be building. There are many possible ways to correctly fulfill all of these requirements, and you should expect to use the internet, Codecademy, and other resources when you encounter a problem that you cannot easily solve.</p>
+                <h4>Project Goals</h4>
+                <p>Context: The company that you work for suspects that credit card distributors have been mailing out cards that have invalid numbers. In this project, you have the role of a clerk who checks if credit cards are valid. Every other clerk currently checks using pencil and paper, but you’ll be optimizing the verification process using your knowledge of functions and loops to handle multiple credit cards at a time. Unlike the other clerks, you can spend the rest of your time relaxing! As you progress through the steps, use the terminal and console.log() statements to check the output of your loops and functions.</p>
+            </section>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <footer>
+            <aside style="float:left;"><a href="./Advanced.html">Previous (Advanced Objects)</a></aside>
+            <aside style="float:right;"><a href="./Advanced.html">Next (Advanced Objects)</a></aside>
+        </footer>
+    </div>
+</body>
+</html>

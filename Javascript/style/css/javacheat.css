@@ -1,0 +1,175 @@
+/* Global CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Jura&family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+/*Body */
+html {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #192a56;
+    color: whitesmoke;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* header */
+
+header {
+    background-color:  #487eb0;
+    font-family: 'Unica One', sans-serif;
+    color: black;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    opacity: 0.9;
+}
+
+header:hover {
+    opacity: 1;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+li {
+    display: inline-flex;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    line-height: 2;
+    color: black;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: static;
+    margin: 10px;
+    background-color: #487eb0;
+    color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  text-decoration: none;
+}
+
+.jumbotron,
+.footer {
+    text-align: center;
+    border: 1px;
+    padding: 65px;
+    background-color: #d35400;
+    opacity: .7;
+}
+
+.jumbotron:hover,
+ .footer:hover {
+    opacity: 1;
+}
+
+span,
+h1 {
+    font-family: 'Unica One', sans-serif;
+    line-height: 1.5;
+    font-size: 36px;
+}
+
+/* main */
+
+h3 {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: 2rem;
+    border-radius: 25px 0px;
+    padding: 35px;
+    background-color: #d35400;
+    width: 550px;
+    margin-left: 45px;
+}
+
+p,
+dl {
+    width: 600px;
+    height: auto;
+    padding: 15px;
+    margin: 30px 0 0 45px;
+    border-radius: 0px 45px;
+    background: #f5f6fa;
+    color: black;
+    line-height: 2;
+}
+
+#height {
+    width: 600px;
+    height: 300px;
+    padding: 15px;
+    margin: 30px 0 0 45px;
+    border-radius: 0px 45px;
+    background: #f5f6fa;
+    color: black;
+    line-height: 2;
+}
+
+
+img {
+    float: right;
+    width: 400px;
+    padding: 10px;
+    margin-right: 30px;
+    border-radius: 0px 45px;
+    background-color: #f5f6fa;
+}
+
+#img1,
+#img2,
+#img3,
+#img4,
+#img5,
+#img6,
+#img7,
+#img8,
+#img9,
+#img10,
+#img11,
+#img12,
+#img13,
+#img14,
+#img15,
+#img16,
+#img17,
+#img18,
+#img19,
+#img20, #img21, #img22, #img23, #img24, #img25,
+#img26, #img27, #img29, #img30, #img31, #img32, #img33,
+#img34, #img35, #img36 {
+    margin-top: -60px;
+}
+
+/*footer 
+.footer {
+    border-top: 1px solid #d35400;
+    margin-top: 45px;
+    background-color: #d35400;
+    font-size: 26px;
+} */
+
+aside a {
+     color: whitesmoke;
+     background-color: #d35400;
+}

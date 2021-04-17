@@ -1,0 +1,173 @@
+/* Global CSS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand&family=Syne+Mono&family=VT323&display=swap');
+
+html {
+    font-family: 'Quicksand', serif;
+    color: #ff0a54;
+    margin: 0;
+    padding: 0;
+}
+
+/*Header*/
+
+.header {
+    font-family: 'Syne Mono', monospace;
+    background-color: #f20089;
+    color: whitesmoke;
+    padding: auto;
+    opacity: 0.8;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.nav ul,
+.dropdown-content ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.nav ul li
+ {
+    display: inline-flex;
+    padding: 20px;
+}
+
+.dropdown-content ul li {
+    display: list-item;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    line-height: 2;
+    color: black;
+}
+
+.dropdown-content ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.jumbotron,
+.footer {
+    text-align: center;
+    font-family: 'Major Mono Display';
+    padding: 55px;
+    background-color: #ccff33;
+    color: black;
+    opacity: 0.7;
+}
+
+.jumbotron:hover,
+.header:hover,
+.footer:hover {
+    opacity: 1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    margin-top: -20px;
+    background-color: whitesmoke;
+    color: black;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  text-decoration: none;
+}
+
+/*main*/
+
+h3 {
+    font-family: 'Major Mono Display';
+    border-radius: 5px;
+    background-color: #f20089;
+    width: 850px;
+    padding: 30px;
+    margin: 20px auto;
+    text-align: center;
+    color: black;
+}
+
+h4 {
+    font-family: 'Major Mono Display', sans-serif;
+    color: black;
+    border-radius: 5px;
+    background-color: #f20089;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+}
+
+section {
+    margin: 20px auto;
+    width: 900px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+.box,
+.box2 {
+    width: 400px;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #8e9aaf;
+    line-height: 1.5;
+    padding: 10px;
+    opacity: .6;
+    color: black;
+}
+
+.box:hover,
+.box2:hover,
+table:hover {
+    opacity: 1;
+    background-color: #240046;
+    color: #ff9100;
+}
+
+table, tr, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+}
+
+li {
+    list-style-position: outside;
+}
+
+img, 
+video {
+    width: 600px;
+    height: auto;
+}
+
+aside,
+em {
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+}
+
+h2 {
+    font-family: 'Major Mono Display';
+}
+
+
+/**/
+

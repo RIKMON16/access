@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+    <link rel="stylesheet" href="./style/css/javacheat.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <ul>
+                <li>Learn JS Syntax - I</li>
+                <li><a href="./javacheatsheet.html">Introduction</a></li>
+                <li><a href="./condition.html">Conditions</a></li>
+                <li><a href="./functions.html">Functions</a></li>  
+                <li><a href="./scope.html">Scope</a></li>
+                <li><a href="./number.html">Number Guesser</a></li>                
+            </ul>
+        </div>
+    </header>
+     <div class="jumbotron">
+         <span>Cheatsheets / JavaScript Syntax, Part I</span>
+        <h1>Learn JavaScript Syntax:</h1>
+        <h1>Scope</h1>
+    </div>
+    <div class="main">
+        <section class="scope">
+            <h3>Scope</h3>
+            <p>
+                Scope is a concept that refers to where values and functions can be accessed.
+                Various scopes include: * Global scope (a value/function in the global scope can be used anywhere in the entire program),
+                * File or module scope (the value/function can only be accessed from within the file),
+                * Function scope (only visible within the function),
+                * Code block scope (only visible within a { ... } codeblock)
+            </p>
+        </section>
+        <section>
+            <h3>Block Scoped Variables</h3>
+            <img src="./style/images/jsimages/38.png" alt="" id="img38">
+            <p>
+                const and let are block scoped variables, meaning they are only accessible in their block or nested blocks. In the given code block, trying to print the statusMessage using the console.log() method will result in a ReferenceError. It is accessible only inside that if block.
+            </p>
+            
+        </section>
+        <section>
+            <h3>Global Variables</h3>
+            <img src="./style/images/jsimages/39.png" alt="" class="img39">
+            <p>
+                JavaScript variables that are declared outside of blocks or functions can exist in the global scope, which means they are accessible throughout a program. Variables declared outside of smaller block or function scopes are accessible inside those smaller scopes.
+                <strong><em>Note:</em></strong> It is best practice to keep global variables to a minimum.
+            </p>
+
+        </section>
+    </div>
+    <div class="footer">
+        <footer>
+            <aside style="float:left;"><a href="./functions.html">Previous (Functions)</a></aside>
+            <aside style="float:right;"><a href="#">Next (Number Guesser)</a></aside>
+        </footer>
+    </div>
+</body>
+</html>

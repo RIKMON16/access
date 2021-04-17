@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Syntax-2</title>
+    <link rel="stylesheet" href="./style/css/syntax2.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <ul>
+                <li><h1>Learn JS Syntax - II</h1></li>
+                <li><a href="./syntax2.html">Array</a></li>
+                <li><a href="./loop.html">Loop</a></li>
+                <li><a href="./objects.html">Objects</a></li>
+                <li><a href="./Advanced.html">Advanced Objects Intro</a></li>
+                <li><a href="./iterator.html">Iterators</a></li>
+                <li><a href="./errors.html">Errors</a></li>
+                <li><a href="./Exercisesjs.html">Exercises</a></li>
+            </ul>
+        </div>
+    </header>
+     <div class="jumbotron">
+         <span>Cheatsheets / JavaScript Syntax</span>
+        <h1>Learn JavaScript Syntax: II</h1>
+        <h1>Arrays</h1>
+    </div>
+    <div class="main">
+        <section>
+            <h3>Arrays</h3>
+            <p>
+                Organizing and storing data is a foundational concept of programming.
+                One way we organize data in real life is by making lists. Let’s make one here:
+                <dl>New Year's Resolutions:
+                    <li>Keep a journal </li>
+                    <li>Take a falconry class</li>
+                    <li>Learn to juggle</li>
+                </dl>
+                <p>Let’s now write this list in JavaScript, as an array:</p>
+                <aside>
+                    let newYearsResolutions = ['Keep a journal', 'Take a falconry class', 'Learn to juggle'];
+                </aside>
+                <p>
+                    Arrays are JavaScript’s way of making lists. Arrays can store any data types (including strings, numbers, and booleans). Like lists, arrays are ordered, meaning each item has a numbered position.
+                    Here’s an array of the concepts we’ll cover:
+                </p>
+                <aside>
+                    let concepts = ['creating arrays', 'array structures', 'array manipulation']
+                </aside>
+                By the end of this lesson you’ll have another tool under your belt that helps you manage chunks of data!
+            </p>    
+        </section>
+        <section>
+            <h3>Create an Array</h3>
+            <p>
+                One way we can create an array is to use an array literal. An array literal creates an array by wrapping items in square brackets []. Remember from the previous exercise, arrays can store any data type — we can have an array that holds all the same data types or an array that holds different data types.
+                <dl>
+                    Let’s take a closer look at the syntax in the array example:
+                    <li>
+                        The array is represented by the square brackets [] and the content inside.
+                    </li>
+                    <li>
+                        Each content item inside an array is called an element.
+                    </li>
+                    <li>
+                        There are three different elements inside the array.
+                    </li>
+                    <li>
+                        Each element inside the array is a different data type.
+                    </li>
+                </dl>
+                <p>
+                    We can also save an array to a variable. You may have noticed we did this in the previous exercise:
+                </p>
+                <aside>
+                    let newYearsResolutions = ['Keep a journal', 'Take a falconry class', 'Learn to juggle'];
+                </aside>
+            </p>
+        </section>
+        <section>
+            <h3>Accessing Elements</h3>
+            <p>
+                <p>
+                    Each element in an array has a numbered position known as its <em>index</em>. We can access individual items using their index, which is similar to referencing an item in a list based on the item’s position.
+                </p>
+                <p>
+                    Arrays in JavaScript are zero-indexed, meaning the positions start counting from 0 rather than 1. Therefore, the first item in an array will be at position 0.
+                </p>
+                <p>
+                    You can also access individual characters in a string using bracket notation and the index. For instance, you can write:
+                </p>
+                <aside>
+                    const hello = 'Hello World';
+console.log(hello[6]);
+// Output: W
+                </aside>
+                The console will display W since it is the character that is at index 6.
+            </p>
+        </section>
+        <section>
+            <h3>Update Elements</h3>
+            <p>
+                <p>
+                    In the previous exercise, you learned how to access elements inside an array or a string by using an index. Once you have access to an element in an array, you can update its value.
+                </p>
+                <aside>
+                    let seasons = ['Winter', 'Spring', 'Summer', 'Fall'];
+                    <aside>
+                        seasons[3] = 'Autumn';
+console.log(seasons); 
+//Output: ['Winter', 'Spring', 'Summer', 'Autumn']
+                    </aside>
+                </aside>
+                <p>
+                    In the example above, the seasons array contained the names of the four seasons.
+
+However, we decided that we preferred to say 'Autumn' instead of 'Fall'.
+
+The line, seasons[3] = 'Autumn'; tells our program to change the item at index 3 of the seasons array to be 'Autumn' instead of what is already there.
+                </p>
+            </p>
+        </section>
+        <section>
+            <h3>Arrays with let and const</h3>
+            <p>
+                <p>
+                    You may recall that you can declare variables with both the let and const keywords. Variables declared with let can be reassigned.
+                </p>
+                <p>
+                    Variables declared with the const keyword cannot be reassigned. However, elements in an array declared with const remain mutable. Meaning that we can change the contents of a const array, but cannot reassign a new array or a different value.
+                </p>
+                <p>
+                    The instructions below will illustrate this concept more clearly. Pay close attention to the similarities and differences between the condiments array and the utensils array as you complete the steps.
+                </p>
+            </p>
+        </section>
+        <section>
+            <h3>The .length property</h3>
+            <p>
+                <p>
+                    One of an array’s built-in properties is length and it returns the number of items in the array. We access the .length property just like we do with strings. Check the example below:
+                </p>
+                <aside>
+                    const newYearsResolutions = ['Keep a journal', 'Take a falconry class'];
+                    <aside>
+                        console.log(newYearsResolutions.length);
+// Output: 2
+                    </aside>
+                </aside>
+                <p>
+                    In the example above, we log newYearsResolutions.length to the console using the following steps:
+                    <dl>
+                        <li>
+                            We use <em>dot notation</em>, chaining a period with the property name to the array, to access the length property of the newYearsResolutions array.
+                        </li>
+                        <li>
+                            Then we log the length of newYearsResolution to the console.
+                        </li>
+                        <li>
+                            Since newYearsResolution has two elements, so 2 would be logged to the console.
+                        </li>
+                    </dl>
+                    When we want to know how many elements are in an array, we can access the .length property.
+                </p>
+            </p>
+        </section>
+        <section>
+            <h3>The .push() Method</h3>
+            <p>
+                <p>
+                    Let’s learn about some built-in JavaScript methods that make working with arrays easier. These methods are specifically called on arrays to make common tasks, like adding and removing elements, more straightforward.
+                </p>
+                <p>
+                    One method, .push() allows us to add items to the end of an array. Here is an example of how this is used:
+                    <aside>
+                        const itemTracker = ['item 0', 'item 1', 'item 2'];
+                        <aside>
+                            itemTracker.push('item 3', 'item 4');
+                        </aside>
+                        <aside>
+                            console.log(itemTracker); 
+// Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+                        </aside>
+                    </aside>
+                    <p>
+                        So, how does .push() work?
+                        <dl>
+                            <li>
+                                We access the push method by using dot notation, connecting push to itemTracker with a period.
+                            </li>
+                            <li>
+                                Then we call it like a function. That’s because .push() is a function and one that JavaScript allows us to use right on an array.
+                            </li>
+                            <li>
+                                .push() can take a single argument or multiple arguments separated by commas. In this case, we’re adding two elements: 'item 3' and 'item 4' to itemTracker.
+                            </li>
+                            <li>
+                                Notice that .push() changes, or mutates, itemTracker. You might also see .push() referred to as a destructive array method since it changes the initial array.
+                            </li>
+                        </dl>
+                        If you’re looking for a method that will mutate an array by adding elements to it, then .push() is the method for you!
+                    </p>
+                </p>
+            </p>
+        </section>
+        <section>
+            <h3>The .pop() Method</h3>   
+            <p>
+                <p>
+                    Another array method, .pop(), removes the last item of an array.
+                </p>
+                <aside>
+                    const newItemTracker = ['item 0', 'item 1', 'item 2'];
+                    <aside>
+                        const removed = newItemTracker.pop();
+                    </aside>
+                    <aside>
+                        console.log(newItemTracker); 
+// Output: [ 'item 0', 'item 1' ]
+console.log(removed);
+// Output: item 2
+                    </aside>
+                </aside>
+                <dl>
+                    <li>
+                        In the example above, calling .pop() on the newItemTracker array removed item 2 from the end.
+                    </li>
+                    <li>
+                        .pop() does not take any arguments, it simply removes the last element of newItemTracker.
+                    </li>
+                    <li>
+                        .pop() returns the value of the last element. In the example, we store the returned value in a variable removed to be used for later.
+                    </li>
+                    <li>
+                        .pop() is a method that mutates the initial array.
+                    </li>
+                    When you need to mutate an array by removing the last element, use .pop().
+                </dl>
+            </p>
+        </section>
+        <section>
+            <h3>More Array Methods</h3>
+            <p>
+                <p>
+                    There are many more array methods than just .push() and .pop(). You can read about all of the array methods that exist on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Mozilla Developer Network (MDN) array documentation.</a>
+                </p>
+                <p>
+                    .pop() and .push() mutate the array on which they’re called. However, there are times that we don’t want to mutate the original array and we can use non-mutating array methods. Be sure to check MDN to understand the behavior of the method you are using.
+                </p>
+                <p>
+                    Some arrays methods that are available to JavaScript developers include: .join(), .slice(), .splice(), .shift(), .unshift(), and .concat() amongst many others. Using these built-in methods make it easier to do some common tasks when working with arrays.
+                </p>
+                <p>
+                    Below, we will explore some methods that we have not learned yet. We will use these methods to edit a grocery list. As you complete the steps, you can consult the MDN documentation to learn what each method does!
+                </p>
+            </p>
+        </section>
+        <section>
+            <h3>Arrays and Functions</h3>
+            <p>
+                <p>
+                    Throughout the lesson we went over arrays being mutable, or changeable. Well what happens if we try to change an array inside a function? Does the array keep the change after the function call or is it scoped to inside the function?
+
+                </p>
+                <p>
+                    ake a look at the following example where we call .push() on an array inside a function. Recall, the .push() method mutates, or changes, an array:
+                </p>
+                <aside>
+                    const flowers = ['peony', 'daffodil', 'marigold'];
+                    <aside>
+                        function addFlower(arr) {
+  arr.push('lily');
+}
+                    </aside>
+                    <aside>
+                        addFlower(flowers);
+                    </aside>
+                    <aside>
+                        console.log(flowers); // Output: ['peony', 'daffodil', 'marigold', 'lily']
+                    </aside>
+                </aside>
+                <dl>
+                    Let’s go over what happened in the example:
+                    <li>
+                        The flowers array that has 3 elements.
+                    </li>
+                    <li>The function addFlower() has a parameter of arr uses .push() to add a 'lily' element into arr.</li>
+                    <li>We call addFlower() with an argument of flowers which will execute the code inside addFlower.</li>
+                    <li>
+                        We check the value of flowers and it now includes the 'lily' element! The array was mutated!
+                    </li>
+                </dl>
+                <p>
+                    So when you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well. You might also see this concept explained as pass-by-reference since what we’re actually passing the function is a reference to where the variable memory is stored and changing the memory.
+                </p>
+
+            </p>
+        </section>
+        <section>
+            <h3>Nested Arrays</h3>
+            <p>
+                <p>
+                    Earlier we mentioned that arrays can store other arrays. When an array contains another array it is known as a <em>nested array.</em> 
+                    Examine the example below:
+                    <aside>
+                        const nestedArr = [[1], [2, 3]];
+                    </aside>
+                </p>
+                <p>
+                    To access the nested arrays we can use bracket notation with the index value, just like we did to access any other element:
+                    <aside>
+                        const nestedArr = [[1], [2, 3]];
+                    </aside>
+                    <aside>
+                        console.log(nestedArr[1]); // Output: [2, 3]
+                    </aside>
+                </p>
+                <p>
+                    Notice that nestedArr[1] will grab the element in index 1 which is the array [2, 3]. Then, if we wanted to access the elements within the nested array we can chain, or add on, more bracket notation with index values.
+                </p>
+                <aside>
+                    const nestedArr = [[1], [2, 3]];
+                </aside>
+                <aside>
+                    console.log(nestedArr[1]); // Output: [2, 3]
+console.log(nestedArr[1][0]); // Output: 2
+                </aside>
+                <p>
+                    In the second console.log() statement, we have two bracket notations chained to nestedArr. We know that nestedArr[1] is the array [2, 3]. Then to grab the first element from that array, we use nestedArr[1][0] and we get the value of 2.
+                </p>
+            </p>
+        </section>
+        <section>
+            <h3>Review Arrays</h3>
+            <dl>
+                Nice work! In this lesson, we learned these concepts regarding arrays:
+                <li>
+                    Arrays are lists that store data in JavaScript.
+                </li>
+                <li>Arrays are created with brackets [].</li>
+                <li>Each item inside of an array is at a numbered position, or index, starting at 0.</li>
+                <li>We can access one item in an array using its index, with syntax like: myArray[0].</li>
+                <li>We can also change an item in an array using its index, with syntax like myArray[0] = 'new string';</li>
+                <li>Arrays have a length property, which allows you to see how many items are in an array.</li>
+                <li>Arrays have their own methods, including .push() and .pop(), which add and remove items from an array, respectively.</li>
+                <li>rrays have many methods that perform different tasks, such as .slice() and .shift(), you can find documentation at the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Mozilla Developer Network</a> website.</li>
+                <li>Some built-in methods are mutating, meaning the method will change the array, while others are not mutating. You can always check the documentation.</li>
+                <li>Variables that contain arrays can be declared with let or const. Even when declared with const, arrays are still mutable. However, a variable declared with const cannot be reassigned.</li>
+                <li>Arrays mutated inside of a function will keep that change even outside the function.</li>
+                <li>Arrays can be nested inside other arrays.</li>
+                <li>To access elements in nested arrays chain indices using bracket notation.</li>
+                Learning how to work with and manipulate arrays will help you work with chunks of data!
+            </dl>
+        </section>
+    </div>
+    <div class="footer">
+        <footer>
+            <aside style="float:left;"><a href="./javacheatsheet.html">Previous (Syntax - I)</a></aside>
+            <aside style="float:right;"><a href="./loop.html">Next (Loop)</a></aside>
+        </footer>
+    </div>
+    
+</body>
+</html>

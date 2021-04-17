@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Syntax-2</title>
+    <link rel="stylesheet" href="./style/css/syntax2.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <ul>
+                <li><h1>Learn JS Syntax - II</h1></li>
+                <li><a href="./syntax2.html">Array</a></li>
+                <li><a href="./loop.html">Loop</a></li>
+                <li><a href="./objects.html">Objects</a></li>
+                <li><a href="./Advanced.html">Advanced Objects Intro</a></li>
+                <li><a href="./iterator.html">Iterators</a></li>
+                <li><a href="./errors.html">Errors</a></li>
+                <li><a href="./Exercisesjs.html">Exercises</a></li>
+            </ul>
+        </div>
+    </header>
+     <div class="jumbotron">
+         <span>Cheatsheets / JavaScript Syntax</span>
+        <h1>Learn JavaScript Syntax: II</h1>
+        <h1>Objects</h1>
+    </div>
+    <div class="main">
+        <section>
+            <h3>Introduction to Objects</h3>
+            <p>
+                It’s time to learn more about the basic structure that <b>permeates</b> <em>(spread throughout (something); pervade.)</em> nearly every aspect of JavaScript programming: objects.
+            </p>
+            <p>
+                You’re probably already more comfortable with objects than you think, because JavaScript loves objects! Many components of the language are actually objects under the hood, and even the parts that aren’t— like strings or numbers— can still act like objects in some instances.
+            </p>
+            <p>
+                There are only seven fundamental data types in JavaScript, and six of those are the primitive data types: string, number, boolean, null, undefined, and symbol. With the seventh type, objects, we open our code to more complex possibilities. We can use JavaScript objects to model real-world things, like a basketball, or we can use objects to build the data structures that make the web possible.
+            </p>
+            <p>
+                At their core, JavaScript objects are containers storing related data and functionality, but that deceptively simple task is extremely powerful in practice. You’ve been using the power of objects all along, but now it’s time to understand the mechanics of objects and start making your own!
+            </p>
+        </section>
+        <section>
+            <h3>Creating Object Literals</h3>
+            <p>
+                Objects can be assigned to variables just like any JavaScript type. We use curly braces, {}, to designate an object literal:
+            </p>
+            <div class="box2">
+                <aside>let spaceship = {};</aside>
+                <aside>// spaceship is an empty object</aside>
+            </div>
+            <p>
+                We fill an object with unordered data. This data is organized into key-value pairs. A key is like a variable name that points to a location in memory that holds a value.
+            </p>
+            <p>A key’s value can be of any data type in the language including functions or other objects.</p>
+            <p>
+                We make a key-value pair by writing the key’s name, or identifier, followed by a colon and then the value. We separate each key-value pair in an object literal with a comma (,). Keys are strings, but when we have a key that does not have any special characters in it, JavaScript allows us to omit the quotation marks:
+            </p>
+            <div class="box2">
+                <aside>// An object literal with two key-value pairs</aside>
+                <aside>let spaceship = {
+                    'Fuel Type':
+                </aside>
+                <aside>'diesel', color: 'silver'};</aside>
+                <p>
+                    object: let spaceship
+                </p>
+                <p>
+                    key: 'Fuel Type' & color
+                </p>
+                <p>
+                    value: 'diesel' & 'silver'
+                </p>
+            </div>
+            <p>
+                The spaceship object has two properties Fuel Type and color. 'Fuel Type' has quotation marks because it contains a space character.
+            </p>
+        </section>
+        <section id="dot">
+            <h3>Accessing Properties</h3>
+            <p>
+                There are two ways we can access an object’s property. Let’s explore the first way— dot notation, ..
+            </p>
+            <p>
+                You’ve used dot notation to access the properties and methods of built-in objects and data instances:
+            </p>
+            <div class="box">
+                <aside>'hello'.length; // Returns 5</aside>
+            </div>
+            <p>
+                With property dot notation, we write the object’s name, followed by the dot operator and then the property name (key):
+            </p>
+            <div class="box">
+                <aside>let spaceship = { homePlanet: 'Earth', color: 'silver'};</aside>
+                <aside>spaceship.homePlanet; // Returns 'Earth',</aside>
+                <aside>spaceship.color; // Returns 'silver',</aside>
+            </div>
+            <p>
+                If we try to access a property that does not exist on that object, undefined will be returned.
+            </p>
+            <div class="box">
+                <aside>spaceship.favoriteIcecream; // Returns undefined</aside>
+            </div>
+        </section>
+        <section id="bra">
+            <h3>Bracket Notation</h3>
+            <p>
+                The second way to access a key’s value is by using bracket notation, [ ].
+            </p>
+            <p>
+                You’ve used bracket notation when indexing an array:
+            </p>
+            <div class="box">
+                <aside>['A', 'B', 'C'][0]; // Returns 'A'</aside>
+            </div>
+            <p>
+                To use bracket notation to access an object’s property, we pass in the property name (key) as a string.
+            </p>
+            <p>
+                We must use bracket notation when accessing keys that have numbers, spaces, or special characters in them. Without bracket notation in these situations, our code would throw an error.
+            </p>
+            <div class="box">
+                <aside>Object: spaceship</aside>
+                <aside>Property Name: 'fuel type'</aside>
+            </div>
+            <br>
+            <div class="box">
+                <aside>let spaceship = { 'Fuel Type': 'Turbo Fuel',</aside>
+                <aside>'Active Duty': true, homePlanet: 'Earth', numCrew: 5 };</aside>
+                <aside>spaceship['Active Duty'];   // Returns true</aside>
+                <aside>spaceship['Fuel Type'];   // Returns  'Turbo Fuel'</aside>
+                <aside>spaceship['numCrew'];   // Returns 5</aside>
+                <aside>spaceship['!!!!!!!!!!!!!!!'];   // Returns undefined</aside>
+            </div>
+            <p>
+                With bracket notation you can also use a variable inside the brackets to select the keys of an object. This can be especially helpful when working with functions:
+            </p>
+            <div class="box">
+                <aside>
+                    let returnAnyProp = (objectName, propName) => 
+                </aside>
+                <aside>objectName[propName];</aside>
+                <aside>returnAnyProp(spaceship, 'homePlanet'); </aside>
+                <aside>// Returns 'Earth'</aside>
+            </div>
+            <p>
+                If we tried to write our returnAnyProp() function with dot notation (objectName.propName) the computer would look for a key of 'propName' on our object and not the value of the propName parameter.
+            </p>
+            <p>
+                Let’s get some practice using bracket notation to access properties!
+            </p>
+            <p>
+                1. Let’s use bracket notation to access the value of 'Active Mission' from the spaceship object in the code editor. Create a variable isActive and assign the spaceship‘s 'Active Mission' property to it.
+            </p>
+            <p>
+                2. Using bracket notation and the propName variable provided, console.log() the value of the 'Active Mission' property.
+            </p>
+            <div class="box">
+                <aside>let spaceship = {'Fuel Type' : 'Turbo Fuel',</aside>
+                <aside>'Active Mission' : true, homePlanet : 'Earth', numCrew: 5};</aside>
+                <aside>let propName =  'Active Mission';</aside>
+                <aside>let isActive = spaceship ['Active Mission'];</aside>
+                <aside>console.log(spaceship[propName]);</aside>
+                <aside>Output: true</aside>
+            </div>
+        </section>
+        <section>
+            <h3>Property Assignment</h3>
+            <p>
+                Once we’ve defined an object, we’re not stuck with all the properties we wrote. Objects are mutable <em>(liable to change.)</em> meaning we can update them after we create them!
+            </p>
+            <p>
+                We can use either <a href="#dot">dot notation, <b>.</b> ,</a> or <a href="#bra">bracket notation, []</a>, and the assignment operator, = to add new key-value pairs to an object or change an existing property.
+            </p>
+            <div class="box">
+                <aside>Object: spaceship</aside>
+                <aside>Property Name: 'fuel type'</aside>
+                <aside>Assignment Operator <b>=</b></aside>
+                <aside>Value: vegetable oil;</aside>
+                <aside>spaceship.color = 'gold';</aside>
+            </div>
+            <p>
+                One of two things can happen with property assignment:
+            </p>
+            <li>
+                If the property already exists on the object, whatever value it held before will be replaced with the newly assigned value.
+            </li>
+            <li>If there was no property with that name, a new property will be added to the object.</li>
+            <p>It’s important to know that although we can’t reassign an object declared with const, we can still mutate it, meaning we can add new properties and change the properties that are there.</p>
+            <div class="box">
+                <em>Example for Assignment Prop</em>
+                <aside>const spaceship = {type: 'shuttle'};</aside>
+                <aside>spaceship = {type: 'alien'}; </aside>
+                <aside>// TypeError: Assignment to constant variable.</aside>
+                <aside>spaceship.type = 'alien'; </aside>
+                <aside>// Changes the value of the type property</aside>
+                <aside>spaceship.speed = 'Mach 5';</aside>
+                <aside>// Creates a new key of 'speed' with a value of 'Mach 5'</aside>
+            </div>
+            <p>
+                You can delete a property from an object with the delete operator.
+            </p>
+            <div class="box">
+                <em>Example for delete prop</em>
+                <aside>const spaceship = {'Fuel Type': 'Turbo Fuel', homePlanet: 'Earth', mission: 'Explore the universe' };</aside>
+                <aside>delete spaceship.mission;  // Removes the mission property</aside>
+            </div>
+        </section>
+        <section>
+            <h3>Methods</h3>
+            <p>
+                When the data stored on an object is a function we call that a method. A property is what an object has, while a method is what an object does.
+            </p>
+            <p>
+                Do object methods seem familiar? That’s because you’ve been using them all along! For example console is a global javascript object and .log() is a method on that object. Math is also a global javascript object and .floor() is a method on it.
+            </p>
+            <p>
+                We can include methods in our object literals by creating ordinary, comma-separated key-value pairs. The key serves as our method’s name, while the value is an anonymous function expression.
+            </p>
+            <div class="box">
+                <em>Example</em>
+                <aside>
+                    const alienShip = {invade: function () { 
+                </aside>
+                <aside>console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.') } };</aside>
+            </div>
+            <p>
+                With the new method syntax introduced in ES6 we can omit the colon and the function keyword.
+            </p>
+            <div class="box">
+                <em>Example: function</em>
+                <aside>const alienShip = { invade () { </aside>
+                <aside>console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')}};</aside>
+            </div>
+            <p>
+                Object methods are invoked by appending the object’s name with the dot operator followed by the method name and parentheses:
+            </p>
+            <div class="box">
+                <em>Example: Object Method</em>
+                <aside>alienShip.invade(); // Prints 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'</aside>
+            </div>
+            <p>
+                1. Below the retreatMessage variable in the code editor, create an alienShip object. It should contain a method .retreat() which will console.log() the retreatMessage.
+            </p>
+            <p>
+                2. Add another method to your object literal. This method, .takeOff(), should console.log() the string 'Spim... Borp... Glix... Blastoff!'.
+            </p>
+            <p>
+                3. Invoke your two methods: first .retreat() then .takeOff().
+            </p>
+            <div class="box">
+                <em>Example: Exercise</em>
+                <aside>
+                    let alienShip = { retreat () {
+                </aside>
+                <aside>console.log('We no longer wish to conquer your planet. It is full of dogs, which we do not care for.')},</aside>
+                <aside>takeOff () {</aside>
+                <aside>console.log('Spim... Borp... Glix... Blastoff!') } };</aside>
+                <aside>alienShip.retreat();</aside>
+                <aside>alienShip.takeOff();</aside>
+                <aside>Output: We no longer wish to conquer your planet. It is full of dogs, which we do not care for. Spim... Borp... Glix... Blastoff!</aside>
+            </div>
+        </section>
+        <section>
+            <h3>Nested Objects</h3>
+            <p>
+                In application code, objects are often nested— an object might have another object as a property which in turn could have a property that’s an array of even more objects!
+            </p>
+            <p>
+                In our spaceship object, we want a crew object. This will contain all the crew members who do important work on the craft. Each of those crew members are objects themselves. They have properties like name, and degree, and they each have unique methods based on their roles. We can also nest other objects in the spaceship such as a telescope or nest details about the spaceship’s computers inside a parent nanoelectronics object.
+            </p>
+            <div class="box">
+                <em>Example</em>
+                <aside> const spaceship = {telescope: { yearBuilt: 2018, model: '91031-XLT', focalLength: 2032 },</aside>
+                <aside>crew: {
+        captain: { 
+            name: 'Sandra', 
+            degree: 'Computer Engineering', 
+            encourageTeam() { console.log('We got this!') } 
+         } },</aside>
+                <aside>
+                    engine: {
+        model: 'Nimbus2000'
+     },
+     nanoelectronics: {
+         computer: {
+            terabytes: 100,
+            monitors: 'HD'
+         },
+                </aside>
+                <aside>
+                    'back-up': {
+           battery: 'Lithium',
+           terabytes: 50
+         }
+    }
+}; 
+                </aside>
+            </div>
+            <p>
+                We can chain operators to access nested properties. We’ll have to pay attention to which operator makes sense to use in each layer. It can be helpful to pretend you are the computer and evaluate each expression from left to right so that each operation starts to feel a little more manageable.
+            </p>
+            <div class="box">
+                <aside>
+                    spaceship.nanoelectronics['back-up'].battery; // Returns 'Lithium'
+                </aside>
+            </div>
+            <p>
+                In the preceding code:
+            </p>
+            <li>
+                First the computer evaluates spaceship.nanoelectronics, which results in an object containing the back-up and computer objects.
+            </li>
+            <li>
+                We accessed the back-up object by appending ['back-up'].
+            </li>
+            <li>
+                The back-up object has a battery property, accessed with .battery which returned the value stored there: 'Lithium'
+            </li>
+        </section>
+        <section>
+            <h3>Pass By Reference</h3>
+            <p>Objects are <em>passed by reference</em> 
+            This means when we pass a variable assigned to an object into a function as an argument, the computer interprets the parameter name as pointing to the space in memory holding that object. As a result, functions which change object properties actually mutate the object permanently (even when the object is assigned to a const variable).</p>
+            <div class="box">
+                <em>Example</em>
+                <aside>const spaceship = {homePlanet : 'Earth',color : 'silver'};</aside>
+                <aside>let paintIt = obj => {obj.color = 'glorious gold'};</aside>
+                <aside>paintIt(spaceship);</aside>
+                <aside>spaceship.color // Returns 'glorious gold'</aside>
+            </div>
+            <p>
+                Our function paintIt() permanently changed the color of our spaceship object. However, reassignment of the spaceship variable wouldn’t work in the same way:
+            </p>
+            <div class="box">
+                <em>Example</em>
+                <aside>let spaceship = {homePlanet : 'Earth',color : 'red'};</aside>
+                <aside>let tryReassignment = obj => {obj = {identified : false, 'transport type' : 'flying'}</aside>
+                <aside>console.log(obj) // Prints {'identified': false, 'transport type': 'flying'}};</aside>
+                <aside>tryReassignment(spaceship) // The attempt at reassignment does not work.</aside>
+                <aside>spaceship // Still returns {homePlanet : 'Earth', color : 'red'};</aside>
+                <aside>spaceship = {identified : false, 'transport type': 'flying'}; // Regular reassignment still works.</aside>
+            </div>
+            <p>
+                Let’s look at what happened in the code example:
+            </p>
+            <li>
+                We declared this spaceship object with let. This allowed us to reassign it to a new object with identified and 'transport type' properties with no problems.
+            </li>
+            <li>
+                When we tried the same thing using a function designed to reassign the object passed into it, the reassignment didn’t stick (even though calling console.log() on the object produced the expected result).
+            </li>
+            <li>
+                When we passed spaceship into that function, obj became a reference to the memory location of the spaceship object, but not to the spaceship variable. This is because the obj parameter of the tryReassignment() function is a variable in its own right. The body of tryReassignment() has no knowledge of the spaceship variable at all!
+            </li>
+            <li>
+                When we did the reassignment in the body of tryReassignment(), the obj variable came to refer to the memory location of the object {'identified' : false, 'transport type' : 'flying'}, while the spaceship variable was completely unchanged from its earlier value.
+            </li>
+        </section>
+        <section>
+            <h3>Looping Through Objects</h3>
+            <p>
+                Loops are programming tools that repeat a block of code until a condition is met. We learned how to iterate <em>(make repeated use of a mathematical or computational procedure, applying it each time to the result of the previous application; perform iteration.)</em> through arrays using their numerical indexing, but the key-value pairs in objects aren’t ordered!
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in">JavaScript has given us alternative solution for iterating through objects with the for...in syntax .</a> 
+            </p>
+            <p>
+                for...in will execute a given block of code for each property in an object.
+            </p>
+            <div class="box">
+                <aside>let spaceship = {crew: {captain: { name: 'Lily', degree: 'Computer Engineering', cheerTeam() { console.log('You got this!') } },</aside>
+                <aside>'chief officer': { name: 'Dan', degree: 'Aerospace Engineering', agree() { console.log('I agree, captain!') } },</aside>
+                <aside>medic: { name: 'Clementine', degree: 'Physics', announce() { console.log(`Jets on!`) } },</aside>
+                <aside>translator: {name: 'Shauna', degree: 'Conservation Science', powerFuel() { console.log('The tank is full!') } }}}; </aside>
+                <br>
+                <aside>// for...in for (let crewMember in spaceship.crew) {console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`);}</aside>
+                <br>
+                <aside>// for (let crewMember in spaceship.crew) {console.log(`${spaceship.crew[crewMember].name}: ${spaceship.crew[crewMember].degree}`);}</aside>
+                <br>
+                <aside>// output: 1st</aside>
+                <aside>captain: Lilly</aside>
+                <aside>CHIEF OFFICER: Dan. MEDIC: Clementine. TRANSLATOR: Shauna</aside>
+                <br>
+                <aside>// output: 2nd code</aside>
+                <aside>Lily: Computer Engineering
+Dan: Aerospace Engineering
+Clementine: Physics
+Shauna: Conservation Science</aside>
+            </div>
+            <p>
+                Our for...in will iterate through each element of the spaceship.crew object. In each iteration, the variable crewMember is set to one of spaceship.crew‘s keys, enabling us to log a list of crew members’ role and name.
+            </p>
+        </section>
+        <section>
+            <h3>Review Objects</h3>
+            <p>
+                Way to go! You’re well on your way to understanding the mechanics of objects in JavaScript. By building your own objects, you will have a better understanding of how JavaScript built-in objects work as well. You can also start imagining organizing your code into objects and modeling real world things in code.
+
+            </p>
+            <p>
+                Let’s review what we learned in this lesson:
+            </p>
+            <li>
+                Objects store collections of key-value pairs.
+            </li>
+            <li>Each key-value pair is a property—when a property is a function it is known as a method.</li>
+            <li>
+                An object literal is composed of comma-separated key-value pairs surrounded by curly braces.
+            </li>
+            <li>
+                You can access, add or edit a property within an object by using dot notation or bracket notation.
+            </li>
+            <li>
+                We can add methods to our object literals using key-value syntax with anonymous function expressions as values or by using the new ES6 method syntax.
+            </li>
+            <li>
+                We can navigate complex, nested objects by chaining operators.
+            </li>
+            <li>
+                Objects are mutable—we can change their properties even when they’re declared with const
+            </li>
+            <li>
+                Objects are passed by reference— when we make changes to an object passed into a function, those changes are permanent.
+            </li>
+            <li>
+                We can iterate through objects using the For...in syntax.
+            </li>
+        </section>
+    </div>
+    <div class="footer">
+        <footer>
+            <aside style="float:left;"><a href="./loop.html">Previous (Loop)</a></aside>
+            <aside style="float:right;"><a href="./Advanced.html">Next (Advanced Objects)</a></aside>
+        </footer>
+    </div>
+</body>
+</html>

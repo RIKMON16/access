@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Documentation</title>
+    <link rel="stylesheet" href="./style/css/java.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul id="nav">
+                <li>Europeous Digital</li>
+                <li>Learn JavaScript</li>
+                <li>documentation</li>
+                <li><a href="./javaexamples.html">Exercises</a></li>
+                <li><a href="./javacheatsheet.html">Cheat Sheet</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="container">
+            <section class="var">
+                <h2>Variables</h2>
+                <p>In programming, a <em>variable</em> is a container for value. You can think of variables as little containers
+                for information that live in a computer's memory. Information stored in variables such as a username, account number, 
+                or even personalied greeting can then be found in memory.
+                </p>
+                <p>
+                    Variables also provide a way of labeling data with a descriptive name, so our programs can be understood more clearly
+                    by the reader and ourselves.
+                </p>
+                <p>
+                    In short variable label & store data in memory. There are only few things you can do with variables.
+                    <ol>
+                        <li>Create a variable with a descriptive name.</li>
+                        <li>Store or updated information stored in a variable</li>
+                        <li>Reference or "get" information stored in a variable</li>
+                    </ol>
+                </p>
+                <span>
+                    Its important to distinguish that variables are not values; they contain values and represent with a name.
+                </span>
+                <p>
+                    In the lesson, we will cover how to use <strong>var</strong>, <strong>let</strong> and <strong>const</strong>
+                    keywords to create variables.
+                </p>
+            </section>
+            <section class="create">
+                <h2>Create a Variable: Var</h2>
+                <p>
+                    There were a lot of changes introduced in the ES6 (ECMAScript2015) version of JavaScript in 2015. One of the biggest
+                    changes was two new keywords, <strong>let</strong>  &  <strong>const</strong>, to create or <em>declare</em> variables.
+                    Prior to the ES6, programmers could only use the <strong>var</strong> keyword to declare variables. 
+                </p>
+                <p class="color">
+                    var myName = 'Arya';
+                    console.log(myName);
+                    // Output: Arya
+                </p>
+                <p>
+                    Let's consider the example above:
+                    <ol>
+                        <li id="left"><strong>var</strong>, short for a variable, is a JavaScript keyword that creates, or declares, a new variable.</li>
+                        <li id="left">
+                            <strong>myName</strong>, is the variable's name. Capitalizing in this way is a standard convention in JavaScript called camel casing. In camel casing you group words
+                            into one, the first word is lowercase, then every word that follows will have its first letter uppercased. (e.g.
+                            camelCaseEverything).
+                        </li>
+                        <li id="left">
+                            <strong>=</strong>, is the assignment operator. It assigns the value (<strong>'Arya'</strong>), to the variable <strong>myName</strong>
+                        </li>
+                        <li id="left">
+                            <strong>'Arya'</strong> is the value assigned ( <strong>=</strong>) to the variable <strong>myName</strong>. You can
+                            also say that
+                            <strong>myName</strong>, variable is <em>initialized</em> with a value of <strong>'Arya'</strong>
+                        </li>
+                        <li id="left">
+                            After the variable is declared, the string value <strong>'Arya'</strong> is printed to the console by 
+                            referencing the variable name: <strong>console.log(myName)</strong>
+                        </li>
+                    </ol>                    
+                </p>
+            </section>
+            <section class="create2">
+                <h2>Continue Para 2</h2>
+                <p>
+                    There are few general rules for naming variables:
+                <ul>
+                    <li id="left">
+                        Variable names cannot start with numbers.
+                    </li>
+                    <li id="left">
+                        Variable names are case sensitive, so <strong>myName</strong> and <strong>myname</strong> would be
+                        different variables. It is bad practice to create two variables that have the same name using different cases.
+                    </li>
+                    <li id="left">
+                        Variable names cannot be the same as <em>keywords.</em> For a comprehensive list of keywords check out <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords">MDN
+                            Keyword documentation</a>
+                    </li>
+                </ul>
+                </p>
+                <p>
+                    Note: In the next exercises, we will learn why ES6’s <strong>let</strong> & <strong>const</strong> are the preferred
+                    variable keywords by many programmers. Because there is still a ton of code written prior to ES6, it’s
+                    helpful to be familiar with the pre-ES6 <strong>var</strong> keyword. If you want to learn more about
+                    <strong>var</strong> and the quirks associated with it, check out the
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">MDN Documentation</a>
+                </p>
+            </section>
+            <section class="let">
+                <h2>Create a Variable: let</h2>
+                <p>
+                    As mentioned in the previous exercise, the <strong>let</strong> keyword was introduced in ES6. The <strong>let</strong> 
+                    keyword signals that the variable can be reassigned a different value. Take a look at the example:
+                </p>
+                <p class="color">
+                    let meal = 'Enchiladas';
+                    console.log(meal); // Output: Enchiladas
+                    meal = 'Burrito';
+                    console.log(meal); // Output: Burrito
+                </p>
+                <p>
+                    Another concept that we should be aware of when using <strong>let </strong> (and even, <strong>var </strong>) is that we can declare a variable
+                    without assigning the variable a value. In such a case, the variable will be automatically initialized with a value of <strong>undefined:</strong> 
+                </p>
+                <p class="color">
+                    let price;
+                    console.log(price); // Output: undefined
+                    price = 350;
+                    console.log(price); // Output: 350
+                </p>
+                <p>
+                    Notice in the example above:
+                    <ul>
+                        <li>
+                            If we don’t assign a value to a variable declared using the <strong>let </strong> keyword, it automatically has a value of
+                            <b>undefined</b>
+                        </li>
+                        <li>
+                            We can reassign the value of the variable.
+                        </li>
+                    </ul>
+                </p>
+            </section>
+            <section class="const">
+                <h2>Create a Variable: const</h2>
+                <p>
+                    The 
+                    -<b> const</b>keyword was also introduced in ES6, & is short for the word constant. Just like the <b>var</b> and <b>let</b> you can store any value in <b>const</b> variable.
+                    The way you declare a <b>const</b> variable & assign a value to it follows the same structure as <b>let</b> & <b>var</b>. 
+                    Take a look at the following example:
+                </p>
+                <p class="color">
+                    const myName = 'Gilberto';
+                    console.log(myName); // Output: Gilberto
+                </p>
+                <p>
+                    However, a <b>const</b> variable cannot be reassigned because it is <i>constant.</i> If you try to reassign a const variable, you’ll
+                    get a <b>TypeError.</b>
+                </p>
+                <p class="color">
+                    Constant variables must be assigned a value when declared. If you try to declare a const variable without a value,
+                    you’ll get a SyntaxError.
+                </p>
+                <p>
+                    If you’re trying to decide between which keyword to use, let or const, think about whether you’ll need to reassign the
+                    variable later on. If you do need to reassign the variable use let, otherwise, use const.
+                </p>
+            </section>
+            <section class="math">
+                <h2>Mathematical Assignment Operators</h2>
+                <p>
+                    Let’s consider how we can use variables and math operators to calculate new values and assign them to a variable. Check
+                    out the example below:
+                </p>
+                <p class="color">
+                    let w = 4;
+                    w = w + 1;
+                    
+                    console.log(w); // Output: 5
+                </p>
+                <p>
+                    In the example above, we created the variable w with the number 4 assigned to it. The following line, w = w + 1,
+                    increases the value of w from 4 to 5.
+                </p>
+                <p>
+                    Another way we could have reassigned w after performing some mathematical operation on it is to use built-in
+                    mathematical assignment operators. We could re-write the code above to be:
+                </p>
+                <p class="color">
+                    let w = 4;
+                    w += 1;
+                    
+                    console.log(w); // Output: 5
+                </p>
+                <p>
+                    In the second example, we used the += assignment operator to reassign w. We’re performing the mathematical operation of
+                    the first operator + using the number to the right, then reassigning w to the computed value. 
+                    We also have access to other mathematical assignment operators: -=, *=, and /= which work in a similar fashion.
+                </p>
+                <p class="color">
+                    let x = 20;
+                    x -= 5; // Can be written as x = x - 5
+                    console.log(x); // Output: 15
+                    
+                    let y = 50;
+                    y *= 2; // Can be written as y = y * 2
+                    console.log(y); // Output: 100
+                    
+                    let z = 8;
+                    z /= 2; // Can be written as z = z / 2
+                    console.log(z); // Output: 4
+                </p>
+            </section>
+            <section class="increment">
+                <h2>The Increment and Decrement Operator</h2>
+                <p>
+                    Other mathematical assignment operators include the increment operator (++) and decrement operator (--).
+                </p>
+                <p>
+                    The increment operator will increase the value of the variable by 1. The decrement operator will decrease the value of
+                    the variable by 1. For example:
+                </p>
+                <p class="color">
+                    let a = 10;
+                    a++;
+                    console.log(a); // Output: 11
+                </p>
+                <p class="color">
+                    let b = 20;
+                    b--;
+                    console.log(b); // Output: 19
+                </p>
+                <p>
+                    Just like the previous mathematical assignment operators (+=, -=, *=, /=), the variable’s value is updated and assigned
+                    as the new value of that variable.
+                </p>
+            </section>
+            <section class="string">
+                <h2>String Concatenation with Variables</h2>
+                <p>
+                    In previous exercises, we assigned strings to variables. Now, let’s go over how to connect, or concatenate, strings in
+                    variables. The + operator can be used to combine two string values even if those values are being stored in variables:
+                </p>
+                <p class="color">
+                    let myPet = 'armadillo';
+                    console.log('I own a pet ' + myPet + '.');
+                    // Output: 'I own a pet armadillo.'
+                </p>
+                <p>
+                    In the example above, we assigned the value 'armadillo' to the myPet variable. On the second line, the + operator is
+                    used to combine three strings: 'I own a pet', the value saved to myPet, and '.'. We log the result of this concatenation
+                    to the console as:
+                </p>
+                <p class="color">
+                    I own a pet armadillo.
+                </p>
+            </section>
+            <section class="interpolation">
+                <h2>String Interpolation</h2>
+                <p>
+                    In the ES6 version of JavaScript, we can insert, or interpolate (insert (something of a different nature) into something else.), variables into strings using template literals. Check
+                    out the following example where a template literal is used to log strings together:
+                </p>
+                <p class="color">
+                    const myPet = 'armadillo';
+                    console.log(`I own a pet ${myPet}.`);
+                    // Output: I own a pet armadillo.
+                </p>
+                <p>
+                    Notice that:
+                    <ul>
+                        <li id="left">
+                            a template literal is wrapped by backticks ` (this key is usually located on the top of your keyboard, left of the 1
+                            key).
+                        </li>
+                        <li id="left">
+                            Inside the template literal, you’ll see a placeholder, ${myPet}. The value of myPet is inserted into the template
+                            literal.
+                        </li>
+                        <li id="left">
+                            When we interpolate `I own a pet ${myPet}.`, the output we print is the string: 'I own a pet armadillo.'
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    One of the biggest benefits to using template literals is the readability of the code. Using template literals, you can
+                    more easily tell what the new string will be. You also don’t have to worry about escaping double quotes or single
+                    quotes.
+                </p>
+            </section>
+            <section class="type">
+                <h2>type of operator</h2>
+                <p>
+                    While writing code, it can be useful to keep track of the data types of the variables in your program. If you need to
+                    check the data type of a variable’s value, you can use the typeof operator.
+                    
+                    The typeof operator checks the value to its right and returns, or passes back, a string of the data type.
+                </p>
+                <p class="color">
+                    const unknown1 = 'foo';
+                    console.log(typeof unknown1); // Output: string
+                    
+                    const unknown2 = 10;
+                    console.log(typeof unknown2); // Output: number
+                    
+                    const unknown3 = true;
+                    console.log(typeof unknown3); // Output: boolean
+                </p>
+                <p>
+                    Let’s break down the first example. Since the value unknown1 is 'foo', a string, typeof unknown1 will return 'string'
+                </p>
+            </section>
+            <section class="review">
+                <h2>Review Variables</h2>
+                <p>
+                    Nice work! This lesson introduced you to variables, a powerful concept you will use in all your future programming
+                    endeavors.
+                </p>
+                <p>
+                    Let’s review what we learned:
+                    <ul>
+                        <li id="left">
+                            Variables hold reusable data in a program and associate it with a name.
+                        </li>
+                        <li id="left">
+                            Variables are stored in memory.
+                        </li>
+                        <li id="left">
+                            The var keyword is used in pre-ES6 versions of JS.
+                        </li>
+                        <li id="left">
+                            let is the preferred way to declare a variable when it can be reassigned, and const is the preferred way to declare a
+                            variable with a constant value.
+                        </li>
+                        <li id="left">
+                            Variables that have not been initialized store the primitive data type undefined.
+                        </li>
+                        <li id="left">
+                            Mathematical assignment operators make it easy to calculate a new value and assign it to the same variable.
+                        </li>
+                        <li id="left">
+                            The + operator is used to concatenate strings including string values held in variables
+                        </li>
+                        <li id="left">
+                            In ES6, template literals use backticks ` and ${} to interpolate values into a string.
+                        </li>
+                        <li id="left">
+                            The typeof keyword returns the data type (as a string) of a value.
+                        </li>
+                    </ul>
+                </p>
+            </section>
+            <section class="chal">
+                <h2>Challenge yourself</h2>
+                <p>
+                    To learn more about variables take on these challenges!
+                    <ul>
+                        <li id="left">
+                            Create variables and manipulate the values
+                        </li>
+                        <li id="left">
+                            Check what happens when you try concatenating strings using variables of different data types
+                        </li>
+                        <li id="left">
+                            Interpolate multiple variables into a string
+                        </li>
+                        <li id="left">See what happens when you use console.log() on variables declared by different keywords (const, let, var) before they’re
+                        defined. For example:</li>
+                        <p class="color">console.log(test1);
+                        
+                        const test1 = 'figuring out quirks';</p>
+                        <li id="left">Find the data type of a variable’s value using the typeof keyword on a variable.</li>
+                    </ul>
+                    <p>
+                        Use typeof to find the data type of the resulting value when you concatenate variables containing two different data
+                        types.
+                    </p>
+                </p>
+            </section>
+        </div>
+        <div class="flex">
+            <article class="condition">
+                <h2>What are Conditional Statements?</h2>
+                <p>
+                    In life, we make decisions based on circumstances. Think of an everyday decision as mundane as falling asleep — if we
+                    are tired, we go to bed, otherwise, we wake up and start our day. 
+                    These if-else decisions can be modeled in code by creating conditional statements. A conditional statement checks a
+                    specific condition(s) and performs a task based on the condition(s).
+                    
+                    In this lesson, we will explore how programs make decisions by evaluating conditions and introduce logic into our code!
+                    We’ll be covering the following concepts:
+                    <ul>
+                        <li id= "left">if, else if, and else statements</li>
+                        <li id= "left">comparison operators</li>
+                        <li id= "left">logical operators</li>
+                        <li id= "left">truthy vs falsy values</li>
+                        <li id= "left">ternary operators</li>
+                        <li id= "left">switch statement</li>
+                    </ul>
+                </p>
+            </article>
+            <article class="state">
+                <h2>if statement</h2>
+                <p>
+                    We often perform a task based on a condition. For example, if the weather is nice today, then we will go outside. If the
+                    alarm clock rings, then we’ll shut it off. If we’re tired, then we’ll go to sleep.
+                    
+                    In programming, we can also perform a task based on a condition using an if statement:
+                </p>
+                <p class="color">
+                    if (true) {
+                    console.log('This message will print!');
+                    }
+                    // Prints: This message will print!
+                </p>
+                <p>
+                    Notice in the example above, we have an if statement. The if statement is composed of:
+                    <ul>
+                        <li id= "left">
+                            The if keyword followed by a set of parentheses () which is followed by a code block, or block statement, indicated by a
+                            set of curly braces {}
+                        </li>
+                        <li id= "left">
+                            Inside the parentheses (), a condition is provided that evaluates to true or false.
+                        </li>
+                        <li id= "left">
+                            If the condition evaluates to true, the code inside the curly braces {} runs, or executes.
+                        </li>
+                        <li id= "left">If the condition evaluates to false, the block won’t execute.</li>
+                    </ul>
+                </p>
+                <p>In simple words if statements use the boolean method to perform the task.
+                </p>
+            </article>
+            <article class="else">
+                <h2>if else statements</h2>
+                <p>
+                    In the previous exercise, we used an if statement that checked a condition to decide whether or not to run a block of
+                    code. In many cases, we’ll have code we want to run if our condition evaluates to false.
+                </p>
+                <p>
+                    If we wanted to add some default behavior to the if statement, we can add an else statement to run a block of code when
+                    the condition evaluates to false. Take a look at the inclusion of an else statement:
+                </p>
+                <p class="color">
+                    if (false) {
+                    console.log('The code in this block will not run.');
+                    } else {
+                    console.log('But the code in this block will!');
+                    }
+                    
+                    // Prints: But the code in this block will!
+                </p>
+                <p>
+                    An else statement must be paired with an if statement, and together they are referred to as an if...else statement.
+                    In the example above, the else statement:
+                    <ul>
+                        <li id="left">Uses the else keyword following the code block of an if statement.</li>
+                        <li id="left">Has a code block that is wrapped by a set of curly braces {}.</li>
+                        <li id="left">The code inside the else statement code block will execute when the if statement’s condition evaluates to false.</li>
+                    </ul>
+                    if...else statements allow us to automate solutions to yes-or-no questions, also known as binary decisions
+                </p>
+            </article>
+        </div>
+        <div class="flex">
+            <section class="operators">
+                <h2>comparison operators</h2>
+                <p>
+                    When writing conditional statements, sometimes we need to use different types of operators to compare values.
+                    These
+                    operators are called comparison operators.
+                </p>
+                <p>
+                    Here is a list of some handy comparison operators and their syntax:
+                    <ul>
+                        <li id="left">Less than: `<` </li>
+                        <li id="left">Greater than: >  </li>
+                        <li id="left">Less than or equal to: '<='</li>
+                        <li id="left">Greater than or equal to: >=</li>
+                        <li id="left">Is equal to: ===</li><li id="left">Is not equal to: !==</li>
+                    </ul>
+                </p>
+                <p>
+                    Comparison operators compare the value on the left with the value on the right. For instance:
+                </p>
+                <p class="color">
+                    10 < 12 // Evaluates to true
+                </p>
+                <p>
+                    It can be helpful to think of comparison statements as questions. When the answer is “yes”, the statement evaluates to
+                    true, and when the answer is “no”, the statement evaluates to false. The code above would be asking: is 10 less than 12?
+                    Yes! So 10 `<` 12 evaluates to true. We can also use comparison operators on different data types like strings:
+                </p>
+                <p class="color">
+                    'apples' === 'oranges' // false
+                </p>
+                <p>
+                    In the example above, we’re using the identity operator (===) to check if the string 'apples' is the same as the string
+                    'oranges'. Since the two strings are not the same, the comparison statement evaluates to false.
+                    
+                    All comparison statements evaluate to either true or false and are made up of:
+                    
+                    Two values that will be compared.
+                    An operator that separates the values and compares them accordingly (>, <, <=,>=,===,!==).
+                </p>
+            </section>
+        </div>
+        <div class="normal">
+            <h3>Logical Operators</h3>
+            <article class="logics">
+                <aside>
+                    Working with conditionals means that we will be using booleans, true or false values. In JavaScript, there are operators
+                    that work with boolean values known as logical operators. We can use logical operators to add more sophisticated logic
+                    to our conditionals. There are three logical operators:
+                    <dl>
+                        <dd>the and operator (&&)</dd>
+                        <dd>the or operator (||)</dd>
+                        <dd>the not operator, otherwise known as the bang operator (!)</dd>
+                    </dl>
+                    When we use the && operator, we are checking that two things are true:
+                    <aside class="code">
+                        if (stopLight === 'green' && pedestrians === 0) {
+                        console.log('Go!');
+                        } else {
+                        console.log('Stop');
+                        }
+                    </aside>
+                    <aside>
+                        When using the && operator, both conditions must evaluate to true for the entire condition to evaluate to true and
+                        execute. Otherwise, if either condition is false, the && condition will evaluate to false and the else block will
+                        execute.
+                        If we only care about either condition being true, we can use the || operator:
+                        <aside class="code">
+                            if (day === 'Saturday' || day === 'Sunday') {
+                            console.log('Enjoy the weekend!');
+                            } else {
+                            console.log('Do some work.');
+                            }
+                        </aside>
+                        When using the || operator, only one of the conditions must evaluate to true for the overall statement to evaluate to
+                        true. In the code example above, if either day === 'Saturday' or day === 'Sunday' evaluates to true the if‘s condition
+                        will evaluate to true and its code block will execute. If the first condition in an || statement evaluates to true, the
+                        second condition won’t even be checked. Only if day === 'Saturday' evaluates to false will day === 'Sunday' be
+                        evaluated. The code in the else statement above will execute only if both comparisons evaluate to false.
+                        The ! not operator reverses, or negates, the value of a boolean:
+                        <aside class="code">
+                            let excited = true;
+                            console.log(!excited); // Prints false
+                            
+                            let sleepy = false;
+                            console.log(!sleepy); // Prints true
+                        </aside>
+                        Essentially, the ! operator will either take a true value and pass back false, or it will take a false value and pass
+                        back true.
+                        
+                        Logical operators are often used in conditional statements to add another layer of logic to our code.
+                    </aside>
+                </aside>
+                <aside>
+                    Example: Insert two variables mood and tirednessLevel. Give mood = sleepy and tirednessLevel = 6
+                    Let’s create an if...else statement that checks if mood is 'sleepy' and tirednessLevel is greater than 8.
+                    
+                    If both conditions evaluate to true, then console.log() the string 'time to sleep'. Otherwise, we should console.log()
+                    'not bed time yet'.
+                    
+                    After you press “Run”, play around with the || operator and the ! operator! What happens if you negate the value of the
+                    entire statement with ! and switch to || instead of &&?
+                </aside>
+                <aside class="code">
+                    let mood = 'sleepy';
+                    let tirednessLevel = 6;
+                    
+                    if (mood === 'sleepy' != tirednessLevel > 8){
+                    console.log('time to sleep')
+                    } else {
+                    console.log('not bed time yet');
+                    }
+                    // output: will be <b>time to sleep</b> as operator != gives opposite value.
+                </aside>
+                <aside class="code">
+                    let mood = 'sleepy';
+                    let tirednessLevel = 6;
+                </aside>
+                <aside class="code">    
+                    if (mood === 'sleepy' && tirednessLevel > 8){
+                    console.log('time to sleep')
+                    } else {
+                    console.log('not bed time yet');
+                    }
+                    // output: will be <b>not bed time yet</b>
+                </aside>
+                <aside class="code">
+                    let mood = 'sleepy';
+                    let tirednessLevel = 6;
+                    
+                    if (mood === 'sleepy' || tirednessLevel > 8){
+                    console.log('time to sleep')
+                    } else {
+                    console.log('not bed time yet');
+                    }
+                    // output will be <b>time to sleep</b> as or operator satisfy one statement.
+                </aside>
+            </article>    
+            <h3 class="unica">Truthy and Falsy</h3>
+            <article class="trusthy">
+                <aside>
+                    Let’s consider how non-boolean data types, like strings or numbers, are evaluated when checked inside a condition.
+                    
+                    Sometimes, you’ll want to check if a variable exists and you won’t necessarily want it to equal a specific value —
+                    you’ll only check to see if the variable has been assigned a value.
+                    
+                    Here’s an example:
+                    <aside class="code">
+                        let myVariable = 'I Exist!';
+                        
+                        if (myVariable) {
+                        console.log(myVariable)
+                        } else {
+                        console.log('The variable does not exist.')
+                        }
+                    </aside>
+                    The code block in the if statement will run because myVariable has a truthy value; even though the value of myVariable
+                    is not explicitly the value true, when used in a boolean or conditional context, it evaluates to true because it has
+                    been assigned a non-falsy value.
+                    <dl>
+                        So which values are falsy— or evaluate to false when checked as a condition? The list of falsy values includes:
+                        <dd>0</dd>
+                        <dd>Empty strings like "" or ''</dd>
+                        <dd>null which represent when there is no value at all</dd>
+                        <dd>undefined which represent when a declared variable lacks a value</dd>
+                        <dd>NaN, or Not a Number</dd>
+                    </dl>
+                    <aside>
+                        Here’s an example with numbers:
+                    <aside class="code">
+                        let numberOfApples = 0;
+                        
+                        if (numberOfApples){
+                        console.log('Let us eat apples!');
+                        } else {
+                        console.log('No apples left!');
+                        }
+                        
+                        // Prints 'No apples left!'
+                    </aside>
+                    The condition evaluates to false because the value of the numberOfApples is 0. Since 0 is a falsy value, the code block
+                    in the else statement will run.
+                    </aside>
+                </aside>
+            </article>
+            <h3 class="unica">Truthy & Falsy Statements</h3>
+            <article class="falsy">
+                <aside>
+                    Truthy and falsy evaluations open a world of short-hand possibilities!
+                    
+                    Say you have a website and want to take a user’s username to make a personalized greeting. Sometimes, the user does not
+                    have an account, making the username variable falsy. The code below checks if username is defined and assigns a default
+                    string if it is not:
+                    <aside class="code">
+                        let defaultName;
+                        if (username) {
+                        defaultName = username;
+                        } else {
+                        defaultName = 'Stranger';
+                        }
+                    </aside>
+                    If you combine your knowledge of logical operators you can use a short-hand for the code above. In a boolean condition,
+                    JavaScript assigns the truthy value to a variable if you use the || operator in your assignment:
+                    <aside class="code">
+                        let defaultName = username || 'Stranger';
+                    </aside>
+                    Because || or statements check the left-hand condition first, the variable defaultName will be assigned the actual value
+                    of username if is truthy, and it will be assigned the value of 'Stranger' if username is falsy. This concept is also
+                    referred to as short-circuit evaluation.
+                </aside>
+            </article>
+            <h3>Ternary Operator</h3>
+            <article class="ternary">
+                <aside>
+                    In the spirit of using short-hand syntax, we can use a ternary operator to simplify an if...else statement.
+                    
+                    Take a look at the if...else statement example:
+                    <aside class="code">
+                        let isNightTime = true;
+                        
+                        if (isNightTime) {
+                        console.log('Turn on the lights!');
+                        } else {
+                        console.log('Turn off the lights!');
+                        }
+                    </aside>
+                    We can use a ternary operator to perform the same functionality:
+                    <aside class="code">
+                        isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lights!');
+                    </aside>
+                    In the example above:
+                    <dt>
+                        <dd>The condition, isNightTime, is provided before the ?.</dd>
+                        <dd>
+                            Two expressions follow the ? and are separated by a colon :.
+                        </dd>
+                        <dd>If the condition evaluates to true, the first expression executes.</dd>
+                        <dd>
+                            If the condition evaluates to false, the second expression executes.
+                        </dd>
+                    </dt>
+                    Like if...else statements, ternary operators can be used for conditions which evaluate to true or false.
+                </aside>
+            </article>
+            <h3>Else if statements</h3>
+            <article class="else">
+                <aside>
+                    We can add more conditions to our if...else with an else if statement. The else if statement allows for more than two
+                    possible outcomes. You can add as many else if statements as you’d like, to make more complex conditionals!
+                    
+                    The else if statement always comes after the if statement and before the else statement. The else if statement also
+                    takes a condition. Let’s take a look at the syntax:
+                    <aside class="code">
+                        let stopLight = 'yellow';
+                        
+                        if (stopLight === 'red') {
+                        console.log('Stop!');
+                        } else if (stopLight === 'yellow') {
+                        console.log('Slow down.');
+                        } else if (stopLight === 'green') {
+                        console.log('Go!');
+                        } else {
+                        console.log('Caution, unknown!');
+                        }
+                    </aside>
+                    The else if statements allow you to have multiple possible outcomes. if/else if/else statements are read from top to
+                    bottom, so the first condition that evaluates to true from the top to bottom is the block that gets executed.
+                    
+                    In the example above, since stopLight === 'red' evaluates to false and stopLight === 'yellow' evaluates to true, the
+                    code inside the first else if statement is executed. The rest of the conditions are not evaluated. If none of the
+                    conditions evaluated to true, then the code in the else statement would have executed.
+                </aside>
+            </article>
+            <h3>The switch keyword</h3>
+            <article class="switch">
+                <aside>
+                    else if statements are a great tool if we need to check multiple conditions. In programming, we often find ourselves
+                    needing to check multiple values and handling each of them differently. For example:
+                    <aside class="code">
+                        let groceryItem = 'papaya';
+                        
+                        if (groceryItem === 'tomato') {
+                        console.log('Tomatoes are $0.49');
+                        } else if (groceryItem === 'papaya'){
+                        console.log('Papayas are $1.29');
+                        } else {
+                        console.log('Invalid item');
+                        }
+                    </aside>
+                    In the code above, we have a series of conditions checking for a value that matches a groceryItem variable. Our code
+                    works fine, but imagine if we needed to check 100 different values! Having to write that many else if statements sounds
+                    like a pain!
+                    A switch statement provides an alternative syntax that is easier to read and write. A switch statement looks like this:
+                    <aside class="code">
+                        let groceryItem = 'papaya';
+                        
+                        switch (groceryItem) {
+                        case 'tomato':
+                        console.log('Tomatoes are $0.49');
+                        break;
+                        case 'lime':
+                        console.log('Limes are $1.49');
+                        break;
+                        case 'papaya':
+                        console.log('Papayas are $1.29');
+                        break;
+                        default:
+                        console.log('Invalid item');
+                        break;
+                        }
+                        
+                        // Prints 'Papayas are $1.29'
+                    </aside>
+                    <dt>
+                        <dd>The switch keyword initiates the statement and is followed by ( ... ), which contains the value that each case will
+                        compare. In the example, the value or expression of the switch statement is groceryItem.
+                        </dd>
+                        <dd>
+                            Inside the block, { ... }, there are multiple cases. The case keyword checks if the expression matches the specified
+                            value that comes after it. The value following the first case is 'tomato'. If the value of groceryItem equalled
+                            'tomato', that case‘s console.log() would run.
+                        </dd>
+                        <dd>
+                            The value of groceryItem is 'papaya', so the third case runs— Papayas are $1.29 is logged to the console.
+                        </dd>
+                        <dd>
+                            The break keyword tells the computer to exit the block and not execute any more code or check any other cases inside the
+                            code block. Note: Without break keywords, the first matching case will run, but so will every subsequent case regardless
+                            of whether or not it matches—including the default. This behavior is different from if/else conditional statements that
+                            execute only one block of code.
+
+                        </dd>
+                        <dd>
+                            At the end of each switch statement, there is a default statement. If none of the cases are true, then the code in the
+                            default statement will run.
+                        </dd>
+
+                    </dt>
+                </aside>
+            </article>
+            <h3>Review</h3>
+            <article class="review">
+                <aside>
+                    Way to go! Here are some of the major concepts for conditionals:
+                    <dl>
+                        <li>
+                            An if statement checks a condition and will execute a task if that condition evaluates to true.
+                        </li>
+                        <li>
+                            if...else statements make binary decisions and execute different code blocks based on a provided condition.
+                        </li>
+                        <li>We can add more conditions using else if statements.</li>
+                        <li>Comparison operators, including <,>, <=,>=, ===, and !== can compare two values.</li>
+                        <li>
+                            The logical and operator, &&, or “and”, checks if both provided expressions are truthy.
+                        </li>
+                        <li>
+                            The logical operator ||, or “or”, checks if either provided expression is truthy.
+                        </li>
+                        <li>
+                            The bang operator, !, switches the truthiness and falsiness of a value.
+                        </li>
+                        <li>
+                            The ternary operator is shorthand to simplify concise if...else statements.
+                        </li>
+                        <li>
+                            A switch statement can be used to simplify the process of writing multiple else if statements. The break keyword stops
+                            the remaining cases from being checked and executed in a switch statement.
+                        </li>
+                    </dl>
+                </aside>
+            </article>
+            <br>
+            <article class="functions">
+                <h3>What are Functions?</h3>
+                    <aside>
+                        When first learning how to calculate the area of a rectangle, there’s a sequence of steps to calculate the correct
+                        answer:
+                        <dl>
+                            <li>
+                                Measure the width of the rectangle
+                            </li>
+                            <li>Measure the height of the rectangle.</li>
+                            <li>Multiply the width and height of the rectangle.</li>
+                        </dl>
+                        With practice, you can calculate the area of the rectangle without being instructed with these three steps every time.
+                        
+                        We can calculate the area of one rectangle with the following code:
+                        <aside class="code">
+                            Examples for function chapter
+                            <dl>
+                                <dd>const width = 10;</dd>
+                                <dd>const height = 6;</dd>
+                                <dd>const area =  width * height;</dd>
+                                <dd>console.log(area); // Output: 60</dd>
+                            </dl>
+                            <aside>Const is a fixed attribute</aside>
+                        </aside>
+                        Imagine being asked to calculate the area of three different rectangles:
+                        <aside class="code">
+                            <dl>
+                                // Area of the first rectangle
+                                <dd>const width1 = 10;</dd>
+                                <dd>const height1 = 6;</dd>
+                                <dd>const area1 =  width1 * height1;</dd>
+                            </dl>
+                            <dl>
+                                // Area of the second rectangle
+                                <dd>const width2 = 4;</dd>
+                                <dd>const height2 = 9;</dd>
+                                <dd>const area2 =  width2 * height2;</dd>
+                            </dl>
+                            <dl>
+                                // Area of the third rectangle
+                                <dd>const width3 = 10;</dd>
+                                <dd>const height3 = 10;</dd>
+                                <dd>const area3 =  width3 * height3;</dd>
+                            </dl>
+                        </aside>
+                        In programming, we often use code to perform a specific task multiple times. Instead of rewriting the same code, we can group a block of code together and associate it with one task, then we can reuse that block of code whenever we need to perform the task again. We achieve this by creating a function. A function is a reusable block of code that groups together a sequence of statements to perform a specific task.
+
+    In this lesson, you will learn how to create and use functions, and how they can be used to create clearer and more concise code.
+                    </aside>
+            </article>
+            <article class="declare">
+                <h3>Function Declarations</h3>
+                <aside>
+                    In JavaScript, there are many ways to create a function. One way to create a function is by using a function declaration. Just like how a variable declaration binds a value to a variable name, a function declaration binds a function to a name, or an identifier. Take a look at the anatomy of a function declaration below:
+                    <aside class="code">
+                        <img src="./style/images/java.png" alt="">
+                    </aside>
+                    A function declaration consists of:
+                    <dt>
+                        <li>The function keyword.</li>
+                        <li>The name of the function, or its identifier, followed by parentheses.</li>
+                        <li>
+                            A function body, or the block of statements required to perform a specific task, enclosed in the function’s curly brackets, { }.
+                        </li>
+                    </dt>
+                    A function declaration is a function that is bound to an identifier, or name. In the next exercise we’ll go over how to run the code inside the function body.
+
+                    We should also be aware of the hoisting feature in JavaScript which allows access to function declarations before they’re defined.
+
+                    Take a look at example of hoisting:
+                    <aside class="code">
+                        <dt>
+                            <dd>console.log(greetWorld()); // Output: Hello, World!</dd>
+                            <dd>function greetWorld() {</dd>
+                            <dd>console.log('Hello, World!');}
+                            </dd>
+                            <dd>inplace of console.log use return statement "Hello World!." give same results.</dd>
+                            <dd>return "Hello, World!."</dd>
+                        </dt>
+                    </aside>
+                    Notice how hoisting allowed greetWorld() to be called before the greetWorld() function was defined! Since hoisting isn’t considered good practice, we simply want you to be aware of this feature.
+                    If you want to read more about hoisting, check out <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting">MDN Documentation</a>
+                </aside>
+            </article>
+            <article class="callingfun">
+                <h3>Calling a function</h3>
+                <aside>
+                    As we saw in previous exercises, a function declaration binds a function to an identifier.
+
+However, a function declaration does not ask the code inside the function body to run, it just declares the existence of the function. The code inside a function body runs, or executes, only when the function is called.
+
+To call a function in your code, you type the function name followed by parentheses.
+                    <aside class="code">
+                        <img src="./style/images/greet.png" alt="">
+                    </aside>
+                    <aside>
+                        This function call executes the function body, or all of the statements between the curly braces in the function declaration.
+                    </aside>
+                    <aside class="code">
+                        <img src="./style/images/greet2.png" alt="">
+                    </aside>
+                    We can call the same function as many times as needed.
+
+Let’s practice calling functions in our code.
+                </aside>
+            </article>
+            <article class="parameter">
+                <h3>Parameters and Arguments</h3>
+                <aside>
+                    So far, the functions we’ve created execute a task without an input. However, some functions can take inputs and use the inputs to perform a task. When declaring a function, we can specify its parameters. Parameters allow functions to accept input(s) and perform a task using the input(s). We use parameters as placeholders for information that will be passed to the function when it is called.
+                    <aside class="code">
+                    Let’s observe how to specify parameters in our function declaration:
+                    <img src="./style/images/idi1.png" alt="">
+                    </aside>
+                        In the diagram above, calculateArea(), computes the area of a rectangle, based on two inputs, width and height. The parameters are specified between the parenthesis as width and height, and inside the function body, they act just like regular variables. width and height act as placeholders for values that will be multiplied together.
+
+                        When calling a function that has parameters, we specify the values in the parentheses that follow the function name. The values that are passed to the function when it is called are called arguments. Arguments can be passed to the function as values or variables.
+                
+                    <aside class="code">
+                        <img src="./style/images/idi.png" alt="">
+                    </aside>
+                    
+                        In the function call above, the number 10 is passed as the width and 6 is passed as height. Notice that the order in which arguments are passed and assigned follows the order that the parameters are declared.
+                    
+                    <aside class="code">
+                        <img src="./style/images/para.png" alt="">
+                    </aside>
+                    The variables rectWidth and rectHeight are initialized with the values for the height and width of a rectangle before being used in the function call.
+
+                    By using parameters, calculateArea() can be reused to compute the area of any rectangle! Functions are a powerful tool in computer programming so let’s practice creating and calling functions with parameters.
+                </aside>
+            </article>
+            <article class="default">
+                <h3>default parameteres</h3>
+                <aside>
+                    One of the features added in ES6 is the ability to use default parameters. Default parameters allow parameters to have a predetermined value in case there is no argument passed into the function or if the argument is undefined when called.
+                    <aside class="code">
+                        Take a look at the code snippet below that uses a default parameter:
+                        <dl>
+                            <dd>function greeting (name = 'stranger') {</dd>
+                            <dd>
+                                console.log(`Hello, ${name}!`)
+                                    }
+                            </dd>
+                            <dd>
+                                greeting('Nick') // Output: Hello, Nick!
+                            </dd>
+                            <dd>greeting() // Output: Hello, stranger!</dd>   
+                        </dl>
+                    </aside>
+                    <dl>
+                        <dd>
+                            In the example above, we used the = operator to assign the parameter name a default value of 'stranger'. This is useful to have in case we ever want to include a non-personalized default greeting!
+                        </dd>
+                        <dd>
+                            When the code calls greeting('Nick') the value of the argument is passed in and, 'Nick', will override the default parameter of 'stranger' to log 'Hello, Nick!' to the console.
+                        </dd>
+                        <dd>
+                            When there isn’t an argument passed into greeting(), the default value of 'stranger' is used, and 'Hello, stranger!' is logged to the console.
+                        </dd>
+                    </dl>
+                    By using a default parameter, we account for situations when an argument isn’t passed into a function that is expecting an argument.
+                </aside>
+            </article>
+            <article class="returnfun">
+                <h3>Return</h3>
+                <aside>
+                    When a function is called, the computer will run through the function’s code and evaluate the result of calling the function. By default that resulting value is undefined
+                    <aside class="code">
+                        <dl>
+                            <dd>
+                                function rectangleArea(width, height) {
+                            </dd>
+                            <dd>
+                                let area = width * height; {
+                            </dd>
+                            <dd>
+                                console.log(rectangleArea(5, 7)) // Prints undefined
+                            </dd>
+                        </dl>
+                    </aside>
+                    In the code example, we defined our function to calculate the area of a width and height parameter. Then rectangleArea() is invoked with the arguments 5 and 7. But when we went to print the results we got undefined. Did we write our function wrong? No! In fact, the function worked fine, and the computer did calculate the area as 35, but we didn’t capture it. So how can we do that? With the keyword return!
+                    <aside class="code">
+                        <img src="./style/images/ret.png" alt="">
+                    </aside>
+                    To pass back information from the function call, we use a return statement. To create a return statement, we use the return keyword followed by the value that we wish to return. Like we saw above, if the value is omitted, undefined is returned instead.
+
+                    When a return statement is used in a function body, the execution of the function is stopped and the code that follows it will not be executed. Look at the example below:
+                    <aside class="code">
+                        <dl>
+                            <dd>
+                                function rectangleArea(width, height) {
+                            </dd>
+                            <dd>
+                                if (width < 0 || height < 0) {
+                            </dd>
+                            <dd>
+                                return 'You need positive integers to calculate area!';}
+                            </dd>
+                            <dd>
+                                return width * height;}
+                            </dd>
+                        </dl>
+                    </aside>
+                    If an argument for width or height is less than 0, then rectangleArea() will return 'You need positive integers to calculate area!'. The second return statement width * height will not run.
+
+                    The return keyword is powerful because it allows functions to produce an output. We can then save the output to a variable for later use.
+                </aside>
+            </article>
+            <article class="helper">
+                <h3>Helper Functions</h3>
+                <aside>
+                    We can also use the return value of a function inside another function. These functions being called within another function are often referred to as helper functions. Since each function is carrying out a specific task, it makes our code easier to read and debug if necessary.
+
+                    If we wanted to define a function that converts the temperature from Celsius to Fahrenheit, we could write two functions like:
+                    <aside class="code">
+                        <img src="./style/images/helper.png" alt="">
+                    </aside>
+                    In the example above:
+                    <dl>
+                        <li>
+                            getFahrenheit() is called and 15 is passed as an argument.
+                        </li>
+                        <li>
+                            The code block inside of getFahrenheit() calls multiplyByNineFifths() and passes 15 as an argument.
+                        </li>
+                        <li>
+                            multiplyByNineFifths() takes the argument of 15 for the number parameter.
+                        </li>
+                        <li>
+                            The code block inside of multiplyByNineFifths() function multiplies 15 by (9/5), which evaluates to 27.
+                        </li>
+                        <li>
+                            27 is returned back to the function call in getFahrenheit().
+                        </li>
+                        <li>
+                            getFahrenheit() continues to execute. It adds 32 to 27, which evaluates to 59.
+                        </li>
+                        <li>
+                            Finally, 59 is returned back to the function call getFahrenheit(15).
+                        </li>
+                    </dl>
+                    We can use functions to section off small bits of logic or tasks, then use them when we need to. Writing helper functions can help take large and difficult tasks and break them into smaller and more manageable tasks.
+                </aside>
+            </article>
+            <article class="expre">
+                <h3>Function Expressions</h3>
+                <aside>
+                    Another way to define a function is to use a function expression. To define a function inside an expression, we can use the function keyword. In a function expression, the function name is usually omitted. A function with no name is called an anonymous function. A function expression is often stored in a variable in order to refer to it.
+                    <aside class="code">
+                        Consider the following function expression:
+                        <img src="./style/images/expre.png" alt="">
+                    </aside>
+                    To declare a function expression:
+                    <dl>
+                        <li>
+                            Declare a variable to make the variable’s name be the name, or identifier, of your function. Since the release of ES6, it is common practice to use const as the keyword to declare the variable.
+                        </li>
+                        <li>
+                            Assign as that variable’s value an anonymous function created by using the function keyword followed by a set of parentheses with possible parameters. Then a set of curly braces that contain the function body.
+                        </li>
+                    </dl>
+                    To invoke a function expression, write the name of the variable in which the function is stored followed by parentheses enclosing any arguments being passed into the function.
+                    <aside class="code">
+                        <dl>
+                            <li>variableName(argument1, argument2)</li>
+                        </dl>
+                    </aside>
+                    Unlike function declarations, function expressions are not hoisted so they cannot be called before they are defined.
+                </aside>
+            </article>
+            <article class="arrow">
+                <h3>Arrow Functions</h3>
+                <aside>
+                    ES6 introduced arrow function syntax, a shorter way to write functions by using the special “fat arrow” () => notation.
+
+                    Arrow functions remove the need to type out the keyword function every time you need to create a function. Instead, you first include the parameters inside the ( ) and then add an arrow => that points to the function body surrounded in { } like this:
+                    <aside class="code">
+                        <dl>
+                            <dd>
+                                const rectangleArea = (width, height) => {
+                            </dd>
+                            <dd>
+                                let area = width * height;
+                            </dd>
+                            <dd>
+                                return area;
+                                };
+                            </dd>
+                        </dl>
+                    </aside>
+                    It’s important to be familiar with the multiple ways of writing functions because you will come across each of these when reading other JavaScript code.
+                </aside>
+            </article>
+            <article class="cons">
+                <h3>Concise Body Arrow Functions</h3>
+                <aside>
+                    JavaScript also provides several ways to refactor arrow function syntax. The most condensed form of the function is known as concise body. We’ll explore a few of these techniques below:
+                    <dl>
+                        <li>
+                            Functions that take only a single parameter do not need that parameter to be enclosed in parentheses. However, if a function takes zero or multiple parameters, parentheses are required.
+                            <aside class="code">
+                                <img src="./style/images/zero.png" alt="">
+                            </aside>
+                        </li>
+                        <li>
+                            A function body composed of a single-line block does not need curly braces. Without the curly braces, whatever that line evaluates will be automatically returned. The contents of the block should immediately follow the arrow => and the return keyword can be removed. This is referred to as implicit return.
+                            <aside class="code">
+                                <img src="./style/images/zero2.png" alt="">
+                            </aside>
+                        </li>
+                    </dl>
+                    So if we have a function:
+                    <aside class="code">
+                        <dl>
+                            <dd>const squareNum = (num) => {</dd>
+                            <dd>return num * num;
+                            };
+                            </dd>
+                        </dl>
+                    </aside>
+                    We can refactor the function to:
+                    <aside class="code">
+                        <dl>
+                            <dd>const squareNum = num => num * num;</dd>
+                        </dl>
+                    </aside>
+                    Notice the following changes:
+                    <dl>
+                        <li>
+                            The parentheses around num have been removed, since it has a single parameter.
+                        </li>
+                        <li>
+                            The curly braces { } have been removed since the function consists of a single-line block.
+                        </li>
+                        <li>
+                            The return keyword has been removed since the function consists of a single-line block.
+                        </li>
+                    </dl>
+                </aside>
+            </article>
+        </div>
+    </div>
+    
+    <footer>
+            <ul class="nav">
+                <li class="foo">Copyright 2021</li>
+                <li class="foo">Europeous Tours Ltd</li>
+                <li class="foo">E-DMC</li>
+            </ul>
+    </footer>
+</body>
+</html>
