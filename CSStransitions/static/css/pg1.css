@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@700&family=Raleway:ital,wght@0,400;0,600;1,400&display=swap');
+
+body {
+    font-family: 'raleway', sans-serif;
+    background-color: #ECEEEE;
+}
+
+.join {
+    display: block;
+    width: 400px;
+    padding: 31px 5px;
+    border-radius: 10px;
+    margin: 20% auto;
+    background-color: orange;
+    text-align: center;
+    font-size: 32px;
+    color: mintcream;
+    transition-property: background-color;
+    transition-duration: 750ms;
+}
+
+.join:hover {
+  background-color: LimeGreen;
+  
+}
